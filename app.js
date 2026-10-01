@@ -23,7 +23,7 @@
     return element;
   }
   const mediaProjects = config.projects.filter(p => localAsset(p.webm) || localAsset(p.mp4));
-  document.title = `${config.name} / ${config.alias} — Edición y postproducción vertical`;
+  document.title = `${config.alias} — Montaje, ritmo y emoción`;
   $$('[data-brand]').forEach(el => { el.replaceChildren(document.createTextNode(config.name)); el.append(node('span', `${config.alias.toUpperCase()} / EDICIÓN Y POSTPRODUCCIÓN`, 'brand-sub')); });
   $$('[data-owner]').forEach(el => { el.textContent = config.name; });
   $('#year').textContent = new Date().getFullYear();
@@ -56,19 +56,52 @@
   const observer = new IntersectionObserver(entries => {
     entries.forEach(({ target, isIntersecting }) => {
       if (!isIntersecting) { target.pause(); }
-      else if (target.dataset.hero && !reduced.matches && !saveData && !manualPaused.has(target)) { play(target); }
+      else if (target.dataset.hero && !document.hidden && !$('dialog[open]') && !reduced.matches && !saveData && !manualPaused.has(target)) { play(target); }
+      else if (!target.dataset.hero && !saveData) { target.preload = 'metadata'; hydrate(target); }
     });
   }, { threshold: .2 });
   const hero = config.hero;
   if (localAsset(hero.webm) || localAsset(hero.mp4)) {
     const video = createVideo(hero); video.dataset.hero = 'true';
     if (!reduced.matches && !saveData) video.autoplay = true;
-    $('#hero-film').prepend(video); $('#hero-placeholder').hidden = true; $('#hero-film .film-bottom > span').textContent = 'BNZO / POSTPRODUCCIÓN';
+    $('#hero-film').prepend(video); $('#hero-placeholder').hidden = true; $('#hero-film .film-bottom > span').textContent = 'INTRO / RITUAL';
     observer.observe(video); const button = $('#hero-play'); button.hidden = false;
+    const audio = $('#hero-audio'); audio.hidden = false;
+    const updateAudio = () => {
+      const audible = !video.muted && video.volume > 0;
+      audio.setAttribute('aria-pressed', String(audible));
+      audio.setAttribute('aria-label', audible ? 'Silenciar vídeo' : 'Activar sonido');
+      audio.querySelector('span').textContent = audible ? 'Sonido on' : 'Sonido off';
+    };
+    // The source retains its real audio. No separate audio stream or timer to drift.
+    video.addEventListener('volumechange', updateAudio);
+    audio.addEventListener('click', () => {
+      video.muted = !video.muted;
+      if (!video.muted) { video.volume = 1; manualPaused.delete(video); play(video); }
+      updateAudio();
+    });
+    updateAudio();
     const update = () => { button.textContent = video.paused ? '▷' : 'Ⅱ'; button.setAttribute('aria-label', video.paused ? 'Reproducir vídeo de portada' : 'Pausar vídeo de portada'); };
-    video.addEventListener('error', () => { video.hidden = true; $('#hero-placeholder').hidden = false; button.hidden = true; $('#hero-film .film-bottom > span').textContent = 'VÍDEO NO DISPONIBLE'; });
+    video.addEventListener('error', () => { video.hidden = true; $('#hero-placeholder').hidden = false; button.hidden = true; audio.hidden = true; $('#hero-film .film-bottom > span').textContent = 'VÍDEO NO DISPONIBLE'; });
     video.addEventListener('play', update); video.addEventListener('pause', update); update();
     button.addEventListener('click', () => { if (video.paused) { manualPaused.delete(video); play(video); } else { manualPaused.add(video); video.pause(); } });
+  }
+  function timelineGraphic(category) {
+    const ns = 'http://www.w3.org/2000/svg';
+    const svg = document.createElementNS(ns, 'svg');
+    svg.setAttribute('viewBox', '0 0 300 120');
+    svg.setAttribute('class', 'pillar-graphic');
+    svg.setAttribute('aria-hidden', 'true'); svg.setAttribute('focusable', 'false');
+    const paths = {
+      oasis: ['M0 70C35 70 37 32 75 32S113 85 150 85S190 49 220 49S260 70 300 70', 'M0 82C35 82 37 44 75 44S113 97 150 97S190 61 220 61S260 82 300 82'],
+      pulse: ['M0 60H36L41 54L46 67L51 42L56 82L61 29L66 88L71 50L76 60H112L117 41L122 77L127 19L132 101L137 34L142 78L147 49L152 60H199L204 47L209 78L214 35L219 89L224 49L229 65L234 60H300', 'M150 0V120'],
+      form: ['M0 31H72V89H0 M79 31H165V89H79Z M172 31H226V89H172Z M233 31H300V89H233Z', 'M190 7V113']
+    };
+    (paths[category] || paths.form).forEach(d => {
+      const path = document.createElementNS(ns, 'path'); path.setAttribute('d',d);
+      path.setAttribute('fill','none'); path.setAttribute('stroke','currentColor'); svg.append(path);
+    });
+    return svg;
   }
   function renderProjects(filter) {
     $('#project-grid').querySelectorAll('video').forEach(video => { video.pause(); observer.unobserve(video); });
@@ -76,7 +109,7 @@
     const projects = config.projects.filter(p => filter === 'all' || p.category === filter);
     projects.forEach(project => {
       const real = !!(localAsset(project.webm) || localAsset(project.mp4));
-      const article = node('article', '', 'project-card');
+      const article = node('article', '', 'project-card reveal');
       const visual = node('button', '', `project-visual ${project.category}`);
       visual.setAttribute('aria-label', `${real ? 'Ver vídeo' : 'Ver enfoque'}: ${project.title}`);
       if (localAsset(project.poster)) {
@@ -90,11 +123,11 @@
         visual.addEventListener('blur', () => video.pause());
       }
       visual.append(node('span', project.label, 'card-overline'));
-      if (!real) visual.append(node('span', project.statement, 'card-statement'));
-      const bottom = node('span', '', 'card-bottom'); bottom.append(node('span', real ? 'VER PIEZA' : 'ENFOQUE DE EDICIÓN'), node('span', real ? '▷' : '+')); visual.append(bottom);
+      if (!real) { visual.append(node('span', project.statement, 'card-statement')); visual.append(timelineGraphic(project.category)); }
+      const bottom = node('span', '', 'card-bottom'); bottom.append(node('span', real ? 'VER PIEZA' : 'EXPLORAR DIRECCIÓN'), node('span', real ? '▷' : '+')); visual.append(bottom);
       visual.addEventListener('click', () => {
         $$('video').forEach(v => v.pause()); $('#project-title').textContent = project.title; $('#project-category').textContent = project.subtitle;
-        $('#project-description').textContent = real ? project.description : `${project.description} Las piezas reales de esta categoría se incorporarán próximamente.`;
+        $('#project-description').textContent = real ? project.description : `${project.description} Pieza próximamente.`;
         $('#project-player').replaceChildren();
         if (real) { const video = createVideo(project, true); $('#project-player').append(video); hydrate(video); }
         $('#project-dialog').showModal();
@@ -102,9 +135,32 @@
       const info = node('div', '', 'project-info'); const text = node('div'); text.append(node('h3', project.title), node('p', project.subtitle)); info.append(text, node('span', project.id));
       article.append(visual, info); $('#project-grid').append(article);
     });
-    $('#filter-status').textContent = `${projects.length} ${projects.length === 1 ? 'pieza mostrada' : 'piezas mostradas'}`;
+    $('#filter-status').textContent = `${projects.length} ${projects.length === 1 ? 'dirección mostrada' : 'direcciones mostradas'}`;
   }
   renderProjects('all');
+  // A native range supplies click, touch drag and keyboard behavior without a library.
+  // The playhead controls editorial atmosphere, independently of the film's playback.
+  const scrubber = $('#philosophy-scrubber');
+  const phases = [
+    { name:'Seleccionar', text:'Escuchar lo que la imagen necesita.' },
+    { name:'Sustraer', text:'Retirar lo que no cambia lo que sientes.' },
+    { name:'Sentir', text:'Dejar solo aquello que permanece.' }
+  ];
+  let currentPhase = -1;
+  function updateTimeline() {
+    const value = Math.max(0, Math.min(100, Number(scrubber.value)));
+    const index = Math.min(2, Math.floor(value / (100 / 3)));
+    $('#interactive-playhead').setAttribute('transform', `translate(${value * 10 - 577} 0)`);
+    if (index !== currentPhase) {
+      currentPhase = index;
+      $('#filosofia').dataset.phase = String(index);
+      $('#timeline-index').textContent = `0${index + 1} / 03`;
+      $('#timeline-philosophy').textContent = phases[index].text;
+      scrubber.setAttribute('aria-valuetext', `${phases[index].name}: ${phases[index].text}`);
+    }
+  }
+  scrubber.addEventListener('input', updateTimeline);
+  updateTimeline();
   $$('[data-filter]').forEach(button => button.addEventListener('click', () => {
     $$('[data-filter]').forEach(b => { const selected = b === button; b.classList.toggle('active', selected); b.setAttribute('aria-pressed', String(selected)); });
     renderProjects(button.dataset.filter);
@@ -144,6 +200,15 @@
     $('#booking-dialog').showModal();
   });
 
+  if ('IntersectionObserver' in window && !reduced.matches) {
+    const reveals = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('revealed'); reveals.unobserve(entry.target); }
+      });
+    }, { threshold: 0.08 });
+    $$('.reveal').forEach(el => reveals.observe(el));
+  }
+
   const legal = config.legal;
   const pending = value => value || '[PENDIENTE DE COMPLETAR POR EL TITULAR]';
   const legalContent = {
@@ -168,7 +233,7 @@
     cookies: { title:'Política de cookies', sections:[
       ['Qué utiliza esta versión', 'No se instalan cookies de análisis, publicidad ni calendario. No se cargan fuentes externas, píxeles ni vídeos de plataformas de terceros. Los recursos visuales se sirven desde el mismo sitio.'],
       ['Preferencia técnica del navegador', 'Nombre: portfolio-consent-v1. Tecnología: localStorage, no una cookie HTTP. Titular: el propio sitio. Finalidad: recordar si has aceptado o rechazado. Contenido: elección, versión y fecha. Validez de la elección: 180 días; al volver a visitar el sitio se descarta una elección caducada. El navegador puede conservar físicamente el registro hasta la siguiente visita o hasta que borres sus datos. No se envía este registro a terceros.'],
-      ['Aceptar, rechazar y revocar', 'Puedes aceptar o rechazar con los botones del aviso. En esta versión ambas opciones mantienen desactivados todos los servicios opcionales porque no hay ninguno instalado. Puedes cambiar tu elección en cualquier momento con «Cambiar consentimiento» al pie de página y pulsar «Rechazar». También puedes borrar los datos del sitio desde tu navegador. La navegación y el contacto están disponibles aunque rechaces.'],
+      ['Aceptar, rechazar y revocar', 'Puedes aceptar o rechazar con los botones del aviso. En esta versión ambas opciones mantienen desactivados todos los servicios opcionales porque no hay ninguno instalado. Puedes cambiar tu elección en cualquier momento con «Preferencias» al pie de página y pulsar «Rechazar». También puedes borrar los datos del sitio desde tu navegador. La navegación y el contacto están disponibles aunque rechaces.'],
       ['Servicios externos', 'El enlace de reservas, cuando esté configurado, abre otro sitio únicamente tras una acción tuya; no carga un widget ni cookies de ese proveedor dentro de esta página. El proveedor debe informar y gestionar los tratamientos de su propio sitio.'],
       ['Cambios en los servicios', 'Si se incorporan analítica, publicidad o un calendario incrustado, deben identificarse sus tecnologías, proveedores, finalidades y duraciones, implementar preferencias por finalidad y bloquearlos hasta el consentimiento específico correspondiente. Una aceptación de esta versión no autoriza servicios añadidos posteriormente.']
     ]}
