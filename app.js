@@ -7,7 +7,6 @@
   const saveData = navigator.connection?.saveData;
   const key = 'portfolio-consent-v1';
   const maxAge = 180 * 24 * 60 * 60 * 1000;
-  const manualPaused = new WeakSet();
   // Only self-hosted asset paths are accepted. Never insert configuration with innerHTML.
   function localAsset(path) {
     if (typeof path !== 'string' || !/^assets\/[a-zA-Z0-9_./-]+$/.test(path) || path.includes('..')) return '';
@@ -53,38 +52,27 @@
     video.dataset.loaded = 'true'; video.load();
   }
   function play(video) { hydrate(video); return video.play().catch(() => {}); }
-  const observer = new IntersectionObserver(entries => {
+  const observer = 'IntersectionObserver' in window ? new IntersectionObserver(entries => {
     entries.forEach(({ target, isIntersecting }) => {
-      if (!isIntersecting) { target.pause(); }
-      else if (target.dataset.hero && !document.hidden && !$('dialog[open]') && !reduced.matches && !saveData && !manualPaused.has(target)) { play(target); }
-      else if (!target.dataset.hero && !saveData) { target.preload = 'metadata'; hydrate(target); }
+      if (!isIntersecting) target.pause();
+      else if (!saveData) { target.preload = 'metadata'; hydrate(target); }
     });
-  }, { threshold: .2 });
-  const hero = config.hero;
-  if (localAsset(hero.webm) || localAsset(hero.mp4)) {
-    const video = createVideo(hero); video.dataset.hero = 'true';
-    if (!reduced.matches && !saveData) video.autoplay = true;
-    $('#hero-film').prepend(video); $('#hero-placeholder').hidden = true; $('#hero-film .film-bottom > span').textContent = 'INTRO / RITUAL';
-    observer.observe(video); const button = $('#hero-play'); button.hidden = false;
-    const audio = $('#hero-audio'); audio.hidden = false;
-    const updateAudio = () => {
-      const audible = !video.muted && video.volume > 0;
-      audio.setAttribute('aria-pressed', String(audible));
-      audio.setAttribute('aria-label', audible ? 'Silenciar vídeo' : 'Activar sonido');
-      audio.querySelector('span').textContent = audible ? 'Sonido on' : 'Sonido off';
-    };
-    // The source retains its real audio. No separate audio stream or timer to drift.
-    video.addEventListener('volumechange', updateAudio);
-    audio.addEventListener('click', () => {
-      video.muted = !video.muted;
-      if (!video.muted) { video.volume = 1; manualPaused.delete(video); play(video); }
-      updateAudio();
+  }, { threshold: .2 }) : { observe() {}, unobserve() {} };
+  // Empty configuration reserves the story's space without fetching a missing file.
+  const story = config.story || {};
+  if (localAsset(story.webm) || localAsset(story.mp4)) {
+    const video = createVideo(story, true); video.id = 'story-video';
+    video.setAttribute('aria-label', 'La historia de Bnzo');
+    $('#story-video').replaceWith(video); $('#story-placeholder').hidden = true;
+    const loadButton = $('#story-load');
+    const activate = () => { hydrate(video); loadButton.hidden = true; };
+    if (saveData || !('IntersectionObserver' in window)) {
+      loadButton.hidden = false; loadButton.addEventListener('click', activate);
+    } else observer.observe(video);
+    video.addEventListener('error', () => {
+      video.hidden = true; loadButton.hidden = true; $('#story-placeholder').hidden = false;
+      $('#story-status').textContent = 'El vídeo no está disponible en este momento.';
     });
-    updateAudio();
-    const update = () => { button.textContent = video.paused ? '▷' : 'Ⅱ'; button.setAttribute('aria-label', video.paused ? 'Reproducir vídeo de portada' : 'Pausar vídeo de portada'); };
-    video.addEventListener('error', () => { video.hidden = true; $('#hero-placeholder').hidden = false; button.hidden = true; audio.hidden = true; $('#hero-film .film-bottom > span').textContent = 'VÍDEO NO DISPONIBLE'; });
-    video.addEventListener('play', update); video.addEventListener('pause', update); update();
-    button.addEventListener('click', () => { if (video.paused) { manualPaused.delete(video); play(video); } else { manualPaused.add(video); video.pause(); } });
   }
   function timelineGraphic(category) {
     const ns = 'http://www.w3.org/2000/svg';
@@ -190,15 +178,13 @@
   }));
   $('#preferences').addEventListener('click', () => { $('#cookie-banner').hidden = false; $('[data-consent="rejected"]').focus({ preventScroll:true }); });
 
+  // Direct navigation only: no calendar iframe, prefetch or third-party script.
   const booking = safeBooking(config.bookingUrl);
-  const email = /^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(config.email) ? config.email : '';
-  $('#booking-open').addEventListener('click', () => {
-    $('#booking-description').textContent = booking ? `Reserva ${config.sessionMinutes} minutos con ${config.name} (${config.alias}) para revisar tus grabaciones, objetivos, entregables y flujo de revisiones. Calendly se abrirá en una nueva pestaña.` : email ? 'Cuéntame qué material tienes, qué piezas necesitas y para cuándo. Buscaremos 15 minutos para definir el flujo de postproducción.' : 'Las reservas todavía no están disponibles. Este portfolio está en preparación; vuelve cuando se haya habilitado el contacto.';
-    $('#booking-link').hidden = !booking; if (booking) $('#booking-link').href = booking;
-    $('#email-link').hidden = !email; if (email) $('#email-link').href = `mailto:${email}?subject=${encodeURIComponent('Hablemos de mi proyecto')}`;
-    $('#booking-privacy').textContent = booking ? 'Al abrir el calendario visitarás un servicio externo con su propia política de privacidad y cookies.' : 'No se recogen ni envían datos desde esta página.';
-    $('#booking-dialog').showModal();
-  });
+  if (booking) {
+    $('#direct-booking').href = booking;
+    $('#direct-booking').hidden = false;
+    $('#booking-pending').hidden = true;
+  }
 
   if ('IntersectionObserver' in window && !reduced.matches) {
     const reveals = new IntersectionObserver(entries => {
@@ -209,38 +195,4 @@
     $$('.reveal').forEach(el => reveals.observe(el));
   }
 
-  const legal = config.legal;
-  const pending = value => value || '[PENDIENTE DE COMPLETAR POR EL TITULAR]';
-  const legalContent = {
-    notice: { title:'Aviso legal', sections:[
-      ['', 'Borrador para completar antes de publicar. La identidad, actividad, datos registrales y condiciones reales deben ser revisados por el titular.'],
-      ['Identificación del titular', `Titular: ${pending(legal.holder)}\nAlias artístico: ${config.alias}\nActividad: ${config.role}\nNIF/CIF: ${pending(legal.taxId)}\nDomicilio profesional: ${pending(legal.address)}\nCorreo: ${pending(email)}\nRegistro mercantil o profesional, si procede: ${pending(legal.registry)}`],
-      ['Objeto y condiciones de uso', 'Este sitio presenta los servicios de edición y postproducción de vídeo vertical de Esteban Bonet, conocido artísticamente como Bnzo, sobre material aportado por el cliente y facilita un primer contacto. Los presupuestos, entregables, plazos, revisiones, licencias y condiciones de contratación se acordarán por escrito antes de iniciar el servicio. La navegación no constituye una contratación.'],
-      ['Propiedad intelectual', 'Las piezas audiovisuales solo deben publicarse con los permisos necesarios de sus titulares, incluyendo música, imagen y marcas. El esquema de montaje de la portada es una composición conceptual de interfaz; no representa un proyecto de cliente ni un trabajo entregado. No se autoriza la reutilización de los trabajos de terceros sin su consentimiento.'],
-      ['Responsabilidad y enlaces', 'Se procura mantener la información actualizada. Los servicios enlazados son gestionados por sus respectivos proveedores. Nada en este aviso limita derechos imperativos reconocidos a consumidores y usuarios.'],
-      ['Normativa aplicable', 'La actividad se somete a la normativa española aplicable y a los derechos reconocidos por la normativa de la Unión Europea. Las condiciones concretas de contratación se facilitarán antes de contratar.']
-    ]},
-    privacy: { title:'Política de privacidad', sections:[
-      ['', 'Borrador pendiente de los datos del responsable, proveedor de alojamiento, proveedor de reservas y plazos definitivos de conservación. No acredita por sí solo el cumplimiento de toda la actividad.'],
-      ['Responsable del tratamiento', `${pending(legal.holder)} (alias artístico: ${config.alias}) · NIF/CIF: ${pending(legal.taxId)}. Domicilio: ${pending(legal.address)}. Contacto para privacidad: ${pending(email)}.`],
-      ['Datos y finalidades', 'Esta página no contiene un formulario, no realiza analítica y no envía solicitudes de contacto por sí misma. Si escribes por correo, se tratarán tus datos identificativos, de contacto y la información que aportes para responder a tu consulta, preparar un presupuesto y gestionar la relación profesional. No envíes información sensible innecesaria. El alojamiento puede tratar IP, fecha, ruta y datos técnicos en registros de seguridad; el titular debe documentar el proveedor y su configuración.'],
-      ['Base jurídica', 'La atención de solicitudes de servicios se fundamenta en la aplicación de medidas precontractuales a petición del interesado y, cuando proceda, en la ejecución del contrato (artículo 6.1.b del RGPD). Las obligaciones fiscales y contables se basan en obligaciones legales (6.1.c). Cualquier tratamiento opcional que requiera consentimiento deberá informarse específicamente y permitir su retirada. No se realizan campañas comerciales desde esta página.'],
-      ['Conservación', 'Las consultas se conservarán durante el tiempo necesario para resolverlas y gestionar las medidas precontractuales solicitadas. Si hay contratación, se aplicarán los plazos legales pertinentes y, cuando proceda, el bloqueo de datos por responsabilidades. Antes de publicar, el titular debe fijar y documentar plazos concretos o criterios adecuados para correo, calendario, registros del servidor y copias de seguridad.'],
-      ['Destinatarios y transferencias', 'El titular debe identificar los proveedores de correo, alojamiento y reservas que actúen como encargados y formalizar los acuerdos correspondientes. No se carga ningún calendario externo en esta página. Si abres el enlace de reservas, accedes al servicio de un tercero. Antes de habilitarlo deben revisarse sus subencargados, ubicaciones de tratamiento y las garantías aplicables a transferencias internacionales. No se venden datos personales desde esta web.'],
-      ['Tus derechos', 'Puedes solicitar acceso, rectificación, supresión, oposición, limitación del tratamiento y portabilidad cuando correspondan, así como retirar tu consentimiento sin afectar al tratamiento anterior. Dirige tu solicitud al correo de privacidad indicado, identificando el derecho que deseas ejercer; solo se solicitará información adicional de identidad cuando sea necesaria. Puedes reclamar ante la Agencia Española de Protección de Datos en www.aepd.es.'],
-      ['Decisiones automatizadas', 'Esta versión no realiza perfiles ni toma decisiones automatizadas con efectos jurídicos sobre las personas.']
-    ]},
-    cookies: { title:'Política de cookies', sections:[
-      ['Qué utiliza esta versión', 'No se instalan cookies de análisis, publicidad ni calendario. No se cargan fuentes externas, píxeles ni vídeos de plataformas de terceros. Los recursos visuales se sirven desde el mismo sitio.'],
-      ['Preferencia técnica del navegador', 'Nombre: portfolio-consent-v1. Tecnología: localStorage, no una cookie HTTP. Titular: el propio sitio. Finalidad: recordar si has aceptado o rechazado. Contenido: elección, versión y fecha. Validez de la elección: 180 días; al volver a visitar el sitio se descarta una elección caducada. El navegador puede conservar físicamente el registro hasta la siguiente visita o hasta que borres sus datos. No se envía este registro a terceros.'],
-      ['Aceptar, rechazar y revocar', 'Puedes aceptar o rechazar con los botones del aviso. En esta versión ambas opciones mantienen desactivados todos los servicios opcionales porque no hay ninguno instalado. Puedes cambiar tu elección en cualquier momento con «Preferencias» al pie de página y pulsar «Rechazar». También puedes borrar los datos del sitio desde tu navegador. La navegación y el contacto están disponibles aunque rechaces.'],
-      ['Servicios externos', 'El enlace de reservas, cuando esté configurado, abre otro sitio únicamente tras una acción tuya; no carga un widget ni cookies de ese proveedor dentro de esta página. El proveedor debe informar y gestionar los tratamientos de su propio sitio.'],
-      ['Cambios en los servicios', 'Si se incorporan analítica, publicidad o un calendario incrustado, deben identificarse sus tecnologías, proveedores, finalidades y duraciones, implementar preferencias por finalidad y bloquearlos hasta el consentimiento específico correspondiente. Una aceptación de esta versión no autoriza servicios añadidos posteriormente.']
-    ]}
-  };
-  $$('[data-legal]').forEach(button => button.addEventListener('click', () => {
-    const data = legalContent[button.dataset.legal]; $('#legal-title').textContent = data.title; $('#legal-body').replaceChildren();
-    data.sections.forEach(([title, body]) => { if (title) $('#legal-body').append(node('h3', title)); const p = node('p', body, title ? '' : 'draft'); $('#legal-body').append(p); });
-    $('#legal-dialog').showModal(); $('#legal-dialog').scrollTop = 0;
-  }));
 })();

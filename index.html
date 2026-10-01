@@ -4,8 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Esteban Bonet / Bnzo. Editor y postproductor de vídeo vertical. Montaje de autor. Oasis Orgánico, El Pulso Invisible y Forma y Fricción.">
+  <link rel="canonical" href="https://www.bnzoedit.online/">
   <meta name="theme-color" content="#121110">
-  <meta name="robots" content="noindex,nofollow">
+  <meta name="robots" content="index, follow">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
   <title>Bnzo — Montaje, ritmo y emoción</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232B2826'/%3E%3Cpath d='M10 8v16M21 8v16' stroke='%23E8E6E1' stroke-width='3'/%3E%3C/svg%3E">
@@ -22,20 +23,23 @@
   <main id="contenido">
     <section id="apertura" class="hero wrap" aria-labelledby="hero-title">
       <h1 id="hero-title" class="hero-tagline">Esteban Bonet / Bnzo — Dirección de Postproducción y Montaje de Autor.</h1>
-      <div class="hero-stage">
-        <div class="stage-note"><span>01 / APERTURA</span><span>IMAGEN. TEXTURA. RITMO.</span></div>
-        <figure class="intro-figure">
-          <div class="hero-film" id="hero-film">
-            <div id="hero-placeholder" class="hero-placeholder"><span class="eyebrow">SECUENCIA 01</span><span class="placeholder-title">Ritual.</span><div class="placeholder-lines" aria-hidden="true"><svg viewBox="0 0 1000 170" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><g stroke="currentColor" stroke-width="1"><path opacity=".35" d="M0 24H1000 M0 74H1000 M0 124H1000 M0 164H1000"/><path opacity=".4" d="M50 17V24 M150 17V24 M250 17V24 M350 17V24 M450 17V24 M550 17V24 M650 17V24 M750 17V24 M850 17V24 M950 17V24"/><path d="M30 37H207V61H30Z M214 37H390V61H214Z M398 37H674V61H398Z M682 37H970V61H682Z" opacity=".65"/><path d="M30 97H76L81 93L86 103L91 84L96 109L101 94L106 98H134L139 89L144 111L149 79L154 116L159 93L164 99H192L197 87L202 106L207 92L212 97H282L287 94L292 102L297 84L302 112L307 88L312 97H409L414 91L419 106L424 80L429 115L434 89L439 97H513L518 93L523 102L528 88L533 110L538 94L543 97H641L646 85L651 110L656 77L661 119L666 87L671 97H767L772 91L777 106L782 84L787 112L792 92L797 97H870L875 93L880 104L885 88L890 108L895 96H970"/><path opacity=".45" d="M30 145H177L190 139H377L390 145H602L615 133H842L855 145H970"/></g><g class="svg-playhead" stroke="#d5c5af"><path d="M577 11V170"/><path fill="#d5c5af" d="M573 6H581V12L577 16L573 12Z"/></g></svg></div><span class="placeholder-status">La pieza no está disponible en este momento.</span></div>
-            <div class="film-bottom"><span>INTRO / RITUAL</span><div class="film-controls"><button id="hero-audio" class="audio-toggle" hidden aria-label="Activar sonido" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 9H8L13 5V19L8 15H4Z"/><path class="audio-waves" d="M16 8Q20 12 16 16M19 5Q26 12 19 19"/><path class="audio-off" d="M17 10L21 14M21 10L17 14"/></svg><span>Sonido off</span></button><button id="hero-play" class="round" hidden aria-label="Reproducir vídeo de portada">▷</button></div></div>
-          </div>
-          <figcaption><span>UN INSTANTE. OTRA SENSACIÓN.</span><span>9:16</span></figcaption>
-        </figure>
-        <div class="stage-note stage-right"><span>BNZO / POSTPRODUCCIÓN</span><a href="#portfolio">Explorar las piezas</a></div>
-      </div>
-      
     </section>
-    <section id="portfolio" class="portfolio wrap" aria-labelledby="portfolio-title"><div class="section-heading reveal"><p class="eyebrow">DIRECCIONES / 01—03</p><h2 id="portfolio-title">Tres formas de <em>sentir.</em></h2></div><div id="project-grid" class="project-grid"></div><p id="portfolio-note" class="portfolio-note">Oasis Orgánico y El Pulso Invisible: piezas próximamente.</p><p id="filter-status" class="sr-only" aria-live="polite"></p></section>
+    <section id="manifiesto" class="manifesto wrap" aria-labelledby="manifesto-title">
+      <figure class="story-figure">
+        <div class="story-frame">
+          <video id="story-video" hidden controls playsinline muted preload="none" aria-label="La historia de Bnzo"></video>
+          <div id="story-placeholder" class="story-placeholder"><span class="eyebrow">BNZO / EN PRIMERA PERSONA</span><svg viewBox="0 0 240 120" fill="none" aria-hidden="true"><path d="M0 30H240M0 90H240M40 60H85M95 60H145M155 60H200M120 10V110" stroke="currentColor"/><circle cx="120" cy="60" r="20" stroke="currentColor"/></svg><span class="story-label">Mi historia.</span><span class="micro" id="story-status">Próximamente.</span></div>
+          <button class="button story-load" id="story-load" hidden>Cargar mi historia</button>
+        </div>
+        <figcaption><span>01 / UNA FORMA DE MIRAR</span><span>9:16</span></figcaption>
+      </figure>
+      <div class="manifesto-copy reveal">
+        <p class="eyebrow">MALLORCA / MONTAJE DE AUTOR</p>
+        <h2 id="manifesto-title">No traduzco metraje. Traduzco caos mental en una verdad milimétrica.</h2>
+        <div class="manifesto-body"><p>Empezar ahora no es un vacío de experiencia; es una negativa rotunda a la desidia y al piloto automático de la industria. Me empapo de cada referencia, de cada silencio y de cada creador, para extraer lo mejor y aplicarlo con mi propio pulso.</p><p class="manifesto-signature">Ese es el toque Bnzo.</p></div>
+      </div>
+    </section>
+    <section id="portfolio" class="portfolio wrap" aria-labelledby="portfolio-title"><div class="section-heading reveal"><p class="eyebrow">DIRECCIONES / 01—03</p><h2 id="portfolio-title">Tres formas de <em>sentir.</em></h2></div><div id="project-grid" class="project-grid"></div><p id="portfolio-note" class="portfolio-note">Oasis Orgánico y Forma y Fricción: piezas próximamente.</p><p id="filter-status" class="sr-only" aria-live="polite"></p></section>
     <section id="filosofia" class="method wrap reveal" aria-labelledby="timeline-title" data-phase="0">
       <div class="section-meta"><span>EL TIMELINE SINCRONIZADO</span><span>EL ARTE DE SUSTRAER</span></div>
       <div class="timeline-heading"><h2 id="timeline-title">Lo esencial <em>permanece.</em></h2><span class="timeline-index" id="timeline-index" aria-hidden="true">01 / 03</span></div>
@@ -43,14 +47,12 @@
       <div class="sequence-legend" aria-hidden="true"><span>Seleccionar.</span><span>Sustraer.</span><span>Sentir.</span></div>
       <div class="timeline-reading"><p id="timeline-philosophy" aria-live="polite">Escuchar lo que la imagen necesita.</p><p id="timeline-help">Arrastra, pulsa o usa las flechas.</p></div>
     </section>
-    <section id="contacto" class="contact wrap reveal" aria-labelledby="contact-title"><p class="eyebrow">SESIÓN ESTRATÉGICA / 15 MINUTOS</p><h2 id="contact-title">Desentrañemos tu flujo<br>de <em>postproducción.</em></h2><button class="button primary" id="booking-open">Reservar sesión estratégica</button><p class="micro">Una auditoría. El siguiente paso.</p></section>
+    <section id="contacto" class="contact wrap reveal" aria-labelledby="contact-title"><p class="eyebrow">SESIÓN ESTRATÉGICA / 15 MINUTOS</p><h2 id="contact-title">Desentrañemos tu flujo<br>de <em>postproducción.</em></h2><div class="contact-actions"><a class="button primary" id="direct-booking" hidden target="_blank" rel="noopener noreferrer">Reservar sesión estratégica</a><a class="contact-email" href="mailto:esteban@bnzoedit.online">esteban@bnzoedit.online<span aria-hidden="true"> ↗</span></a></div><p id="booking-pending" class="micro">Para concertar la sesión de 15 minutos, escríbeme.</p><p class="micro">Una auditoría. El siguiente paso.</p></section>
   </main>
-  <footer class="footer wrap"><div class="footer-top"><a class="wordmark" href="#inicio" aria-label="Bnzo — Volver al inicio">bnzo.</a><p>Esteban Bonet / Montaje &amp; postproducción</p></div><div class="footer-bottom"><span>© <span id="year"></span> <span data-owner>Esteban Bonet</span></span><div><button data-legal="notice">Aviso legal</button><button data-legal="privacy">Privacidad</button><button data-legal="cookies">Cookies</button><button id="preferences">Preferencias</button></div></div></footer>
-  <aside id="cookie-banner" class="cookie-banner" aria-label="Preferencias de privacidad" hidden><div><strong>Tu privacidad.</strong><p>Sin analítica ni publicidad. Solo recordamos tu elección. <button class="text-button" data-legal="cookies">Política de cookies</button></p></div><div class="cookie-actions"><button class="button consent" data-consent="accepted">Aceptar todas</button><button class="button consent" data-consent="rejected">Rechazar</button></div></aside>
-  <dialog id="legal-dialog" aria-labelledby="legal-title"><div class="dialog-top"><p class="eyebrow">INFORMACIÓN LEGAL</p><button class="close" data-close aria-label="Cerrar información legal">×</button></div><h2 id="legal-title"></h2><div id="legal-body" class="legal-body"></div></dialog>
-  <dialog id="booking-dialog" aria-labelledby="booking-title"><div class="dialog-top"><p class="eyebrow">HABLEMOS DE TU PROYECTO</p><button class="close" data-close aria-label="Cerrar reservas">×</button></div><h2 id="booking-title">15 minutos.<br>Un montaje con <em>dirección.</em></h2><p id="booking-description"></p><a id="booking-link" class="button primary" hidden target="_blank" rel="noopener noreferrer">Elegir hora en Calendly</a><a id="email-link" class="text-button email-link" hidden>Prefiero escribir por correo</a><p class="micro" id="booking-privacy"></p></dialog>
+  <footer class="footer wrap"><div class="footer-top"><a class="wordmark" href="#inicio" aria-label="Bnzo — Volver al inicio">bnzo.</a><p>Esteban Bonet / Montaje &amp; postproducción</p></div><div class="footer-bottom"><span>© <span id="year"></span> <span data-owner>Esteban Bonet</span></span><div><a href="legal.html#aviso-legal">Aviso legal</a><a href="legal.html#privacidad">Privacidad</a><a href="legal.html#cookies">Cookies</a><button id="preferences">Preferencias</button></div></div></footer>
+  <aside id="cookie-banner" class="cookie-banner" aria-label="Preferencias de privacidad" hidden><div><strong>Tu privacidad.</strong><p>Sin analítica ni publicidad. Solo recordamos tu elección. <a class="text-button" href="legal.html#cookies">Política de cookies</a></p></div><div class="cookie-actions"><button class="button consent" data-consent="accepted">Aceptar todas</button><button class="button consent" data-consent="rejected">Rechazar</button></div></aside>
   <dialog id="project-dialog" aria-labelledby="project-title"><div class="dialog-top"><p class="eyebrow" id="project-category"></p><button class="close" data-close aria-label="Cerrar proyecto">×</button></div><h2 id="project-title"></h2><div id="project-player"></div><p id="project-description"></p></dialog>
-  <noscript><div class="noscript">Activa JavaScript para explorar el portfolio, consultar los textos legales y abrir las opciones de contacto.</div></noscript>
+  <noscript><div class="noscript">Activa JavaScript para reproducir el portfolio. Puedes contactar por correo y consultar la información legal sin JavaScript.</div></noscript>
 </body>
 </html>
 
