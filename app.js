@@ -26,7 +26,9 @@
   $$('[data-brand]').forEach(el => { el.replaceChildren(document.createTextNode(config.name)); el.append(node('span', `${config.alias.toUpperCase()} / EDICIÓN Y POSTPRODUCCIÓN`, 'brand-sub')); });
   $$('[data-owner]').forEach(el => { el.textContent = config.name; });
   $('#year').textContent = new Date().getFullYear();
-  if (mediaProjects.length === config.projects.length) $('#portfolio-note').hidden = true;
+  const pendingProjects = config.projects.filter(p => !localAsset(p.webm) && !localAsset(p.mp4));
+  $('#portfolio-note').hidden = pendingProjects.length === 0;
+  $('#portfolio-note').textContent = pendingProjects.length ? `${pendingProjects.map(p => p.title).join(' y ')}: ${pendingProjects.length === 1 ? 'pieza próximamente.' : 'piezas próximamente.'}` : '';
 
   function createVideo(project, controls = false) {
     const video = document.createElement('video');
@@ -99,6 +101,7 @@
       const real = !!(localAsset(project.webm) || localAsset(project.mp4));
       const article = node('article', '', 'project-card reveal');
       const visual = node('button', '', `project-visual ${project.category}`);
+      if (project.fit === 'contain') visual.classList.add('preserve-frame');
       visual.setAttribute('aria-label', `${real ? 'Ver vídeo' : 'Ver enfoque'}: ${project.title}`);
       if (localAsset(project.poster)) {
         const img = document.createElement('img'); img.src = project.poster; img.alt = ''; img.loading = 'lazy'; img.decoding = 'async'; img.width = 720; img.height = 1280; visual.append(img);

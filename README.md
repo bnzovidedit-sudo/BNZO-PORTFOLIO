@@ -10,7 +10,7 @@ Cabecera simétrica y tagline. Manifiesto en dos columnas: espacio de historia 9
 
 El Pulso Invisible usa assets/pulso-tren.mp4 y su poster. Copia H.264/AAC de FINAL_1.mp4 de la carpeta facilitada; duración 11,8 segundos, 720 × 1280 y 4.666.160 bytes. Original intacto. Carga diferida y reproducción por interacción. El café está retirado del flujo y del paquete. Las copias anteriores se conservan fuera del directorio desplegable.
 
-Para tu historia, coloca el MP4 en assets/ y configura story.mp4 en config.js; story.poster, story.webm y story.captions son opcionales. El vídeo usa controles nativos, carga diferida y encuadre sin recorte. Mientras no haya archivo, se muestra Mi historia / Próximamente sin solicitar archivos inexistentes. Oasis Orgánico y Forma y Fricción aún no tienen piezas.
+Para tu historia, coloca el MP4 en assets/ y configura story.mp4 en config.js; story.poster, story.webm y story.captions son opcionales. El vídeo usa controles nativos, carga diferida y encuadre sin recorte. Mientras no haya archivo, se muestra Mi historia / Próximamente sin solicitar archivos inexistentes. Oasis Orgánico incorpora Natur; Forma y Fricción aún no tiene pieza.
 
 ## Contacto y legal
 
@@ -21,3 +21,8 @@ legal.html es estático y accesible sin JavaScript. Completar directamente en es
 ## Entrega
 
 Revisión preparada para publicación mediante GitHub y Vercel. Para probar: servidor HTTP en esta carpeta. No hay promesa de carga instantánea o 60 fps universal; depende de dispositivo y red.
+
+## Natur — revisión local
+
+assets/natur-final.mp4 es la copia web de NATUR FINAL FINAL.mp4: H.264/AAC, 1280 × 720, 4.398.436 bytes. Es horizontal y se muestra completo con object-fit:contain dentro de la tarjeta izquierda 9:16. Poster: assets/natur-poster.jpg. Preview silenciado en bucle al pasar el puntero o enfocar; el clic abre controles nativos. Original intacto. Integración preparada para publicación en GitHub y Vercel.
+
