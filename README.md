@@ -22,7 +22,6 @@ legal.html es estático y accesible sin JavaScript. Completar directamente en es
 
 Revisión preparada para publicación mediante GitHub y Vercel. Para probar: servidor HTTP en esta carpeta. No hay promesa de carga instantánea o 60 fps universal; depende de dispositivo y red.
 
-## Natur — revisión local
+## Natur — vertical
 
-assets/natur-final.mp4 es la copia web de NATUR FINAL FINAL.mp4: H.264/AAC, 1280 × 720, 4.398.436 bytes. Es horizontal y se muestra completo con object-fit:contain dentro de la tarjeta izquierda 9:16. Poster: assets/natur-poster.jpg. Preview silenciado en bucle al pasar el puntero o enfocar; el clic abre controles nativos. Original intacto. Integración preparada para publicación en GitHub y Vercel.
-
+El original contiene una imagen vertical dentro de un lienzo horizontal con bandas negras. Se elimina únicamente ese relleno: área conservada 608 × 1080 en x=656, y=0, sin cortar la imagen lateral. Copia H.264/AAC 720 × 1280, con el mismo tamaño de tarjeta que El Pulso Invisible y object-fit:contain. Poster del primer fotograma de la ola. Al pausar el preview se muestra de nuevo la portada. Original intacto.

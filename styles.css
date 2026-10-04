@@ -24,3 +24,4 @@
 /* Horizontal originals keep their complete frame inside the vertical card. */
 .project-visual.preserve-frame{background:var(--bg)}.project-visual.preserve-frame>video,.project-visual.preserve-frame>img{object-fit:contain;background:var(--bg)}
 
+.project-visual>video.preview-resting{opacity:0}

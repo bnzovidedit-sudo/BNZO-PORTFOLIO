@@ -108,6 +108,12 @@
       }
       if (real) {
         const video = createVideo(project); visual.append(video); observer.observe(video);
+        // Return Natur to its opening wave whenever the preview is paused.
+        if (project.restorePoster) {
+          video.classList.add('preview-resting');
+          video.addEventListener('playing', () => video.classList.remove('preview-resting'));
+          video.addEventListener('pause', () => video.classList.add('preview-resting'));
+        }
         visual.addEventListener('pointerenter', () => { if (!reduced.matches && !saveData) play(video); });
         visual.addEventListener('pointerleave', () => video.pause());
         visual.addEventListener('focus', () => { if (!reduced.matches && !saveData) play(video); });
