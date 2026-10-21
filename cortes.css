@@ -1,0 +1,47 @@
+/* «Dónde corto»: mapa de cortes de los reels. Todo va dentro de #cortes para no tocar el resto de la web.
+   Usa los tokens de styles.css (--surface, --ink, --muted, --stone, --line) y su sistema .reveal. */
+#cortes { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(32px, 5vw, 96px);
+  align-items: start; border-top: 1px solid var(--line); padding-block: 80px 90px; }
+#cortes .cuts-media { margin: 0; position: sticky; top: 96px; }
+/* El ancho se limita por la altura disponible: el marco tiene la proporción del reel (sin bandas) */
+#cortes .reel { display: block; width: 100%; max-width: calc((100vh - 160px) * 9 / 16); aspect-ratio: 9 / 16; object-fit: cover; background: var(--surface); }
+#cortes .reel-caption { margin-top: 12px; color: var(--muted); font-size: 14px; }
+/* En la web, .section-heading pone título y entradilla en fila; en esta columna van apilados */
+#cortes .section-heading { display: block; margin-bottom: 0; }
+#cortes h2 { margin: 0; text-wrap: balance; }
+
+#cortes .reel-info { margin-top: 40px; max-width: 36em; }
+#cortes .reel-title:focus { outline: none; }
+#cortes .reel-title:focus-visible { outline: 3px solid var(--stone); outline-offset: 4px; }
+#cortes .reel-title { margin: 0; font: 400 clamp(26px, 2.6vw, 36px)/1.1 var(--serif); letter-spacing: -0.02em; }
+#cortes .reel-hice { margin: 12px 0 0; line-height: 1.6; }
+#cortes .reel-stats { margin: 10px 0 0; color: var(--muted); font-size: 14px; font-variant-numeric: tabular-nums; }
+
+#cortes .map { margin-top: 36px; }
+#cortes .map-title { margin: 0 0 14px; font: 600 16px/1.3 inherit; }
+#cortes .map-strip { display: flex; gap: 4px; height: 112px; }
+#cortes .shot { flex: var(--w) 1 0; min-width: 0; position: relative; padding: 0; border: 0; border-radius: 0; cursor: pointer;
+  touch-action: manipulation; background: var(--surface); opacity: .5; transition: opacity .2s, transform .2s cubic-bezier(.2, 0, 0, 1); }
+#cortes .shot img { display: block; width: 100%; height: 100%; object-fit: cover; }
+#cortes .shot:hover, #cortes .shot:focus-visible { opacity: .85; }
+#cortes .shot:active { transform: scaleY(.96); }
+#cortes .shot[aria-current="true"] { opacity: 1; }
+#cortes .shot[aria-current="true"]::after { content: ""; position: absolute; left: 0; right: 0; bottom: -10px; height: 4px; background: var(--stone); }
+#cortes .map-progress { margin-top: 18px; height: 4px; background: var(--surface); }
+#cortes .map-progress span { display: block; height: 100%; width: 100%; background: var(--stone); transform-origin: left; transform: scaleX(0); }
+
+@media (max-width: 899px) {
+  #cortes { grid-template-columns: minmax(0, 1fr); gap: 28px; padding-block: 64px 72px; }
+  #cortes .cuts-text { display: contents; }
+  #cortes .cuts-media { position: static; order: 2; }
+  #cortes .section-heading { order: 0; }
+  #cortes .reel-info { order: 4; margin-top: 0; }
+  #cortes .map { order: 5; margin-top: 0; min-width: 0; }
+  #cortes .reel { max-width: min(100%, calc(72vh * 9 / 16)); margin-inline: auto; }
+  /* La tira salta de línea; cada plano ocupa su parte de la duración (--p) y como mínimo 24 px */
+  #cortes .map-strip { flex-wrap: wrap; height: auto; row-gap: 14px; }
+  #cortes .shot { flex: 0 0 auto; width: max(24px, calc(var(--p) * 1%)); height: 88px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #cortes .shot { transition: none; }
+}

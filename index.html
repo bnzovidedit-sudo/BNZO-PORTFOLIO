@@ -3,54 +3,89 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Esteban Bonet / Bnzo. Editor y postproductor de vídeo vertical. Montaje de autor. Oasis Orgánico, El Pulso Invisible y Forma y Fricción.">
+  <meta name="description" content="Soy Esteban (bnzo), editor de vídeo en Palma. Tú grabas con el móvil y yo te devuelvo reels listos para subir. Precios claros y trato directo.">
   <link rel="canonical" href="https://www.bnzoedit.online/">
   <meta name="theme-color" content="#121110">
   <meta name="robots" content="index, follow">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
-  <title>Bnzo — Montaje, ritmo y emoción</title>
+  <title>Esteban (bnzo) · Editor de reels en Palma de Mallorca</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232B2826'/%3E%3Cpath d='M10 8v16M21 8v16' stroke='%23E8E6E1' stroke-width='3'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="styles.css">
-  <script defer src="config.js"></script>
-  <script defer src="app.js"></script>
+  <link rel="stylesheet" href="styles.css?v=20261019-personal">
+  <script defer src="config.js?v=20261022-reels"></script>
+  <script defer src="app.js?v=20261022-sobremi"></script>
+  <link rel="stylesheet" href="cortes.css?v=20261021b">
+  <script defer src="assets/planos.js?v=20261022-reels"></script>
+  <script defer src="cortes.js?v=20261021b"></script>
 </head>
 <body>
   <a class="skip" href="#contenido">Saltar al contenido</a>
   <header id="inicio" class="header wrap">
-    <a class="brand" href="#inicio" aria-label="Bnzo — Inicio"><span class="wordmark">bnzo<span aria-hidden="true">.</span></span><span class="brand-credit">Esteban Bonet<br>Edición &amp; postproducción</span></a>
-    <a class="nav-contact" href="#contacto">Hablemos<span class="contact-line" aria-hidden="true"></span></a>
+    <a class="brand" href="#inicio" aria-label="Esteban (bnzo) — Inicio"><span class="wordmark">Esteban<span aria-hidden="true">.</span></span><span class="brand-credit">bnzo<br>Editor de vídeo en Palma</span></a>
+    <a class="nav-contact" href="#contacto">Escríbeme<span class="contact-line" aria-hidden="true"></span></a>
   </header>
   <main id="contenido">
     <section id="apertura" class="hero wrap" aria-labelledby="hero-title">
-      <h1 id="hero-title" class="hero-tagline">Esteban Bonet / Bnzo — Dirección de Postproducción y Montaje de Autor.</h1>
-    </section>
-    <section id="manifiesto" class="manifesto wrap" aria-labelledby="manifesto-title">
-      <figure class="story-figure">
+      <div class="hero-copy"><p class="eyebrow">Hola, soy Esteban.</p>
+      <h1 id="hero-title" class="hero-title">Edito los vídeos de tu negocio y te los devuelvo listos para subir.</h1>
+      <p class="hero-sub">Tú grabas con el móvil, yo me encargo del resto: cortes, ritmo, subtítulos, color y sonido. Desde Palma.</p>
+      <a class="button primary" id="hero-cta" href="#contacto">Escríbeme por WhatsApp</a>
+      <p class="micro hero-note">Te respondo yo, no una agencia.</p></div>    </section>
+    <section id="manifiesto" class="manifesto no-story wrap" aria-labelledby="manifesto-title">
+      <figure class="story-figure" id="story-figure" hidden>
         <div class="story-frame">
           <video id="story-video" hidden controls playsinline muted preload="none" aria-label="La historia de Bnzo"></video>
-          <div id="story-placeholder" class="story-placeholder"><span class="eyebrow">BNZO / EN PRIMERA PERSONA</span><svg viewBox="0 0 240 120" fill="none" aria-hidden="true"><path d="M0 30H240M0 90H240M40 60H85M95 60H145M155 60H200M120 10V110" stroke="currentColor"/><circle cx="120" cy="60" r="20" stroke="currentColor"/></svg><span class="story-label">Mi historia.</span><span class="micro" id="story-status">Próximamente.</span></div>
+          <div id="story-placeholder" class="story-placeholder"><span class="eyebrow">ESTEBAN / EN PRIMERA PERSONA</span><svg viewBox="0 0 240 120" fill="none" aria-hidden="true"><path d="M0 30H240M0 90H240M40 60H85M95 60H145M155 60H200M120 10V110" stroke="currentColor"/><circle cx="120" cy="60" r="20" stroke="currentColor"/></svg><span class="story-label">Mi historia.</span><span class="micro" id="story-status">Próximamente.</span></div>
           <button class="button story-load" id="story-load" hidden>Cargar mi historia</button>
         </div>
-        <figcaption><span>01 / UNA FORMA DE MIRAR</span><span>9:16</span></figcaption>
+        <figcaption><span>Presentación · con voz y subtítulos</span><span>9:16</span></figcaption>
       </figure>
       <div class="manifesto-copy reveal">
-        <p class="eyebrow">MALLORCA / MONTAJE DE AUTOR</p>
-        <h2 id="manifesto-title">No traduzco metraje. Traduzco caos mental en una verdad milimétrica.</h2>
-        <div class="manifesto-body"><p>Empezar ahora no es un vacío de experiencia; es una negativa rotunda a la desidia y al piloto automático de la industria. Me empapo de cada referencia, de cada silencio y de cada creador, para extraer lo mejor y aplicarlo con mi propio pulso.</p><p class="manifesto-signature">Ese es el toque Bnzo.</p></div>
+        <p class="eyebrow">Sobre mí</p>
+        <h2 id="manifesto-title">Llevo nueve años viviendo por mi cuenta en distintas ciudades y he trabajado en casi todos los sectores.</h2>
+        <div class="manifesto-body"><p>Si algo he aprendido es lo que vale el tiempo de quien tiene un negocio. Por eso me dedico a editar: tú haces lo tuyo y yo convierto lo que grabas en vídeos que se ven tan bien como trabajas.</p><p>Empecé hace poco, y eso juega a tu favor: cada proyecto tiene toda mi atención. Reviso cada corte y cada silencio hasta que el vídeo funciona.</p><p class="manifesto-signature">— Esteban</p></div>
       </div>
     </section>
-    <section id="portfolio" class="portfolio wrap" aria-labelledby="portfolio-title"><div class="section-heading reveal"><p class="eyebrow">DIRECCIONES / 01—03</p><h2 id="portfolio-title">Tres formas de <em>sentir.</em></h2></div><div id="project-grid" class="project-grid"></div><p id="portfolio-note" class="portfolio-note">Forma y Fricción: pieza próximamente.</p><p id="filter-status" class="sr-only" aria-live="polite"></p></section>
-    <section id="filosofia" class="method wrap reveal" aria-labelledby="timeline-title" data-phase="0">
-      <div class="section-meta"><span>EL TIMELINE SINCRONIZADO</span><span>EL ARTE DE SUSTRAER</span></div>
-      <div class="timeline-heading"><h2 id="timeline-title">Lo esencial <em>permanece.</em></h2><span class="timeline-index" id="timeline-index" aria-hidden="true">01 / 03</span></div>
-      <div class="interactive-sequence"><div class="sequence"><svg viewBox="0 0 1000 170" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><g stroke="currentColor" stroke-width="1"><path opacity=".35" d="M0 24H1000 M0 74H1000 M0 124H1000 M0 164H1000"/><path opacity=".4" d="M50 17V24 M150 17V24 M250 17V24 M350 17V24 M450 17V24 M550 17V24 M650 17V24 M750 17V24 M850 17V24 M950 17V24"/><path d="M30 37H207V61H30Z M214 37H390V61H214Z M398 37H674V61H398Z M682 37H970V61H682Z" opacity=".65"/><path d="M30 97H76L81 93L86 103L91 84L96 109L101 94L106 98H134L139 89L144 111L149 79L154 116L159 93L164 99H192L197 87L202 106L207 92L212 97H282L287 94L292 102L297 84L302 112L307 88L312 97H409L414 91L419 106L424 80L429 115L434 89L439 97H513L518 93L523 102L528 88L533 110L538 94L543 97H641L646 85L651 110L656 77L661 119L666 87L671 97H767L772 91L777 106L782 84L787 112L792 92L797 97H870L875 93L880 104L885 88L890 108L895 96H970"/><path opacity=".45" d="M30 145H177L190 139H377L390 145H602L615 133H842L855 145H970"/></g><g id="interactive-playhead" class="svg-playhead" transform="translate(-577 0)" stroke="#d5c5af"><path d="M577 11V170"/><path fill="#d5c5af" d="M573 6H581V12L577 16L573 12Z"/></g></svg></div><label for="philosophy-scrubber" class="sr-only">Explorar el criterio de montaje</label><input id="philosophy-scrubber" class="timeline-range" type="range" min="0" max="100" value="0" step="1" aria-describedby="timeline-help" aria-valuetext="Seleccionar: escuchar lo que la imagen necesita."></div>
-      <div class="sequence-legend" aria-hidden="true"><span>Seleccionar.</span><span>Sustraer.</span><span>Sentir.</span></div>
-      <div class="timeline-reading"><p id="timeline-philosophy" aria-live="polite">Escuchar lo que la imagen necesita.</p><p id="timeline-help">Arrastra, pulsa o usa las flechas.</p></div>
+    <section id="portfolio" class="portfolio wrap" aria-labelledby="portfolio-title"><div class="section-heading reveal"><h2 id="portfolio-title">Mi trabajo</h2><p class="section-lead">Tres vídeos que he editado de principio a fin. Toca uno para verlo y te cuento qué hice en cada uno.</p></div><div id="project-grid" class="project-grid"></div><p id="filter-status" class="sr-only" aria-live="polite"></p></section>
+    <section id="cortes" class="cuts wrap" aria-labelledby="cuts-title">
+      <figure class="cuts-media reveal">
+        <video id="reel" class="reel" controls playsinline muted preload="metadata" poster="assets/cafe-reel-poster.jpg" src="assets/cafe-reel.mp4" aria-describedby="reel-hice"></video>
+        <figcaption id="reel-caption" class="reel-caption">Café · anuncio de producto</figcaption>
+      </figure>
+      <div class="cuts-text">
+        <div class="section-heading reveal"><h2 id="cuts-title">Dónde corto y por qué</h2><p class="section-lead">Cada franja es un plano del montaje, medida en el vídeo final. Toca una y el reel salta a ese momento. Para cambiar de reel, toca su tarjeta en «Mi trabajo».</p></div>
+        <div class="reel-info reveal" id="reel-panel">
+          <h3 id="reel-title" class="reel-title" tabindex="-1">Café</h3>
+          <p id="reel-hice" class="reel-hice">Cortes precisos y diseño de sonido para que el café se sienta antes de probarlo.</p>
+          <p id="reel-stats" class="reel-stats" aria-live="polite"></p>
+        </div>
+        <div class="map reveal">
+          <h4 class="map-title" id="map-title">Mapa de cortes</h4>
+          <div id="map" class="map-strip" role="group" aria-labelledby="map-title"></div>
+          <div class="map-progress" aria-hidden="true"><span id="map-bar"></span></div>
+        </div>
+      </div>
     </section>
-    <section id="contacto" class="contact wrap reveal" aria-labelledby="contact-title"><p class="eyebrow">SESIÓN ESTRATÉGICA / 15 MINUTOS</p><h2 id="contact-title">Desentrañemos tu flujo<br>de <em>postproducción.</em></h2><div class="contact-actions"><a class="button primary" id="direct-booking" hidden target="_blank" rel="noopener noreferrer">Reservar sesión estratégica</a><a class="contact-email" href="mailto:esteban@bnzoedit.online">esteban@bnzoedit.online<span aria-hidden="true"> ↗</span></a></div><p id="booking-pending" class="micro">Para concertar la sesión de 15 minutos, escríbeme.</p><p class="micro">Una auditoría. El siguiente paso.</p></section>
+    <section id="servicios" class="services wrap" aria-labelledby="services-title">
+      <h2 id="services-title">Precios claros</h2>
+      <p class="section-lead">Reels verticales editados con tu material: cortes, ritmo, subtítulos, color y sonido. Incluyen 2 cambios y entrega en 72 h. IVA aparte.</p>
+      <div class="service-list">
+        <article class="service"><h3>Reel suelto</h3><p class="price">60 €</p><p>Para probar o para algo puntual: una novedad, un evento, un anuncio.</p></article>
+        <article class="service"><h3>Pack Crece</h3><p class="price">200 € <span>/ mes</span></p><p>4 reels al mes, uno por semana. Lo justo para publicar con constancia.</p></article>
+        <article class="service"><h3>Pack Pro</h3><p class="price">360 € <span>/ mes</span></p><p>8 reels al mes para negocios con mucho movimiento: gimnasios, restaurantes, inmobiliarias.</p></article>
+      </div>
+      <p class="launch-note"><strong>Lanzamiento:</strong> los 3 primeros negocios tienen el primer mes del Pack Crece a 160 €.</p>
+    </section>
+    <section id="filosofia" class="method wrap reveal" aria-labelledby="timeline-title" data-phase="0">
+      <div class="section-meta"><span>Así trabajamos</span></div>
+      <div class="timeline-heading"><h2 id="timeline-title">Cómo trabajamos</h2><span class="timeline-index" id="timeline-index" aria-hidden="true">01 / 03</span></div>
+      <div class="interactive-sequence"><div class="sequence"><svg viewBox="0 0 1000 170" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><g stroke="currentColor" stroke-width="1"><path opacity=".35" d="M0 24H1000 M0 74H1000 M0 124H1000 M0 164H1000"/><path opacity=".4" d="M50 17V24 M150 17V24 M250 17V24 M350 17V24 M450 17V24 M550 17V24 M650 17V24 M750 17V24 M850 17V24 M950 17V24"/><path d="M30 37H207V61H30Z M214 37H390V61H214Z M398 37H674V61H398Z M682 37H970V61H682Z" opacity=".65"/><path d="M30 97H76L81 93L86 103L91 84L96 109L101 94L106 98H134L139 89L144 111L149 79L154 116L159 93L164 99H192L197 87L202 106L207 92L212 97H282L287 94L292 102L297 84L302 112L307 88L312 97H409L414 91L419 106L424 80L429 115L434 89L439 97H513L518 93L523 102L528 88L533 110L538 94L543 97H641L646 85L651 110L656 77L661 119L666 87L671 97H767L772 91L777 106L782 84L787 112L792 92L797 97H870L875 93L880 104L885 88L890 108L895 96H970"/><path opacity=".45" d="M30 145H177L190 139H377L390 145H602L615 133H842L855 145H970"/></g><g id="interactive-playhead" class="svg-playhead" transform="translate(-577 0)" stroke="#d5c5af"><path d="M577 11V170"/><path fill="#d5c5af" d="M573 6H581V12L577 16L573 12Z"/></g></svg></div><label for="philosophy-scrubber" class="sr-only">Explorar el criterio de montaje</label><input id="philosophy-scrubber" class="timeline-range" type="range" min="0" max="100" value="0" step="1" aria-describedby="timeline-help" aria-valuetext="Me lo mandas: envíame lo que grabaste por WhatsApp o Drive. Vale el móvil."></div>
+      <div class="sequence-legend" aria-hidden="true"><span>1. Me lo mandas</span><span>2. Lo edito en 72 h</span><span>3. Lo revisas</span></div>
+      <div class="timeline-reading"><p id="timeline-philosophy" aria-live="polite">Envíame lo que grabaste por WhatsApp o Drive. Vale el móvil.</p><p id="timeline-help">Mueve la línea para recorrer el proceso.</p></div>
+    </section>
+    <section id="contacto" class="contact wrap reveal" aria-labelledby="contact-title"><h2 id="contact-title">¿Hablamos?</h2><p class="contact-lead">Escríbeme y te contesto yo, normalmente el mismo día.</p><div class="contact-actions"><a class="button primary" id="whatsapp-link" hidden target="_blank" rel="noopener noreferrer">Escribir por WhatsApp</a><a class="button primary" id="direct-booking" hidden target="_blank" rel="noopener noreferrer">Reservar una llamada de 15 minutos</a><a class="contact-email" id="instagram-link" hidden target="_blank" rel="noopener noreferrer">Instagram</a></div><p id="booking-pending" class="micro">¿Dudas? Te reedito gratis un vídeo que ya hayas publicado para que veas la diferencia.</p></section>
   </main>
-  <footer class="footer wrap"><div class="footer-top"><a class="wordmark" href="#inicio" aria-label="Bnzo — Volver al inicio">bnzo.</a><p>Esteban Bonet / Montaje &amp; postproducción</p></div><div class="footer-bottom"><span>© <span id="year"></span> <span data-owner>Esteban Bonet</span></span><div><a href="legal.html#aviso-legal">Aviso legal</a><a href="legal.html#privacidad">Privacidad</a><a href="legal.html#cookies">Cookies</a><button id="preferences">Preferencias</button></div></div></footer>
-  <aside id="cookie-banner" class="cookie-banner" aria-label="Preferencias de privacidad" hidden><div><strong>Tu privacidad.</strong><p>Sin analítica ni publicidad. Solo recordamos tu elección. <a class="text-button" href="legal.html#cookies">Política de cookies</a></p></div><div class="cookie-actions"><button class="button consent" data-consent="accepted">Aceptar todas</button><button class="button consent" data-consent="rejected">Rechazar</button></div></aside>
+  <footer class="footer wrap"><div class="footer-top"><a class="wordmark" href="#inicio" aria-label="Volver al inicio">Esteban.</a><p>Esteban Bonet (bnzo) · Editor de vídeo en Palma</p></div><div class="footer-bottom"><span>© <span id="year"></span> <span data-owner>Esteban Bonet</span></span><div><a href="legal.html#aviso-legal">Aviso legal</a><a href="legal.html#privacidad">Privacidad</a><a href="legal.html#cookies">Cookies</a><button id="preferences">Preferencias</button></div></div></footer>
+  <aside id="cookie-banner" class="cookie-banner" aria-label="Preferencias de privacidad" hidden><div><strong>Tu privacidad.</strong><p>Sin analítica ni publicidad. Solo recuerdo tu elección. <a class="text-button" href="legal.html#cookies">Política de cookies</a></p></div><div class="cookie-actions"><button class="button consent" data-consent="accepted">Aceptar todas</button><button class="button consent" data-consent="rejected">Rechazar</button></div></aside>
   <dialog id="project-dialog" aria-labelledby="project-title"><div class="dialog-top"><p class="eyebrow" id="project-category"></p><button class="close" data-close aria-label="Cerrar proyecto">×</button></div><h2 id="project-title"></h2><div id="project-player"></div><p id="project-description"></p></dialog>
   <noscript><div class="noscript">Activa JavaScript para reproducir el portfolio. Puedes contactar por correo y consultar la información legal sin JavaScript.</div></noscript>
 </body>

@@ -22,19 +22,16 @@
     return element;
   }
   const mediaProjects = config.projects.filter(p => localAsset(p.webm) || localAsset(p.mp4));
-  document.title = `${config.alias} — Montaje, ritmo y emoción`;
-  $$('[data-brand]').forEach(el => { el.replaceChildren(document.createTextNode(config.name)); el.append(node('span', `${config.alias.toUpperCase()} / EDICIÓN Y POSTPRODUCCIÓN`, 'brand-sub')); });
+  document.title = `Esteban (${config.alias.toLowerCase()}) · Editor de reels en Palma de Mallorca`;
+  $$('[data-brand]').forEach(el => { el.replaceChildren(document.createTextNode(config.name)); el.append(node('span', `${config.alias.toUpperCase()} / EDITOR DE VÍDEO EN PALMA`, 'brand-sub')); });
   $$('[data-owner]').forEach(el => { el.textContent = config.name; });
   $('#year').textContent = new Date().getFullYear();
-  const pendingProjects = config.projects.filter(p => !localAsset(p.webm) && !localAsset(p.mp4));
-  $('#portfolio-note').hidden = pendingProjects.length === 0;
-  $('#portfolio-note').textContent = pendingProjects.length ? `${pendingProjects.map(p => p.title).join(' y ')}: ${pendingProjects.length === 1 ? 'pieza próximamente.' : 'piezas próximamente.'}` : '';
 
   function createVideo(project, controls = false) {
     const video = document.createElement('video');
-    video.muted = true; video.loop = !controls; video.playsInline = true;
+    video.muted = !controls; video.loop = !controls; video.playsInline = true;
     video.controls = controls; video.preload = 'none';
-    video.setAttribute('playsinline', ''); video.setAttribute('muted', '');
+    video.setAttribute('playsinline', ''); if (!controls) video.setAttribute('muted', '');
     if (!controls) video.setAttribute('loop', '');
     if (localAsset(project.poster)) video.poster = project.poster;
     for (const type of ['webm', 'mp4']) {
@@ -64,8 +61,9 @@
   const story = config.story || {};
   if (localAsset(story.webm) || localAsset(story.mp4)) {
     const video = createVideo(story, true); video.id = 'story-video';
-    video.setAttribute('aria-label', 'La historia de Bnzo');
+    video.setAttribute('aria-label', 'Esteban se presenta: qué es editar para él y cómo trabaja (con subtítulos)');
     $('#story-video').replaceWith(video); $('#story-placeholder').hidden = true;
+    $('#story-figure').hidden = false; $('#manifiesto').classList.remove('no-story');
     const loadButton = $('#story-load');
     const activate = () => { hydrate(video); loadButton.hidden = true; };
     if (saveData || !('IntersectionObserver' in window)) {
@@ -96,7 +94,7 @@
   function renderProjects(filter) {
     $('#project-grid').querySelectorAll('video').forEach(video => { video.pause(); observer.unobserve(video); });
     $('#project-grid').replaceChildren();
-    const projects = config.projects.filter(p => filter === 'all' || p.category === filter);
+    const projects = mediaProjects.filter(p => filter === 'all' || p.category === filter);
     projects.forEach(project => {
       const real = !!(localAsset(project.webm) || localAsset(project.mp4));
       const article = node('article', '', 'project-card reveal');
@@ -121,27 +119,30 @@
       }
       visual.append(node('span', project.label, 'card-overline'));
       if (!real) { visual.append(node('span', project.statement, 'card-statement')); visual.append(timelineGraphic(project.category)); }
-      const bottom = node('span', '', 'card-bottom'); bottom.append(node('span', real ? 'VER PIEZA' : 'EXPLORAR DIRECCIÓN'), node('span', real ? '▷' : '+')); visual.append(bottom);
+      const bottom = node('span', '', 'card-bottom'); bottom.append(node('span', real ? 'Ver pieza' : 'Explorar dirección'), node('span', real ? '▷' : '+')); visual.append(bottom);
       visual.addEventListener('click', () => {
-        $$('video').forEach(v => v.pause()); $('#project-title').textContent = project.title; $('#project-category').textContent = project.subtitle;
+        $$('video').forEach(v => v.pause());
+        // Si el reel está en «Dónde corto» (cortes.js), se abre allí con su mapa de cortes; si no, el diálogo de siempre.
+        if (real && window.cortesAbrir && window.cortesAbrir(project.mp4)) return;
+        $('#project-title').textContent = project.title; $('#project-category').textContent = project.subtitle;
         $('#project-description').textContent = real ? project.description : `${project.description} Pieza próximamente.`;
         $('#project-player').replaceChildren();
         if (real) { const video = createVideo(project, true); $('#project-player').append(video); hydrate(video); }
         $('#project-dialog').showModal();
       });
-      const info = node('div', '', 'project-info'); const text = node('div'); text.append(node('h3', project.title), node('p', project.subtitle)); info.append(text, node('span', project.id));
+      const info = node('div', '', 'project-info'); const text = node('div'); text.append(node('h3', project.title), node('p', project.subtitle)); if (project.useCase) text.append(node('p', project.useCase, 'project-goal')); info.append(text);
       article.append(visual, info); $('#project-grid').append(article);
     });
-    $('#filter-status').textContent = `${projects.length} ${projects.length === 1 ? 'dirección mostrada' : 'direcciones mostradas'}`;
+    $('#filter-status').textContent = `${projects.length} ${projects.length === 1 ? 'pieza mostrada' : 'piezas mostradas'}`;
   }
   renderProjects('all');
   // A native range supplies click, touch drag and keyboard behavior without a library.
   // The playhead controls editorial atmosphere, independently of the film's playback.
   const scrubber = $('#philosophy-scrubber');
   const phases = [
-    { name:'Seleccionar', text:'Escuchar lo que la imagen necesita.' },
-    { name:'Sustraer', text:'Retirar lo que no cambia lo que sientes.' },
-    { name:'Sentir', text:'Dejar solo aquello que permanece.' }
+    { name:'Me lo mandas', text:'Envíame lo que grabaste por WhatsApp o Drive. Vale el móvil.' },
+    { name:'Lo edito en 72 h', text:'Elijo lo que cuenta, quito lo que sobra y ajusto ritmo, subtítulos, color y sonido.' },
+    { name:'Lo revisas', text:'Te lo paso listo para subir. Tienes 2 cambios incluidos.' }
   ];
   let currentPhase = -1;
   function updateTimeline() {
@@ -186,6 +187,21 @@
     if ($('#cookie-banner').contains(document.activeElement)) $('#preferences').focus({ preventScroll:true });
   }));
   $('#preferences').addEventListener('click', () => { $('#cookie-banner').hidden = false; $('[data-consent="rejected"]').focus({ preventScroll:true }); });
+
+  // WhatsApp: plain link to wa.me, opened only on click. Nothing is loaded in advance.
+  const waNumber = String(config.whatsapp || '').replace(/\D/g, '');
+  if (/^\d{9,15}$/.test(waNumber)) {
+    const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(String(config.whatsappMessage || ''))}`;
+    const waLink = $('#whatsapp-link'); waLink.href = waUrl; waLink.hidden = false;
+    const heroCta = $('#hero-cta'); heroCta.href = waUrl; heroCta.target = '_blank'; heroCta.rel = 'noopener noreferrer';
+  }
+
+  // Instagram: plain link, opened only on click. Nothing is loaded in advance.
+  const igHandle = String(config.instagram || '');
+  if (/^[A-Za-z0-9._]{1,30}$/.test(igHandle)) {
+    const igLink = $('#instagram-link');
+    igLink.href = `https://www.instagram.com/${igHandle}/`; igLink.textContent = `Instagram @${igHandle}`; igLink.hidden = false;
+  }
 
   // Direct navigation only: no calendar iframe, prefetch or third-party script.
   const booking = safeBooking(config.bookingUrl);
