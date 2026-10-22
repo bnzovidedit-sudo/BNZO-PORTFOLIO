@@ -136,29 +136,6 @@
     $('#filter-status').textContent = `${projects.length} ${projects.length === 1 ? 'pieza mostrada' : 'piezas mostradas'}`;
   }
   renderProjects('all');
-  // A native range supplies click, touch drag and keyboard behavior without a library.
-  // The playhead controls editorial atmosphere, independently of the film's playback.
-  const scrubber = $('#philosophy-scrubber');
-  const phases = [
-    { name:'Me lo mandas', text:'Envíame lo que grabaste por WhatsApp o Drive. Vale el móvil.' },
-    { name:'Lo edito en 72 h', text:'Elijo lo que cuenta, quito lo que sobra y ajusto ritmo, subtítulos, color y sonido.' },
-    { name:'Lo revisas', text:'Te lo paso listo para subir. Tienes 2 cambios incluidos.' }
-  ];
-  let currentPhase = -1;
-  function updateTimeline() {
-    const value = Math.max(0, Math.min(100, Number(scrubber.value)));
-    const index = Math.min(2, Math.floor(value / (100 / 3)));
-    $('#interactive-playhead').setAttribute('transform', `translate(${value * 10 - 577} 0)`);
-    if (index !== currentPhase) {
-      currentPhase = index;
-      $('#filosofia').dataset.phase = String(index);
-      $('#timeline-index').textContent = `0${index + 1} / 03`;
-      $('#timeline-philosophy').textContent = phases[index].text;
-      scrubber.setAttribute('aria-valuetext', `${phases[index].name}: ${phases[index].text}`);
-    }
-  }
-  scrubber.addEventListener('input', updateTimeline);
-  updateTimeline();
   $$('[data-filter]').forEach(button => button.addEventListener('click', () => {
     $$('[data-filter]').forEach(b => { const selected = b === button; b.classList.toggle('active', selected); b.setAttribute('aria-pressed', String(selected)); });
     renderProjects(button.dataset.filter);
