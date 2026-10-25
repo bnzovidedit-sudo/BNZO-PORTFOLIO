@@ -5,8 +5,6 @@
   const $$ = (selector) => [...document.querySelectorAll(selector)];
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
   const saveData = navigator.connection?.saveData;
-  const key = 'portfolio-consent-v1';
-  const maxAge = 180 * 24 * 60 * 60 * 1000;
   // Only self-hosted asset paths are accepted. Never insert configuration with innerHTML.
   function localAsset(path) {
     if (typeof path !== 'string' || !/^assets\/[a-zA-Z0-9_./-]+$/.test(path) || path.includes('..')) return '';
@@ -22,7 +20,7 @@
     return element;
   }
   const mediaProjects = config.projects.filter(p => localAsset(p.webm) || localAsset(p.mp4));
-  document.title = `Esteban (${config.alias.toLowerCase()}) · Editor de reels en Palma de Mallorca`;
+  document.title = 'BNZOEDIT | Edición de vídeo para marcas y creadores';
   $$('[data-brand]').forEach(el => { el.replaceChildren(document.createTextNode(config.name)); el.append(node('span', `${config.alias.toUpperCase()} / EDITOR DE VÍDEO EN PALMA`, 'brand-sub')); });
   $$('[data-owner]').forEach(el => { el.textContent = config.name; });
   $('#year').textContent = new Date().getFullYear();
@@ -131,7 +129,7 @@
         $('#project-dialog').showModal();
       });
       const info = node('div', '', 'project-info'); const text = node('div'); text.append(node('h3', project.title), node('p', project.subtitle)); if (project.useCase) text.append(node('p', project.useCase, 'project-goal')); info.append(text);
-      article.append(visual, info); $('#project-grid').append(article);
+      const role = node('p', project.summary || '', 'project-context'); text.append(role); article.append(visual, info); $('#project-grid').append(article);
     });
     $('#filter-status').textContent = `${projects.length} ${projects.length === 1 ? 'pieza mostrada' : 'piezas mostradas'}`;
   }
@@ -148,29 +146,15 @@
     dialog.addEventListener('close', () => { dialog.querySelectorAll('video').forEach(v => { v.pause(); v.remove(); }); });
   });
 
-  // The build intentionally contains NO analytics, pixel, remote font or embedded calendar.
-  // Accepting cannot load unknown third parties. Audit and update policy before adding any.
-  let consent = null;
-  try {
-    const saved = JSON.parse(localStorage.getItem(key));
-    if (saved?.version === 1 && ['accepted','rejected'].includes(saved.choice) && Number.isFinite(saved.at) && Date.now() >= saved.at && Date.now() - saved.at < maxAge) consent = saved.choice;
-    else localStorage.removeItem(key);
-  } catch { /* Storage unavailable: keep a session-only choice. */ }
-  $('#cookie-banner').hidden = !!consent;
-  $$('[data-consent]').forEach(button => button.addEventListener('click', () => {
-    consent = button.dataset.consent;
-    try { localStorage.setItem(key, JSON.stringify({ version:1, choice:consent, at:Date.now() })); } catch { /* Navigation remains usable. */ }
-    $('#cookie-banner').hidden = true;
-    if ($('#cookie-banner').contains(document.activeElement)) $('#preferences').focus({ preventScroll:true });
-  }));
-  $('#preferences').addEventListener('click', () => { $('#cookie-banner').hidden = false; $('[data-consent="rejected"]').focus({ preventScroll:true }); });
+  // Remove the obsolete preference saved by earlier versions. No new storage is written.
+  try { localStorage.removeItem('portfolio-consent-v1'); } catch {}
 
   // WhatsApp: plain link to wa.me, opened only on click. Nothing is loaded in advance.
   const waNumber = String(config.whatsapp || '').replace(/\D/g, '');
   if (/^\d{9,15}$/.test(waNumber)) {
     const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(String(config.whatsappMessage || ''))}`;
     const waLink = $('#whatsapp-link'); waLink.href = waUrl; waLink.hidden = false;
-    const heroCta = $('#hero-cta'); heroCta.href = waUrl; heroCta.target = '_blank'; heroCta.rel = 'noopener noreferrer';
+    // Hero keeps its internal contact anchor.
   }
 
   // Instagram: plain link, opened only on click. Nothing is loaded in advance.

@@ -3,33 +3,76 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Soy Esteban (bnzo), editor de vídeo en Palma. Tú grabas con el móvil y yo te devuelvo reels listos para subir. Precios claros y trato directo.">
+  <meta name="description" content="Edición de reels, clips de podcasts y piezas promocionales con tus grabaciones o recursos de stock. Esteban Bonet, trabajo online desde Palma.">
   <link rel="canonical" href="https://www.bnzoedit.online/">
   <meta name="theme-color" content="#121110">
   <meta name="robots" content="index, follow">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
-  <title>Esteban (bnzo) · Editor de reels en Palma de Mallorca</title>
+  <title>BNZOEDIT | Edición de vídeo para marcas y creadores</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232B2826'/%3E%3Cpath d='M10 8v16M21 8v16' stroke='%23E8E6E1' stroke-width='3'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="styles.css?v=20261022-skills">
-  <script defer src="config.js?v=20261022-reels"></script>
-  <script defer src="app.js?v=20261022-skills"></script>
-  <link rel="stylesheet" href="cortes.css?v=20261021b">
-  <script defer src="assets/planos.js?v=20261022-reels"></script>
-  <script defer src="cortes.js?v=20261021b"></script>
+  <link rel="stylesheet" href="styles.css?v=20261025">
+  <script defer src="config.js?v=20261025"></script>
+  <script defer src="app.js?v=20261025"></script>
+  <link rel="stylesheet" href="cortes.css?v=20261025">
+  <script defer src="assets/planos.js?v=20261025"></script>
+  <script defer src="cortes.js?v=20261025"></script>
+<meta property="og:type" content="website">
+<meta property="og:title" content="BNZOEDIT · Edición de vídeo para marcas y creadores">
+<meta property="og:description" content="Reels, clips y piezas promocionales con tus grabaciones o recursos de stock. Esteban Bonet, trabajo online desde Palma.">
+<meta property="og:url" content="https://www.bnzoedit.online/">
+<meta property="og:image" content="https://www.bnzoedit.online/assets/portfolio-social.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="portfolio-update.css?v=20261025">
 </head>
 <body>
   <a class="skip" href="#contenido">Saltar al contenido</a>
   <header id="inicio" class="header wrap">
-    <a class="brand" href="#inicio" aria-label="Esteban (bnzo) — Inicio"><span class="wordmark">Esteban<span aria-hidden="true">.</span></span><span class="brand-credit">bnzo<br>Editor de vídeo en Palma</span></a>
-    <a class="nav-contact" href="#contacto">Escríbeme<span class="contact-line" aria-hidden="true"></span></a>
+    <a class="brand" href="#inicio" aria-label="BNZOEDIT — Inicio"><span class="wordmark">BNZOEDIT<span aria-hidden="true">.</span></span><span class="brand-credit">Esteban Bonet<br>Edición y postproducción</span></a>
+    <nav class="main-nav" aria-label="Navegación principal"><a href="#portfolio">Trabajos</a><a href="#servicios">Servicios</a><a href="#proceso">Cómo trabajo</a><a href="#contacto">Contacto</a></nav>
   </header>
   <main id="contenido">
     <section id="apertura" class="hero wrap" aria-labelledby="hero-title">
-      <div class="hero-copy"><p class="eyebrow">Hola, soy Esteban.</p>
-      <h1 id="hero-title" class="hero-title">Edito los vídeos de tu negocio y te los devuelvo listos para subir.</h1>
-      <p class="hero-sub">Tú grabas con el móvil, yo me encargo del resto: cortes, ritmo, subtítulos, color y sonido. Desde Palma.</p>
-      <a class="button primary" id="hero-cta" href="#contacto">Escríbeme por WhatsApp</a>
-      <p class="micro hero-note">Te respondo yo, no una agencia.</p></div>    </section>
+      <div class="hero-copy"><p class="eyebrow">BNZOEDIT · ESTEBAN BONET</p>
+      <h1 id="hero-title" class="hero-title">Edición de vídeo para marcas y creadores.</h1>
+      <p class="hero-sub">Doy forma a tus grabaciones, entrevistas y recursos de stock para convertirlos en reels, clips y piezas promocionales. Selección, montaje, subtítulos y acabado de imagen y sonido. Trabajo online desde Palma.</p>
+      <div class="hero-actions"><a class="button primary" href="#portfolio">Ver trabajos</a><a class="button" id="hero-cta" href="#contacto">Cuéntame tu proyecto</a></div>
+      <p class="micro hero-note">Del material de partida a la pieza final. Trato directo conmigo.</p></div>    </section>
+
+    <section id="portfolio" class="portfolio wrap" aria-labelledby="portfolio-title"><div class="section-heading reveal"><h2 id="portfolio-title">Trabajos seleccionados</h2><p class="section-lead">Una selección de montajes. Abre una pieza para verla y conocer su objetivo, el material utilizado y mis decisiones de edición.</p></div><div id="project-grid" class="project-grid"></div><p id="filter-status" class="sr-only" aria-live="polite"></p></section>
+    <section id="cortes" class="cuts wrap" aria-labelledby="cuts-title">
+      <figure class="cuts-media reveal">
+        <video id="reel" class="reel" controls playsinline muted preload="metadata" poster="assets/barberia-reel-poster.jpg" src="assets/barberia-reel.mp4" aria-describedby="reel-hice"></video>
+        <button type="button" class="button sound-toggle" id="sound-toggle" aria-pressed="false">Activar sonido</button><figcaption id="reel-caption" class="reel-caption">Barbería · muestra de edición para barberías</figcaption>
+      </figure>
+      <div class="cuts-text">
+        <div class="section-heading reveal"><h2 id="cuts-title">La pieza y sus decisiones</h2><p class="section-lead">Mira el resultado y descubre cómo está construido. Puedes cambiar de pieza desde las tarjetas de trabajos.</p></div>
+        <div class="reel-info reveal" id="reel-panel">
+          <h3 id="reel-title" class="reel-title" tabindex="-1">Barbería</h3>
+          <p id="reel-hice" class="reel-hice">Proyecto personal de autopromoción con planos de stock. Proceso, resultado y cierre comercial.</p>
+          <p id="reel-credit" class="project-credit"></p><a class="text-button" href="#contacto">Consultar una pieza similar →</a>
+        </div>
+        <details class="map"><summary>Ver decisiones de edición y mapa de cortes</summary><p id="reel-stats" class="reel-stats" aria-live="polite"></p>
+          <h4 class="map-title" id="map-title">Mapa de cortes</h4>
+          <div id="map" class="map-strip" role="group" aria-labelledby="map-title"></div>
+          <div class="map-progress" aria-hidden="true"><span id="map-bar"></span></div>
+        </details>
+      </div>
+    </section>
+    <section id="servicios" class="services wrap" aria-labelledby="services-title">
+      <h2 id="services-title">Qué puedo editar para ti</h2>
+<div class="offer-grid"><article><h3>Reels y contenido breve</h3><p>Montaje de tus grabaciones, subtítulos y adaptación al formato acordado.</p></article><article><h3>Clips de entrevistas y podcasts</h3><p>Selección y adaptación de fragmentos. El presupuesto depende del material a revisar y las piezas que necesitas.</p></article><article><h3>Piezas con stock</h3><p>Selección de recursos y montaje para una idea concreta. Búsqueda y licencias acordadas en el presupuesto.</p></article></div>
+<h3 class="pricing-heading">Tarifas para reels con tu material</h3>
+      <p class="section-lead">Edición de reels verticales con tu material: cortes, ritmo, subtítulos, color y sonido. Incluyen 2 rondas de cambios. Plazo por reel: 72 horas laborables desde que recibo todo el material y las indicaciones. El presupuesto concreta la fecha de entrega y el calendario de los packs mensuales. Precios sin IVA.</p>
+      <div class="service-list">
+        <article class="service"><h3>Reel suelto</h3><p class="price">60 €</p><p>Para probar o para algo puntual: una novedad, un evento, un anuncio.</p></article>
+        <article class="service"><h3>Pack Crece</h3><p class="price">200 € <span>/ mes</span></p><p>4 reels al mes, uno por semana. Lo justo para publicar con constancia.</p></article>
+        <article class="service"><h3>Pack Pro</h3><p class="price">360 € <span>/ mes</span></p><p>8 reels al mes para negocios con mucho movimiento: gimnasios, restaurantes, inmobiliarias.</p></article>
+      </div>
+      <p class="scope-note">Antes de empezar, acordamos por escrito la duración final, los minutos de material a revisar y las versiones incluidas. La búsqueda de stock, las licencias y la locución se presupuestan aparte cuando sean necesarias.</p><p class="launch-note"><strong>Lanzamiento:</strong> primer mes del Pack Crece a 160 € para los 3 primeros negocios. La disponibilidad se confirma en el presupuesto.</p>
+      <p class="micro">Con IVA (21 %) incluido: reel suelto 72,60 €, Pack Crece 242 €/mes, Pack Pro 435,60 €/mes y lanzamiento 193,60 €. <a class="text-button" href="legal.html#condiciones">Condiciones del servicio</a></p>
+    </section>
+    <section id="proceso" class="process wrap" aria-labelledby="process-title"><h2 id="process-title">Cómo trabajo</h2><ol class="process-list"><li><h3>Brief y material</h3><p>Me cuentas qué necesitas, compartes una referencia y el material disponible.</p></li><li><h3>Alcance y presupuesto</h3><p>Acordamos entregas, duración, recursos, plazo y precio antes de empezar.</p></li><li><h3>Edición y revisión</h3><p>Preparo el montaje y reúnes tus comentarios en cada ronda de cambios.</p></li><li><h3>Entrega</h3><p>Recibes el archivo final en los formatos acordados.</p></li></ol></section>
     <section id="manifiesto" class="manifesto no-story wrap" aria-labelledby="manifesto-title">
       <figure class="story-figure" id="story-figure" hidden>
         <div class="story-frame">
@@ -41,61 +84,23 @@
       </figure>
       <div class="manifesto-copy reveal">
         <p class="eyebrow">Sobre mí</p>
-        <h2 id="manifesto-title">Soy joven, emprendo por mi cuenta y tengo alma de nómada.</h2>
-        <div class="manifesto-body"><p>Me muevo, pruebo cosas y me busco la vida solo. Eso me ha hecho independiente y creativo: si algo hay que sacarlo adelante, lo saco, y si se puede contar mejor, busco cómo.</p><p>Así edito también. Sin plantillas: miro lo que has grabado, encuentro la historia de tu negocio y la monto para que la gente quiera verla. Tú sigues con lo tuyo y yo me ocupo del vídeo.</p><p>Hablas directamente conmigo, sin agencias de por medio. Cuéntame qué tienes en mente y lo vemos juntos.</p><p class="manifesto-signature">— Esteban</p></div>
+        <h2 id="manifesto-title">Soy Esteban, el editor detrás de BNZOEDIT.</h2>
+        <div class="manifesto-body"><p>Trabajo online desde Palma con grabaciones de clientes y recursos de stock. Me ocupo de seleccionar el material, construir el montaje y preparar la entrega para el formato acordado.</p><p>También desarrollo proyectos propios como ANIPULSO y Recortia. En ellos trabajo la selección de contenido, el guion y la edición.</p><p>Hablas directamente conmigo desde el primer mensaje hasta la entrega.</p><p class="manifesto-signature">— Esteban</p></div>
       </div>
-    </section>
-    <section id="portfolio" class="portfolio wrap" aria-labelledby="portfolio-title"><div class="section-heading reveal"><h2 id="portfolio-title">Mi trabajo</h2><p class="section-lead">Tres vídeos que he editado de principio a fin. Toca uno para verlo y te cuento qué hice en cada uno.</p></div><div id="project-grid" class="project-grid"></div><p id="filter-status" class="sr-only" aria-live="polite"></p></section>
-    <section id="cortes" class="cuts wrap" aria-labelledby="cuts-title">
-      <figure class="cuts-media reveal">
-        <video id="reel" class="reel" controls playsinline muted preload="metadata" poster="assets/cafe-reel-poster.jpg" src="assets/cafe-reel.mp4" aria-describedby="reel-hice"></video>
-        <figcaption id="reel-caption" class="reel-caption">Café · anuncio de producto</figcaption>
-      </figure>
-      <div class="cuts-text">
-        <div class="section-heading reveal"><h2 id="cuts-title">Dónde corto y por qué</h2><p class="section-lead">Cada franja es un plano del montaje, medida en el vídeo final. Toca una y el reel salta a ese momento. Para cambiar de reel, toca su tarjeta en «Mi trabajo».</p></div>
-        <div class="reel-info reveal" id="reel-panel">
-          <h3 id="reel-title" class="reel-title" tabindex="-1">Café</h3>
-          <p id="reel-hice" class="reel-hice">Cortes precisos y diseño de sonido para que el café se sienta antes de probarlo.</p>
-          <p id="reel-stats" class="reel-stats" aria-live="polite"></p>
-        </div>
-        <div class="map reveal">
-          <h4 class="map-title" id="map-title">Mapa de cortes</h4>
-          <div id="map" class="map-strip" role="group" aria-labelledby="map-title"></div>
-          <div class="map-progress" aria-hidden="true"><span id="map-bar"></span></div>
-        </div>
-      </div>
-    </section>
-    <section id="servicios" class="services wrap" aria-labelledby="services-title">
-      <h2 id="services-title">Precios claros</h2>
-      <p class="section-lead">Reels verticales editados con tu material: cortes, ritmo, subtítulos, color y sonido. Incluyen 2 cambios y entrega en 72 h. Precios sin IVA.</p>
-      <div class="service-list">
-        <article class="service"><h3>Reel suelto</h3><p class="price">60 €</p><p>Para probar o para algo puntual: una novedad, un evento, un anuncio.</p></article>
-        <article class="service"><h3>Pack Crece</h3><p class="price">200 € <span>/ mes</span></p><p>4 reels al mes, uno por semana. Lo justo para publicar con constancia.</p></article>
-        <article class="service"><h3>Pack Pro</h3><p class="price">360 € <span>/ mes</span></p><p>8 reels al mes para negocios con mucho movimiento: gimnasios, restaurantes, inmobiliarias.</p></article>
-      </div>
-      <p class="launch-note"><strong>Lanzamiento:</strong> los 3 primeros negocios tienen el primer mes del Pack Crece a 160 €.</p>
-      <p class="micro">Con IVA (21 %) incluido: reel suelto 72,60 €, Pack Crece 242 €/mes, Pack Pro 435,60 €/mes y lanzamiento 193,60 €. <a class="text-button" href="legal.html#condiciones">Condiciones del servicio</a></p>
     </section>
     <section id="habilidades" class="skills wrap" aria-labelledby="skills-title">
-      <div class="section-heading reveal"><h2 id="skills-title">Lo que sé hacer</h2><p class="section-lead">No solo corto vídeos: llevo mis propios canales, así que sé lo que necesita una pieza para funcionar una vez publicada.</p></div>
+      <div class="section-heading reveal"><h2 id="skills-title">Proyectos propios y recursos complementarios</h2><p class="section-lead">ANIPULSO y Recortia son espacios donde desarrollo contenido propio. La locución y las miniaturas pueden añadirse a un encargo con presupuesto específico.</p></div>
       <div class="skills-layout">
-        <ol class="skill-list reveal">
-          <li><span class="skill-n">01</span><div><h3>Editar</h3><p>Reels verticales con ritmo y cortes pensados, con subtítulos, color y sonido incluidos.</p></div></li>
-          <li><span class="skill-n">02</span><div><h3>Locutar</h3><p>Pongo la voz a ANIPULSO, mi noticiero de anime. Puedo narrar tu vídeo si no quieres salir en cámara.</p></div></li>
-          <li><span class="skill-n">03</span><div><h3>Llevar un canal</h3><p>Elijo los temas, escribo los guiones y decido el formato y el ritmo de publicación de mis canales.</p></div></li>
-          <li><span class="skill-n">04</span><div><h3>Hacer miniaturas</h3><p>Diseño las portadas de ANIPULSO para que se entienda de qué va el vídeo de un vistazo.</p></div></li>
-          <li><span class="skill-n">05</span><div><h3>Crear clips</h3><p>Saco los mejores momentos de streams y podcasts y los convierto en clips verticales con gancho y subtítulos.</p></div></li>
-        </ol>
+        <div class="skill-list reveal"><h3>Más allá del montaje</h3><p>En ANIPULSO trabajo el guion, la locución, los rótulos y las miniaturas. En Recortia selecciono y adapto fragmentos de streams y podcasts.</p><p>Estos proyectos muestran otras partes de mi proceso. La gestión de canales y la publicación no forman parte del servicio habitual de edición.</p></div>
         <div class="channel-list reveal">
           <a class="channel" href="https://www.youtube.com/@AniPulso" target="_blank" rel="noopener noreferrer"><span class="eyebrow">YouTube · @AniPulso</span><h3>ANIPULSO</h3><p>Noticiero y canal de anime. Mi voz, el guion, los rótulos y las miniaturas.</p><span class="channel-go">Ver el canal <span aria-hidden="true">↗</span></span></a>
           <a class="channel" href="https://www.tiktok.com/@recortia_" target="_blank" rel="noopener noreferrer"><span class="eyebrow">TikTok · @recortia_</span><h3>Recortia</h3><p>Clips para campañas de clipping, sacados de streams y podcasts.</p><span class="channel-go">Ver los clips <span aria-hidden="true">↗</span></span></a>
         </div>
       </div>
     </section>
-    <section id="contacto" class="contact wrap reveal" aria-labelledby="contact-title"><h2 id="contact-title">¿Hablamos?</h2><p class="contact-lead">Escríbeme y te contesto yo, normalmente el mismo día.</p><div class="contact-actions"><a class="button primary" id="whatsapp-link" hidden target="_blank" rel="noopener noreferrer">Escribir por WhatsApp</a><a class="button primary" id="direct-booking" hidden target="_blank" rel="noopener noreferrer">Reservar una llamada de 15 minutos</a><a class="contact-email" id="instagram-link" hidden target="_blank" rel="noopener noreferrer">Instagram</a></div><p id="booking-pending" class="micro">¿Dudas? Te reedito gratis un vídeo que ya hayas publicado para que veas la diferencia.</p></section>
+    <section id="contacto" class="contact wrap reveal" aria-labelledby="contact-title"><h2 id="contact-title">Cuéntame qué necesitas editar.</h2><p class="contact-lead">Envíame una referencia, el formato que necesitas, cuánto material tienes y para cuándo lo quieres. Te respondo con una propuesta de alcance y presupuesto.</p><div class="contact-actions"><a class="button primary" id="whatsapp-link" hidden target="_blank" rel="noopener noreferrer">Escribir por WhatsApp</a><a class="button primary" id="direct-booking" hidden target="_blank" rel="noopener noreferrer">Reservar una llamada de 15 minutos</a><a class="contact-email" href="mailto:esteban@bnzoedit.online">esteban@bnzoedit.online</a><a class="contact-email" id="instagram-link" hidden target="_blank" rel="noopener noreferrer">Instagram</a></div><p id="booking-pending" class="micro">Primera valoración de tu material y de lo que necesita el proyecto.</p></section>
   </main>
-  <footer class="footer wrap"><div class="footer-top"><a class="wordmark" href="#inicio" aria-label="Volver al inicio">Esteban.</a><p>Esteban Bonet (bnzo) · Editor de vídeo en Palma</p></div><div class="footer-bottom"><span>© <span id="year"></span> <span data-owner>Esteban Bonet</span></span><div><a href="legal.html#aviso-legal">Aviso legal</a><a href="legal.html#privacidad">Privacidad</a><a href="legal.html#cookies">Cookies</a><button id="preferences">Preferencias</button></div></div></footer>
-  <aside id="cookie-banner" class="cookie-banner" aria-label="Preferencias de privacidad" hidden><div><strong>Tu privacidad.</strong><p>Sin analítica ni publicidad. Solo recuerdo tu elección. <a class="text-button" href="legal.html#cookies">Política de cookies</a></p></div><div class="cookie-actions"><button class="button consent" data-consent="accepted">Aceptar todas</button><button class="button consent" data-consent="rejected">Rechazar</button></div></aside>
+  <footer class="footer wrap"><div class="footer-top"><a class="wordmark" href="#inicio" aria-label="Volver al inicio">BNZOEDIT.</a><p>Esteban Bonet · Edición y postproducción online desde Palma</p></div><div class="footer-bottom"><span>© <span id="year"></span> <span data-owner>Esteban Bonet</span></span><div><a href="legal.html#aviso-legal">Aviso legal</a><a href="legal.html#privacidad">Privacidad</a><a href="legal.html#cookies">Cookies</a></div></div></footer>
   <dialog id="project-dialog" aria-labelledby="project-title"><div class="dialog-top"><p class="eyebrow" id="project-category"></p><button class="close" data-close aria-label="Cerrar proyecto">×</button></div><h2 id="project-title"></h2><div id="project-player"></div><p id="project-description"></p></dialog>
   <noscript><div class="noscript">Activa JavaScript para reproducir el portfolio. Puedes contactar por correo y consultar la información legal sin JavaScript.</div></noscript>
 </body>

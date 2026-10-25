@@ -13,8 +13,12 @@
   function elegir(r, cambiarUrl = true) {
     actual = r;
     q("#reel-title").textContent = r.titulo;
-    q("#reel-hice").textContent = r.hice;
-    q("#reel-caption").textContent = `${r.titulo} · ${r.tipo.toLowerCase()}`;
+    
+    const project = window.PORTFOLIO_CONFIG.projects.find(p => p.mp4 === r.video);
+    q("#reel-hice").textContent = project?.description || r.hice;
+    q("#reel-credit").textContent = project?.credit || '';
+    q("details").open = false;
+    q("#reel-caption").textContent = `${r.titulo} · ${(project?.subtitle || r.tipo).toLowerCase()}`;
     if (video.getAttribute("src") !== r.video) { video.poster = r.poster; video.src = r.video; }
     if (cambiarUrl) history.replaceState(null, "", `#cortes-${r.id}`);
     pintarMapa(r);
@@ -64,7 +68,12 @@
   video.addEventListener("timeupdate", () => marcar(video.currentTime));
   video.addEventListener("seeked", () => marcar(video.currentTime));
 
+  const sound = q("#sound-toggle");
+  function soundState() { sound.textContent = video.muted ? 'Activar sonido' : 'Silenciar'; sound.setAttribute('aria-pressed', String(!video.muted)); }
+  sound.addEventListener('click', () => { video.muted = !video.muted; if (!video.muted) { video.volume = 1; video.play().catch(() => {}); } soundState(); });
+  video.addEventListener('volumechange', soundState);
+  soundState();
   const inicial = reels.find((r) => location.hash === `#cortes-${r.id}`);
   if (inicial) { elegir(inicial, false); root.scrollIntoView(); }
-  else pintarMapa(actual);
+  else elegir(actual, false);
 })();

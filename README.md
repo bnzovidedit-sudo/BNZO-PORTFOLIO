@@ -1,27 +1,24 @@
-# Bnzo — Manifiesto asimétrico
+# BNZOEDIT
 
-Web estática sin dependencias: HTML, CSS y JavaScript. Desplegar esta carpeta como raíz en Vercel, sin build. Cabeceras en vercel.json; alternativa Netlify en netlify.toml.
+Portfolio de Esteban Bonet, editor y postproductor de vídeo. Web estática HTML/CSS/JavaScript, sin compilación.
 
-## Composición
+## Publicación
 
-Cabecera simétrica y tagline. Manifiesto en dos columnas: espacio de historia 9:16 a la izquierda y texto a la derecha. En móvil se apilan. Animación con IntersectionObserver y cubic-bezier(0.16,1,0.3,1), respetando movimiento reducido.
+Repositorio: https://github.com/bnzovidedit-sudo/BNZO-PORTFOLIO — rama main.
+Proyecto existente de Vercel: web, equipo bnzoeditvid. Dominio: https://www.bnzoedit.online/.
+Conservar vercel.json y publicar la raíz del repositorio.
 
-## Vídeos
+## Selección y funcionamiento
 
-El Pulso Invisible usa assets/pulso-tren.mp4 y su poster. Copia H.264/AAC de FINAL_1.mp4 de la carpeta facilitada; duración 11,8 segundos, 720 × 1280 y 4.666.160 bytes. Original intacto. Carga diferida y reproducción por interacción. El café está retirado del flujo y del paquete. Las copias anteriores se conservan fuera del directorio desplegable.
+Barbería y Gimnasio: muestras de autopromoción. Café: pieza de producto. Tren: pieza conceptual.
+Vídeos originales sin modificar en esta actualización. Natur se conserva fuera de la selección visible.
+Tarjetas breves; descripción y créditos junto al reproductor. Mapa de cortes opcional y control explícito del sonido.
+Servicios, alcance, precios y contacto en index.html; condiciones y privacidad en legal.html.
+Sin analítica, publicidad ni banner de consentimiento. Se elimina únicamente la preferencia obsoleta de versiones anteriores.
 
-Para tu historia, coloca el MP4 en assets/ y configura story.mp4 en config.js; story.poster, story.webm y story.captions son opcionales. El vídeo usa controles nativos, carga diferida y encuadre sin recorte. Mientras no haya archivo, se muestra Mi historia / Próximamente sin solicitar archivos inexistentes. Oasis Orgánico incorpora Natur; Forma y Fricción aún no tiene pieza.
+## Mantenimiento
 
-## Contacto y legal
+config.js contiene proyectos y contacto; assets/planos.js contiene los mapas de las piezas; portfolio-update.css contiene los últimos ajustes de diseño.
+Al cambiar una pieza, mantener coherentes su descripción, créditos, archivo y mapa. No atribuir autoría o resultados no documentados.
 
-Correo directo: esteban@bnzoedit.online. bookingUrl espera tu URL real HTTPS del evento; al configurarla aparece el botón directo de reserva sin incrustar trackers. No hay URL de Calendly inventada.
-
-legal.html es estático y accesible sin JavaScript. Completar directamente en esa página NIF, domicilio y demás datos pendientes; los campos legales de config.js no actualizan automáticamente el HTML legal. Indexación preparada con index, follow, canonical, robots.txt y sitemap.xml.
-
-## Entrega
-
-Revisión preparada para publicación mediante GitHub y Vercel. Para probar: servidor HTTP en esta carpeta. No hay promesa de carga instantánea o 60 fps universal; depende de dispositivo y red.
-
-## Natur — vertical
-
-El original contiene una imagen vertical dentro de un lienzo horizontal con bandas negras. Se elimina únicamente ese relleno: área conservada 608 × 1080 en x=656, y=0, sin cortar la imagen lateral. Copia H.264/AAC 720 × 1280, con el mismo tamaño de tarjeta que El Pulso Invisible y object-fit:contain. Poster del primer fotograma de la ola. Al pausar el preview se muestra de nuevo la portada. Original intacto.
+Actualización editorial: 25 de octubre de 2026.
