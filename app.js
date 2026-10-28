@@ -96,11 +96,12 @@
     projects.forEach(project => {
       const real = !!(localAsset(project.webm) || localAsset(project.mp4));
       const article = node('article', '', 'project-card reveal');
+      if (project.wide) article.classList.add('wide');
       const visual = node('button', '', `project-visual ${project.category}`);
       if (project.fit === 'contain') visual.classList.add('preserve-frame');
       visual.setAttribute('aria-label', `${real ? 'Ver vídeo' : 'Ver enfoque'}: ${project.title}`);
       if (localAsset(project.poster)) {
-        const img = document.createElement('img'); img.src = project.poster; img.alt = ''; img.loading = 'lazy'; img.decoding = 'async'; img.width = 720; img.height = 1280; visual.append(img);
+        const img = document.createElement('img'); img.src = project.poster; img.alt = ''; img.loading = 'lazy'; img.decoding = 'async'; img.width = project.wide ? 1280 : 720; img.height = project.wide ? 720 : 1280; visual.append(img);
       }
       if (real) {
         const video = createVideo(project); visual.append(video); observer.observe(video);

@@ -18,6 +18,7 @@
     q("#reel-hice").textContent = project?.description || r.hice;
     q("#reel-credit").textContent = project?.credit || '';
     q("details").open = false;
+    root.classList.toggle("horizontal", r.formato === "horizontal");
     q("#reel-caption").textContent = `${r.titulo} · ${(project?.subtitle || r.tipo).toLowerCase()}`;
     if (video.getAttribute("src") !== r.video) { video.poster = r.poster; video.src = r.video; }
     if (cambiarUrl) history.replaceState(null, "", `#cortes-${r.id}`);
@@ -48,7 +49,8 @@
       b.style.setProperty("--w", (p.fin - p.ini).toFixed(2));
       b.style.setProperty("--p", (((p.fin - p.ini) / r.duracion) * 100 * 0.9).toFixed(2));
       const img = document.createElement("img");
-      img.src = p.img; img.decoding = "async"; img.loading = "lazy"; img.width = 135; img.height = 240;
+      img.src = p.img; img.decoding = "async"; img.loading = "lazy";
+      img.width = r.formato === "horizontal" ? 240 : 135; img.height = r.formato === "horizontal" ? 135 : 240;
       img.alt = `Plano ${k + 1} de ${n}: de ${fmt(p.ini)} a ${fmt(p.fin)} segundos`;
       b.appendChild(img);
       b.addEventListener("click", () => { video.currentTime = p.ini + 0.01; video.play().catch(() => {}); });

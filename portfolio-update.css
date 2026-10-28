@@ -9,3 +9,16 @@
 .project-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.project-info .project-context{margin-top:10px;font-size:14px;line-height:1.6}
 @media(max-width:1100px){.project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.project-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* 28 October 2026: one horizontal spot on its own row, three vertical reels below. */
+.project-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.project-card.wide{grid-column:1/-1}.project-card.wide .project-visual{aspect-ratio:16/9}
+@media(max-width:700px){.project-grid{grid-template-columns:minmax(0,1fr)}}
+#cortes.horizontal{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+#cortes.horizontal .reel{aspect-ratio:16/9;max-width:100%}
+@media(max-width:899px){#cortes.horizontal{grid-template-columns:minmax(0,1fr)}#cortes.horizontal .reel{max-width:100%}#cortes.horizontal .shot{height:56px;width:max(32px,calc(var(--p)*1%))}}
+
+/* Pricing removed: a short invitation to a 15-minute call instead. */
+.chat-invite{border-top:1px solid var(--stone);padding-top:28px;max-width:44em}
+.chat-heading{font:400 clamp(26px,2.6vw,34px)/1.15 var(--serif);letter-spacing:-.02em;margin:0 0 14px}
+.chat-invite p{color:var(--muted);font-size:16px;line-height:1.7;margin:0 0 24px}
