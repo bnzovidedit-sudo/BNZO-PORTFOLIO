@@ -1,148 +1,169 @@
 window.PLANOS = [
   {
-    "id": "barberia",
-    "titulo": "Barbería",
-    "tipo": "Pieza promocional",
-    "video": "assets/barberia-reel.mp4",
-    "poster": "assets/barberia-reel-poster.jpg",
-    "hice": "Monté el proceso de un corte —tijera, máquina, perfil final— al pulso de la música y cerré con el resultado. Planos de stock de Pexels (cottonbro).",
-    "duracion": 20.0,
+    "id": "fisiofamily-spot",
+    "titulo": "Fisiofamily",
+    "tipo": "Spot de marca",
+    "video": "assets/fisiofamily-spot.mp4",
+    "poster": "assets/fisiofamily-spot-poster.jpg",
+    "hice": "Spot de 34 s para una marca ficticia de fisioterapia.",
+    "duracion": 34.44,
     "planos": [
       {
         "ini": 0.0,
-        "fin": 2.67,
-        "img": "assets/planos/barberia_00.jpg"
+        "fin": 1.64,
+        "img": "assets/planos/fisiofamily-spot_00.jpg"
       },
       {
-        "ini": 2.67,
-        "fin": 3.74,
-        "img": "assets/planos/barberia_01.jpg"
+        "ini": 1.64,
+        "fin": 4.44,
+        "img": "assets/planos/fisiofamily-spot_01.jpg"
       },
       {
-        "ini": 3.74,
-        "fin": 5.34,
-        "img": "assets/planos/barberia_02.jpg"
+        "ini": 4.44,
+        "fin": 6.44,
+        "img": "assets/planos/fisiofamily-spot_02.jpg"
       },
       {
-        "ini": 5.34,
-        "fin": 6.41,
-        "img": "assets/planos/barberia_03.jpg"
+        "ini": 6.44,
+        "fin": 8.04,
+        "img": "assets/planos/fisiofamily-spot_03.jpg"
       },
       {
-        "ini": 6.41,
-        "fin": 8.02,
-        "img": "assets/planos/barberia_04.jpg"
+        "ini": 8.04,
+        "fin": 10.44,
+        "img": "assets/planos/fisiofamily-spot_04.jpg"
       },
       {
-        "ini": 8.02,
-        "fin": 9.62,
-        "img": "assets/planos/barberia_05.jpg"
+        "ini": 10.44,
+        "fin": 11.44,
+        "img": "assets/planos/fisiofamily-spot_05.jpg"
       },
       {
-        "ini": 9.62,
-        "fin": 11.22,
-        "img": "assets/planos/barberia_06.jpg"
+        "ini": 11.44,
+        "fin": 12.44,
+        "img": "assets/planos/fisiofamily-spot_06.jpg"
       },
       {
-        "ini": 11.22,
-        "fin": 12.29,
-        "img": "assets/planos/barberia_07.jpg"
+        "ini": 12.44,
+        "fin": 14.04,
+        "img": "assets/planos/fisiofamily-spot_07.jpg"
       },
       {
-        "ini": 12.29,
-        "fin": 14.43,
-        "img": "assets/planos/barberia_08.jpg"
+        "ini": 14.04,
+        "fin": 15.44,
+        "img": "assets/planos/fisiofamily-spot_08.jpg"
       },
       {
-        "ini": 14.43,
-        "fin": 20.0,
-        "img": "assets/planos/barberia_09.jpg"
+        "ini": 15.44,
+        "fin": 17.44,
+        "img": "assets/planos/fisiofamily-spot_09.jpg"
+      },
+      {
+        "ini": 17.44,
+        "fin": 19.44,
+        "img": "assets/planos/fisiofamily-spot_10.jpg"
+      },
+      {
+        "ini": 19.44,
+        "fin": 21.44,
+        "img": "assets/planos/fisiofamily-spot_11.jpg"
+      },
+      {
+        "ini": 21.44,
+        "fin": 22.44,
+        "img": "assets/planos/fisiofamily-spot_12.jpg"
+      },
+      {
+        "ini": 22.44,
+        "fin": 23.44,
+        "img": "assets/planos/fisiofamily-spot_13.jpg"
+      },
+      {
+        "ini": 23.44,
+        "fin": 26.44,
+        "img": "assets/planos/fisiofamily-spot_14.jpg"
+      },
+      {
+        "ini": 26.44,
+        "fin": 27.44,
+        "img": "assets/planos/fisiofamily-spot_15.jpg"
+      },
+      {
+        "ini": 27.44,
+        "fin": 34.44,
+        "img": "assets/planos/fisiofamily-spot_16.jpg"
       }
-    ]
+    ],
+    "formato": "horizontal"
   },
   {
-    "id": "gimnasio",
+    "id": "gimnasio-pata",
     "titulo": "Gimnasio",
     "tipo": "Pieza promocional",
-    "video": "assets/gimnasio-reel.mp4",
-    "poster": "assets/gimnasio-reel-poster.jpg",
-    "hice": "Subida de tensión con planos de entrenamiento, un silencio justo antes del golpe y una ráfaga de cortes al ritmo del drop. Planos de stock de Pexels.",
-    "duracion": 20.0,
+    "video": "assets/gimnasio-pata.mp4",
+    "poster": "assets/gimnasio-pata-poster.jpg",
+    "hice": "Reel de entrenamiento al ritmo de la música.",
+    "duracion": 15.0,
     "planos": [
       {
         "ini": 0.0,
-        "fin": 1.97,
-        "img": "assets/planos/gimnasio_00.jpg"
+        "fin": 1.28,
+        "img": "assets/planos/gimnasio-pata_00.jpg"
       },
       {
-        "ini": 1.97,
-        "fin": 3.44,
-        "img": "assets/planos/gimnasio_01.jpg"
+        "ini": 1.28,
+        "fin": 4.32,
+        "img": "assets/planos/gimnasio-pata_01.jpg"
       },
       {
-        "ini": 3.44,
-        "fin": 4.9,
-        "img": "assets/planos/gimnasio_02.jpg"
+        "ini": 4.32,
+        "fin": 5.32,
+        "img": "assets/planos/gimnasio-pata_02.jpg"
       },
       {
-        "ini": 4.9,
-        "fin": 6.34,
-        "img": "assets/planos/gimnasio_03.jpg"
+        "ini": 5.32,
+        "fin": 6.8,
+        "img": "assets/planos/gimnasio-pata_03.jpg"
       },
       {
-        "ini": 6.34,
-        "fin": 7.87,
-        "img": "assets/planos/gimnasio_04.jpg"
+        "ini": 6.8,
+        "fin": 7.56,
+        "img": "assets/planos/gimnasio-pata_04.jpg"
       },
       {
-        "ini": 7.87,
-        "fin": 9.47,
-        "img": "assets/planos/gimnasio_05.jpg"
+        "ini": 7.56,
+        "fin": 9.0,
+        "img": "assets/planos/gimnasio-pata_05.jpg"
       },
       {
-        "ini": 9.47,
-        "fin": 10.22,
-        "img": "assets/planos/gimnasio_06.jpg"
+        "ini": 9.0,
+        "fin": 9.48,
+        "img": "assets/planos/gimnasio-pata_06.jpg"
       },
       {
-        "ini": 10.22,
-        "fin": 11.17,
-        "img": "assets/planos/gimnasio_07.jpg"
+        "ini": 9.48,
+        "fin": 10.44,
+        "img": "assets/planos/gimnasio-pata_07.jpg"
       },
       {
-        "ini": 11.17,
-        "fin": 11.66,
-        "img": "assets/planos/gimnasio_08.jpg"
+        "ini": 10.44,
+        "fin": 12.4,
+        "img": "assets/planos/gimnasio-pata_08.jpg"
       },
       {
-        "ini": 11.66,
-        "fin": 12.14,
-        "img": "assets/planos/gimnasio_09.jpg"
+        "ini": 12.4,
+        "fin": 12.88,
+        "img": "assets/planos/gimnasio-pata_09.jpg"
       },
       {
-        "ini": 12.14,
-        "fin": 13.12,
-        "img": "assets/planos/gimnasio_10.jpg"
+        "ini": 12.88,
+        "fin": 14.0,
+        "img": "assets/planos/gimnasio-pata_10.jpg"
       },
       {
-        "ini": 13.12,
-        "fin": 14.07,
-        "img": "assets/planos/gimnasio_11.jpg"
-      },
-      {
-        "ini": 14.07,
-        "fin": 15.05,
-        "img": "assets/planos/gimnasio_12.jpg"
-      },
-      {
-        "ini": 15.05,
-        "fin": 15.53,
-        "img": "assets/planos/gimnasio_13.jpg"
-      },
-      {
-        "ini": 15.53,
-        "fin": 20.0,
-        "img": "assets/planos/gimnasio_14.jpg"
+        "ini": 14.0,
+        "fin": 15.0,
+        "img": "assets/planos/gimnasio-pata_11.jpg"
       }
     ]
   },
