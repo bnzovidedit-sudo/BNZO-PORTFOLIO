@@ -1,5 +1,223 @@
 window.PLANOS = [
   {
+    "id": "eventos-spot",
+    "titulo": "Eventos",
+    "tipo": "Motion para eventos",
+    "video": "assets/eventos-spot.mp4",
+    "poster": "assets/eventos-spot-poster.jpg",
+    "hice": "Tipografía cinética de 15 s a 160 BPM: cada corte cae en el golpe.",
+    "duracion": 15.0,
+    "planos": [
+      {
+        "ini": 0.0,
+        "fin": 0.33,
+        "img": "assets/planos/eventos-spot_00.jpg"
+      },
+      {
+        "ini": 0.33,
+        "fin": 0.75,
+        "img": "assets/planos/eventos-spot_01.jpg"
+      },
+      {
+        "ini": 0.75,
+        "fin": 1.5,
+        "img": "assets/planos/eventos-spot_02.jpg"
+      },
+      {
+        "ini": 1.5,
+        "fin": 5.46,
+        "img": "assets/planos/eventos-spot_03.jpg"
+      },
+      {
+        "ini": 5.46,
+        "fin": 10.88,
+        "img": "assets/planos/eventos-spot_04.jpg"
+      },
+      {
+        "ini": 10.88,
+        "fin": 11.25,
+        "img": "assets/planos/eventos-spot_05.jpg"
+      },
+      {
+        "ini": 11.25,
+        "fin": 11.62,
+        "img": "assets/planos/eventos-spot_06.jpg"
+      },
+      {
+        "ini": 11.62,
+        "fin": 12.0,
+        "img": "assets/planos/eventos-spot_07.jpg"
+      },
+      {
+        "ini": 12.0,
+        "fin": 12.38,
+        "img": "assets/planos/eventos-spot_08.jpg"
+      },
+      {
+        "ini": 12.38,
+        "fin": 15.0,
+        "img": "assets/planos/eventos-spot_09.jpg"
+      }
+    ],
+    "formato": "horizontal"
+  },
+  {
+    "id": "asalto-spot",
+    "titulo": "ASALTO",
+    "tipo": "Spot de marca",
+    "video": "assets/asalto-spot.mp4",
+    "poster": "assets/asalto-spot-poster.jpg",
+    "hice": "Spot de 25 s para una marca ficticia de boxeo.",
+    "duracion": 25.4,
+    "planos": [
+      {
+        "ini": 0.0,
+        "fin": 0.4,
+        "img": "assets/planos/asalto-spot_00.jpg"
+      },
+      {
+        "ini": 0.4,
+        "fin": 1.0,
+        "img": "assets/planos/asalto-spot_01.jpg"
+      },
+      {
+        "ini": 1.0,
+        "fin": 1.6,
+        "img": "assets/planos/asalto-spot_02.jpg"
+      },
+      {
+        "ini": 1.6,
+        "fin": 4.0,
+        "img": "assets/planos/asalto-spot_03.jpg"
+      },
+      {
+        "ini": 4.0,
+        "fin": 4.6,
+        "img": "assets/planos/asalto-spot_04.jpg"
+      },
+      {
+        "ini": 4.6,
+        "fin": 5.4,
+        "img": "assets/planos/asalto-spot_05.jpg"
+      },
+      {
+        "ini": 5.4,
+        "fin": 6.8,
+        "img": "assets/planos/asalto-spot_06.jpg"
+      },
+      {
+        "ini": 6.8,
+        "fin": 7.4,
+        "img": "assets/planos/asalto-spot_07.jpg"
+      },
+      {
+        "ini": 7.4,
+        "fin": 8.2,
+        "img": "assets/planos/asalto-spot_08.jpg"
+      },
+      {
+        "ini": 8.2,
+        "fin": 8.6,
+        "img": "assets/planos/asalto-spot_09.jpg"
+      },
+      {
+        "ini": 8.6,
+        "fin": 9.4,
+        "img": "assets/planos/asalto-spot_10.jpg"
+      },
+      {
+        "ini": 9.4,
+        "fin": 12.0,
+        "img": "assets/planos/asalto-spot_11.jpg"
+      },
+      {
+        "ini": 12.0,
+        "fin": 12.4,
+        "img": "assets/planos/asalto-spot_12.jpg"
+      },
+      {
+        "ini": 12.4,
+        "fin": 12.8,
+        "img": "assets/planos/asalto-spot_13.jpg"
+      },
+      {
+        "ini": 12.8,
+        "fin": 13.2,
+        "img": "assets/planos/asalto-spot_14.jpg"
+      },
+      {
+        "ini": 13.2,
+        "fin": 13.8,
+        "img": "assets/planos/asalto-spot_15.jpg"
+      },
+      {
+        "ini": 13.8,
+        "fin": 14.2,
+        "img": "assets/planos/asalto-spot_16.jpg"
+      },
+      {
+        "ini": 14.2,
+        "fin": 14.6,
+        "img": "assets/planos/asalto-spot_17.jpg"
+      },
+      {
+        "ini": 14.6,
+        "fin": 15.4,
+        "img": "assets/planos/asalto-spot_18.jpg"
+      },
+      {
+        "ini": 15.4,
+        "fin": 16.6,
+        "img": "assets/planos/asalto-spot_19.jpg"
+      },
+      {
+        "ini": 16.6,
+        "fin": 17.0,
+        "img": "assets/planos/asalto-spot_20.jpg"
+      },
+      {
+        "ini": 17.0,
+        "fin": 17.4,
+        "img": "assets/planos/asalto-spot_21.jpg"
+      },
+      {
+        "ini": 17.4,
+        "fin": 18.4,
+        "img": "assets/planos/asalto-spot_22.jpg"
+      },
+      {
+        "ini": 18.4,
+        "fin": 19.2,
+        "img": "assets/planos/asalto-spot_23.jpg"
+      },
+      {
+        "ini": 19.2,
+        "fin": 19.6,
+        "img": "assets/planos/asalto-spot_24.jpg"
+      },
+      {
+        "ini": 19.6,
+        "fin": 20.4,
+        "img": "assets/planos/asalto-spot_25.jpg"
+      },
+      {
+        "ini": 20.4,
+        "fin": 21.6,
+        "img": "assets/planos/asalto-spot_26.jpg"
+      },
+      {
+        "ini": 21.6,
+        "fin": 22.4,
+        "img": "assets/planos/asalto-spot_27.jpg"
+      },
+      {
+        "ini": 22.4,
+        "fin": 25.4,
+        "img": "assets/planos/asalto-spot_28.jpg"
+      }
+    ]
+  },
+  {
     "id": "fisiofamily-spot",
     "titulo": "Fisiofamily",
     "tipo": "Spot de marca",
@@ -164,83 +382,6 @@ window.PLANOS = [
         "ini": 14.0,
         "fin": 15.0,
         "img": "assets/planos/gimnasio-pata_11.jpg"
-      }
-    ]
-  },
-  {
-    "id": "cafe",
-    "titulo": "Café",
-    "tipo": "Anuncio de producto",
-    "video": "assets/cafe-reel.mp4",
-    "poster": "assets/cafe-reel-poster.jpg",
-    "hice": "Cortes precisos y diseño de sonido para que el café se sienta antes de probarlo.",
-    "duracion": 17.54,
-    "planos": [
-      {
-        "ini": 0.0,
-        "fin": 0.47,
-        "img": "assets/planos/cafe_00.jpg"
-      },
-      {
-        "ini": 0.47,
-        "fin": 1.57,
-        "img": "assets/planos/cafe_01.jpg"
-      },
-      {
-        "ini": 1.57,
-        "fin": 2.9,
-        "img": "assets/planos/cafe_02.jpg"
-      },
-      {
-        "ini": 2.9,
-        "fin": 4.34,
-        "img": "assets/planos/cafe_03.jpg"
-      },
-      {
-        "ini": 4.34,
-        "fin": 6.44,
-        "img": "assets/planos/cafe_04.jpg"
-      },
-      {
-        "ini": 6.44,
-        "fin": 8.81,
-        "img": "assets/planos/cafe_05.jpg"
-      },
-      {
-        "ini": 8.81,
-        "fin": 11.01,
-        "img": "assets/planos/cafe_06.jpg"
-      },
-      {
-        "ini": 11.01,
-        "fin": 12.98,
-        "img": "assets/planos/cafe_07.jpg"
-      },
-      {
-        "ini": 13.11,
-        "fin": 15.25,
-        "img": "assets/planos/cafe_09.jpg"
-      },
-      {
-        "ini": 15.25,
-        "fin": 17.54,
-        "img": "assets/planos/cafe_10.jpg"
-      }
-    ]
-  },
-  {
-    "id": "tren",
-    "titulo": "Tren",
-    "tipo": "Pieza conceptual",
-    "video": "assets/pulso-tren.mp4",
-    "poster": "assets/pulso-tren-poster.jpg",
-    "hice": "Una frase en tres apariciones sobre un plano sostenido.",
-    "duracion": 11.818,
-    "planos": [
-      {
-        "ini": 0,
-        "fin": 11.818,
-        "img": "assets/pulso-tren-poster.jpg"
       }
     ]
   }
