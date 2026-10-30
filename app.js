@@ -20,7 +20,7 @@
     return element;
   }
   const mediaProjects = config.projects.filter(p => localAsset(p.webm) || localAsset(p.mp4));
-  document.title = 'BNZOEDIT | Spots, edición y VFX';
+  document.title = 'BNZOEDIT | Spots y edición de vídeo';
   $$('[data-brand]').forEach(el => { el.replaceChildren(document.createTextNode(config.name)); el.append(node('span', `${config.alias.toUpperCase()} / EDITOR DE VÍDEO EN PALMA`, 'brand-sub')); });
   $$('[data-owner]').forEach(el => { el.textContent = config.name; });
   $('#year').textContent = new Date().getFullYear();

@@ -14,6 +14,11 @@
   .project-card.wide { grid-column: 1 / -1; }
 }
 
+/* Pantalla completa: el vídeo entero sobre negro. Sin esto, object-fit: cover (y el aspect-ratio del marco) recortaban
+   un vertical en una pantalla 16:9 como si fuera un horizontal ampliado (aviso de Esteban, 30-10). */
+video:fullscreen { object-fit: contain !important; aspect-ratio: auto !important; max-width: none !important; width: 100% !important; height: 100% !important; background: #000 !important; }
+video:-webkit-full-screen { object-fit: contain !important; aspect-ratio: auto !important; max-width: none !important; width: 100% !important; height: 100% !important; background: #000 !important; }
+
 /* Etiqueta honesta para marcas inventadas: se lee en la tarjeta, no escondida en la ficha */
 .concept-note { display: block; margin-top: 6px; font-size: 14px; color: #94908B; }
 
