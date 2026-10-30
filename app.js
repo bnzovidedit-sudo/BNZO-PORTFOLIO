@@ -20,7 +20,7 @@
     return element;
   }
   const mediaProjects = config.projects.filter(p => localAsset(p.webm) || localAsset(p.mp4));
-  document.title = 'BNZOEDIT | Edición de vídeo para marcas y creadores';
+  document.title = 'BNZOEDIT | Spots, edición y VFX';
   $$('[data-brand]').forEach(el => { el.replaceChildren(document.createTextNode(config.name)); el.append(node('span', `${config.alias.toUpperCase()} / EDITOR DE VÍDEO EN PALMA`, 'brand-sub')); });
   $$('[data-owner]').forEach(el => { el.textContent = config.name; });
   $('#year').textContent = new Date().getFullYear();
@@ -92,11 +92,13 @@
   function renderProjects(filter) {
     $('#project-grid').querySelectorAll('video').forEach(video => { video.pause(); observer.unobserve(video); });
     $('#project-grid').replaceChildren();
-    const projects = mediaProjects.filter(p => filter === 'all' || p.category === filter);
+    // Filtro por disciplina (spot, edicion, motion); category sigue siendo solo el estilo visual de la tarjeta
+    const projects = mediaProjects.filter(p => filter === 'all' || [].concat(p.discipline).includes(filter));
     projects.forEach(project => {
       const real = !!(localAsset(project.webm) || localAsset(project.mp4));
       const article = node('article', '', 'project-card reveal');
       if (project.wide) article.classList.add('wide');
+      if (project.pair) article.classList.add('pair');
       const visual = node('button', '', `project-visual ${project.category}`);
       if (project.fit === 'contain') visual.classList.add('preserve-frame');
       visual.setAttribute('aria-label', `${real ? 'Ver vídeo' : 'Ver enfoque'}: ${project.title}`);
@@ -130,7 +132,9 @@
         $('#project-dialog').showModal();
       });
       const info = node('div', '', 'project-info'); const text = node('div'); text.append(node('h3', project.title), node('p', project.subtitle)); if (project.useCase) text.append(node('p', project.useCase, 'project-goal')); info.append(text);
-      const role = node('p', project.summary || '', 'project-context'); text.append(role); article.append(visual, info); $('#project-grid').append(article);
+      const role = node('p', project.summary || '', 'project-context'); text.append(role);
+      if (project.note) text.append(node('span', project.note, 'concept-note'));
+      article.append(visual, info); $('#project-grid').append(article);
     });
     $('#filter-status').textContent = `${projects.length} ${projects.length === 1 ? 'pieza mostrada' : 'piezas mostradas'}`;
   }

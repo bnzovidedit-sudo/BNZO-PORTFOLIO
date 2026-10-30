@@ -1,0 +1,27 @@
+/* Spots y motion (30-10, [propuesta]): rejilla de 6 columnas para mezclar el spot destacado (fila entera),
+   dos spots 16:9 a media fila (.pair) y los reels verticales de tres en tres. Se carga la última. */
+@media (min-width: 901px) {
+  .project-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .project-card { grid-column: span 2; }
+  .project-card.wide { grid-column: 1 / -1; }
+  .project-card.wide.pair { grid-column: span 3; }
+  /* Fila de verticales tras los dos spots 16:9: con dos piezas, centradas (columnas 2-5) en vez de dejar un hueco a la derecha */
+  .project-card.pair + .project-card.pair + .project-card:not(.wide) { grid-column: 2 / span 2; }
+}
+@media (min-width: 701px) and (max-width: 900px) {
+  .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .project-card { grid-column: span 1; }
+  .project-card.wide { grid-column: 1 / -1; }
+}
+
+/* Etiqueta honesta para marcas inventadas: se lee en la tarjeta, no escondida en la ficha */
+.concept-note { display: block; margin-top: 6px; font-size: 14px; color: #94908B; }
+
+/* Filtro por disciplina: botones planos de esquina recta (DESIGN.md); el activo se rellena con la piedra */
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 28px; }
+.filter { min-height: 44px; padding: 0 18px; border: 0; border-radius: 0; background: #1C1917; color: #E8E6E1;
+  font: 600 15px/1 "Segoe UI", system-ui, sans-serif; cursor: pointer; transition: opacity .15s, transform .1s; }
+.filter:hover { opacity: .85; }
+.filter:active { transform: scale(.97); }
+.filter.active { background: #C4BAAD; color: #121110; }
+.filter:focus-visible { outline: 3px solid #C4BAAD; outline-offset: 2px; }
