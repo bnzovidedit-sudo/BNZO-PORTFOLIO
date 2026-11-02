@@ -119,3 +119,12 @@ sound.addEventListener('click', () => {
   sound.textContent = video.muted ? 'Activar sonido' : 'Silenciar';
   if (!video.muted) video.play().catch(() => {});
 });
+
+// Al volver desde la web de KAIRO (/#marca) o entrar con un ancla, el navegador no siempre salta:
+// la sección fija cambia de alto mientras carga. Se salta a mano cuando la página ya está montada.
+if (location.hash.length > 1) {
+  window.addEventListener('load', () => {
+    const target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if (target) window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY, behavior: 'instant' });
+  });
+}
