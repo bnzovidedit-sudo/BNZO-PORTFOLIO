@@ -120,11 +120,20 @@ sound.addEventListener('click', () => {
   if (!video.muted) video.play().catch(() => {});
 });
 
-// Al volver desde la web de KAIRO (/#marca) o entrar con un ancla, el navegador no siempre salta:
-// la sección fija cambia de alto mientras carga. Se salta a mano cuando la página ya está montada.
+// Al volver desde la web de KAIRO (/#marca) o entrar con un ancla, el salto nativo (suave) se calcula
+// antes de que la página se asiente y acaba fuera de sitio. Se salta sin suavizado al cargar y se repite
+// mientras la página se asienta, salvo que el visitante ya se esté desplazando.
 if (location.hash.length > 1) {
-  window.addEventListener('load', () => {
+  let userMoved = false;
+  const stop = () => { userMoved = true; };
+  ['wheel', 'touchstart', 'keydown', 'pointerdown'].forEach((ev) => window.addEventListener(ev, stop, { once: true, passive: true }));
+  const jump = () => {
     const target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
-    if (target) window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY, behavior: 'instant' });
-  });
+    if (!target || userMoved) return;
+    const root = document.documentElement;
+    root.style.scrollBehavior = 'auto';
+    window.scrollTo(0, target.getBoundingClientRect().top + window.scrollY);
+    root.style.scrollBehavior = '';
+  };
+  window.addEventListener('load', () => { jump(); setTimeout(jump, 350); setTimeout(jump, 900); });
 }
