@@ -1,0 +1,4 @@
+Fuentes alojadas en la propia web, para no enviar la IP de los visitantes a Google.
+
+- Barlow Condensed (Jeremy Tribby) y Inter (Rasmus Andersson), descargadas de Google Fonts.
+- Licencia: SIL Open Font License 1.1 (https://openfontlicense.org). Permite usarlas y alojarlas en una web comercial.
