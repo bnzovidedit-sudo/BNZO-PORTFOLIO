@@ -231,18 +231,52 @@ h3 { font-size: var(--step-lead); font-weight: 700; line-height: 1.1; }
 .verb-word h3 { font-size: inherit; line-height: 1; padding-top: .04em; color: var(--k-hueso); }
 .verb-line { position: absolute; z-index: 2; left: var(--m); bottom: 32px; max-width: 34ch; padding: 16px 20px; background: rgba(11, 11, 13, .72); color: var(--k-hueso); font-size: var(--step-body); }
 
-/* En proceso: título fijo, el taller pasa debajo */
-.log { position: relative; padding-top: var(--gap); }
-.log-pin { position: sticky; top: 0; height: 100svh; display: grid; place-content: center; text-align: center; z-index: 2; pointer-events: none; }
-.log-pin h2 { font-size: var(--step-display); }
-.log-pin p { margin: 24px auto 0; max-width: 36ch; background: var(--bg); padding: 8px 14px; font-size: var(--step-lead); line-height: 1.3; }
-.log-list { position: relative; z-index: 1; margin-top: -55svh; padding: 0 var(--m) 12svh; display: flex; flex-direction: column; gap: 26svh; }
-.log-item { width: min(30vw, 440px); margin-left: 8vw; }
-.log-item:nth-child(even) { align-self: flex-end; margin-left: 0; margin-right: 8vw; }
-.log-item img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; margin-bottom: 16px; }
+/* De dónde vengo: anillo de piezas. Sin JS es una fila que se desliza */
+.log { position: relative; padding: var(--gap) 0 calc(var(--gap) * .6); overflow-x: clip; }
+.log-head { text-align: center; padding-inline: var(--m); }
+.log-head h2 { font-size: clamp(4rem, 1rem + 11vw, 12rem); }
+.log-head p { margin: 20px auto 0; max-width: 36ch; font-size: var(--step-lead); line-height: 1.3; color: var(--muted); }
+.log-list { display: flex; gap: 24px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 56px var(--m) 16px; }
+.log-item { flex: none; width: min(64vw, 260px); scroll-snap-align: center; }
+.log-card { position: relative; aspect-ratio: 9 / 16; background: var(--surface); overflow: hidden; margin-bottom: 16px; }
+.log-card img, .log-card video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.log-card img.wide { object-fit: contain; }
 .log-item h3 { font-size: var(--step-body); font-weight: 700; }
 .log-role { font-size: var(--step-small); color: var(--muted); margin-bottom: 8px; }
-.log-item p:last-child { max-width: 32ch; }
+.log-text p:last-child { max-width: 32ch; }
+
+/* Con JS: las piezas forman un cilindro que se arrastra */
+.orbit.on { --cw: clamp(160px, 17vw, 260px); position: relative; height: calc(var(--cw) * 16 / 9 + 160px); margin-top: 24px; perspective: 1400px; perspective-origin: 50% 20%; display: grid; place-items: center; cursor: grab; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
+.orbit.on.grab { cursor: grabbing; }
+.orbit.on .log-list { position: relative; display: block; width: var(--cw); aspect-ratio: 9 / 16; padding: 0; overflow: visible; transform-style: preserve-3d; }
+.orbit.on .log-item { position: absolute; inset: 0; width: auto; cursor: pointer; }
+.orbit.on .log-card { height: 100%; margin: 0; outline: 3px solid transparent; transition: outline-color .3s; }
+.orbit.on .log-item.now .log-card { outline-color: var(--accent); cursor: grab; }
+.orbit.on .log-card img { -webkit-user-drag: none; }
+.orbit.on .log-text { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.orbit.on .log-card video { opacity: 0; transition: opacity .4s; }
+.orbit.on .log-card video.ready { opacity: 1; }
+.orbit:focus-visible { outline-offset: -3px; }
+
+/* Ficha de la pieza de delante, mandos y camino */
+.orbit-panel { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 16px 40px; max-width: 1120px; margin: 8px auto 0; padding-inline: var(--m); }
+.orbit-info h3 { font-size: var(--step-lead); }
+.orbit-info .log-role { margin: 6px 0 8px; }
+.orbit-info p:last-child { max-width: 52ch; }
+.orbit-info.swap { opacity: 0; transform: translateY(8px); }
+.orbit-info { transition: opacity .25s, transform .25s var(--ease); }
+.orbit-ctrl { display: flex; gap: 8px; }
+.orbit-ctrl button { min-width: 52px; min-height: 52px; padding: 0 16px; border: 0; background: var(--surface); font-weight: 600; cursor: pointer; transition: background-color .18s, transform .18s var(--ease); }
+.orbit-ctrl button:hover { background: #2a2a27; }
+.orbit-ctrl button:active { transform: scale(.95); }
+.orbit-ctrl button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
+.orbit-steps { display: flex; gap: 4px; max-width: 1120px; margin: 40px auto 0; padding: 0 var(--m); overflow-x: auto; scrollbar-width: none; }
+.orbit-steps li { flex: 1 0 auto; }
+.orbit-steps button { position: relative; width: 100%; min-height: 48px; padding: 14px 4px 0; border: 0; background: none; text-align: left; font-size: var(--step-small); color: var(--muted); cursor: pointer; white-space: nowrap; transition: color .18s; }
+.orbit-steps button::before { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 3px; background: var(--deep); }
+.orbit-steps button::after { content: ''; position: absolute; left: 0; top: 0; width: 100%; height: 3px; background: var(--accent); transform: scaleX(var(--p, 0)); transform-origin: left; }
+.orbit-steps button:hover, .orbit-steps button[aria-current="true"] { color: var(--ink); }
+.orbit-steps button.seen { --p: 1; }
 
 /* Contacto */
 .contact {
@@ -319,10 +353,12 @@ h3 { font-size: var(--step-lead); font-weight: 700; line-height: 1.1; }
   .verb-word { font-size: 22vw; }
   .verb-line { left: 16px; right: 16px; bottom: 16px; max-width: none; }
 
-  .log-pin { height: auto; position: relative; padding: 0 16px 40px; }
-  .log-pin h2 { font-size: 22vw; }
-  .log-list { margin-top: 0; gap: 48px; padding-bottom: 48px; }
-  .log-item, .log-item:nth-child(even) { width: 72%; margin: 0; }
+  .log-head h2 { font-size: 18vw; }
+  .orbit.on { --cw: 42vw; perspective: 900px; height: calc(var(--cw) * 16 / 9 + 64px); }
+  .orbit-panel { grid-template-columns: 1fr; gap: 20px; }
+  .orbit-ctrl button { flex: 1; }
+  .orbit-steps { flex-wrap: wrap; gap: 4px; margin-top: 28px; }
+  .orbit-steps li { flex: 1 0 30%; }
 
   .contact-mail { font-size: 13vw; margin-bottom: 8vh; }
   .contact-foot { flex-direction: column; }
@@ -352,7 +388,6 @@ h3 { font-size: var(--step-lead); font-weight: 700; line-height: 1.1; }
 .me-text p { max-width: 40ch; }
 .me-text p + p { margin-top: 16px; }
 .me-text .me-lead { font-size: var(--step-lead); line-height: 1.3; font-weight: 600; }
-.log-item img.wide { aspect-ratio: 16 / 9; }
 .sheet img.pos-left { object-position: 0 50%; }
 
 @media (max-width: 1080px) {

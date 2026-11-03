@@ -8,8 +8,8 @@
   <meta name="theme-color" content="#0f0f0e">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
   <link rel="preload" href="assets/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="bnzo.css?v=20261102">
-  <script defer src="bnzo.js?v=20261102b"></script>
+  <link rel="stylesheet" href="bnzo.css?v=20261103">
+  <script defer src="bnzo.js?v=20261103"></script>
 </head>
 <body>
   <a class="skip" href="#contenido">Saltar al contenido</a>
@@ -241,62 +241,80 @@
       </div>
     </section>
 
-    <!-- De dónde vengo: título fijo, el camino pasa debajo -->
+    <!-- De dónde vengo: las piezas giran en un anillo; la de delante se reproduce -->
     <section id="origen" class="log" aria-labelledby="log-title">
-      <div class="log-pin">
+      <div class="log-head">
         <h2 id="log-title">De dónde vengo</h2>
         <p>De editar reels con el móvil de otros a construir marcas enteras.</p>
       </div>
-      <ol class="log-list">
-        <li class="log-item">
-          <img src="assets/natur-poster.jpg" alt="Fotograma del borrador Natur: agua y naturaleza" width="720" height="1280" loading="lazy">
-          <h3>Natur</h3>
-          <p class="log-role">Borrador · BNZOEDIT</p>
-          <p>Planos de agua y naturaleza montados al ritmo de la respiración, dejando que la imagen hable sola.</p>
-        </li>
-        <li class="log-item">
-          <img src="assets/pulso-tren-poster.jpg" alt="Fotograma del borrador «El pulso invisible», trayectos en tren" width="720" height="1280" loading="lazy">
-          <h3>El pulso invisible</h3>
-          <p class="log-role">Borrador · historia corta</p>
-          <p>Trayectos de tren convertidos en una historia con principio y final en menos de un minuto.</p>
-        </li>
-        <li class="log-item">
-          <img src="assets/cafe-reel-poster.jpg" alt="Fotograma del reel para una cafetería" width="720" height="1280" loading="lazy">
-          <h3>Café</h3>
-          <p class="log-role">Borrador · reel de negocio</p>
-          <p>Un reel para una cafetería, montado con planos de móvil.</p>
-        </li>
-        <li class="log-item">
-          <img src="assets/barberia-reel-poster.jpg" alt="Fotograma del comercial para una barbería" width="720" height="1280" loading="lazy">
-          <h3>Barbería</h3>
-          <p class="log-role">Borrador · comercial</p>
-          <p>Un comercial vertical para una barbería: el salto de editar momentos a vender un negocio.</p>
-        </li>
-        <li class="log-item">
-          <img class="wide" src="assets/scriptum-ep01.jpg" alt="Miniatura de «La misma espada», primer episodio de SCRIPTUM GAMING" width="1280" height="720" loading="lazy">
-          <h3>SCRIPTUM GAMING</h3>
-          <p class="log-role">27 de octubre · mi canal</p>
-          <p>Abrí mi propio canal de YouTube de lore de videojuegos. Ahí entreno guion, voz y montaje largo.</p>
-        </li>
-        <li class="log-item">
-          <img src="assets/asalto-spot-poster.jpg" alt="Fotograma del spot de boxeo ASALTO" width="720" height="1280" loading="lazy">
-          <h3>ASALTO</h3>
-          <p class="log-role">30 de octubre · spot</p>
-          <p>El spot de boxeo pasó por 14 versiones hasta la definitiva.</p>
-        </li>
-        <li class="log-item">
-          <img src="assets/kairo-spot-poster.jpg" alt="Cierre del spot de KAIRO con su eslogan" width="720" height="1280" loading="lazy">
-          <h3>KAIRO</h3>
-          <p class="log-role">30 de octubre · marca</p>
-          <p>Spot, kit de redes y manual de 13 páginas en el mismo día.</p>
-        </li>
-        <li class="log-item">
-          <img src="assets/kairo-proceso-poster.jpg" alt="Portada del reel «Esta marca no existe»" width="720" height="1280" loading="lazy">
-          <h3>Bnzo</h3>
-          <p class="log-role">31 de octubre · el salto</p>
-          <p>Quito el «edit» del nombre. A partir de aquí, Bnzo hace marcas. La siguiente puede ser la tuya.</p>
-        </li>
-      </ol>
+      <div class="orbit" id="orbit" aria-roledescription="carrusel" aria-label="Mi camino, de la primera pieza a la última">
+        <ol class="log-list">
+          <li class="log-item" data-video="assets/natur-final.mp4">
+            <figure class="log-card"><img src="assets/natur-poster.jpg" alt="Fotograma del borrador Natur: agua y naturaleza" width="720" height="1280" loading="lazy"></figure>
+            <div class="log-text">
+              <h3>Natur</h3>
+              <p class="log-role">Borrador · BNZOEDIT</p>
+              <p>Planos de agua y naturaleza montados al ritmo de la respiración, dejando que la imagen hable sola.</p>
+            </div>
+          </li>
+          <li class="log-item" data-video="assets/pulso-tren.mp4">
+            <figure class="log-card"><img src="assets/pulso-tren-poster.jpg" alt="Fotograma del borrador «El pulso invisible», trayectos en tren" width="720" height="1280" loading="lazy"></figure>
+            <div class="log-text">
+              <h3>El pulso invisible</h3>
+              <p class="log-role">Borrador · historia corta</p>
+              <p>Trayectos de tren convertidos en una historia con principio y final en menos de un minuto.</p>
+            </div>
+          </li>
+          <li class="log-item" data-video="assets/cafe-reel.mp4">
+            <figure class="log-card"><img src="assets/cafe-reel-poster.jpg" alt="Fotograma del reel para una cafetería" width="720" height="1280" loading="lazy"></figure>
+            <div class="log-text">
+              <h3>Café</h3>
+              <p class="log-role">Borrador · reel de negocio</p>
+              <p>Un reel para una cafetería, montado con planos de móvil.</p>
+            </div>
+          </li>
+          <li class="log-item" data-video="assets/barberia-reel.mp4">
+            <figure class="log-card"><img src="assets/barberia-reel-poster.jpg" alt="Fotograma del comercial para una barbería" width="720" height="1280" loading="lazy"></figure>
+            <div class="log-text">
+              <h3>Barbería</h3>
+              <p class="log-role">Borrador · comercial</p>
+              <p>Un comercial vertical para una barbería: el salto de editar momentos a vender un negocio.</p>
+            </div>
+          </li>
+          <li class="log-item">
+            <figure class="log-card"><img class="wide" src="assets/scriptum-ep01.jpg" alt="Miniatura de «La misma espada», primer episodio de SCRIPTUM GAMING" width="1280" height="720" loading="lazy"></figure>
+            <div class="log-text">
+              <h3>SCRIPTUM GAMING</h3>
+              <p class="log-role">27 de octubre · mi canal</p>
+              <p>Abrí mi propio canal de YouTube de lore de videojuegos. Ahí entreno guion, voz y montaje largo.</p>
+            </div>
+          </li>
+          <li class="log-item" data-video="assets/asalto-spot.mp4">
+            <figure class="log-card"><img src="assets/asalto-spot-poster.jpg" alt="Fotograma del spot de boxeo ASALTO" width="720" height="1280" loading="lazy"></figure>
+            <div class="log-text">
+              <h3>ASALTO</h3>
+              <p class="log-role">30 de octubre · spot</p>
+              <p>El spot de boxeo pasó por 14 versiones hasta la definitiva.</p>
+            </div>
+          </li>
+          <li class="log-item" data-video="assets/kairo-spot.mp4">
+            <figure class="log-card"><img src="assets/kairo-spot-poster.jpg" alt="Cierre del spot de KAIRO con su eslogan" width="720" height="1280" loading="lazy"></figure>
+            <div class="log-text">
+              <h3>KAIRO</h3>
+              <p class="log-role">30 de octubre · marca</p>
+              <p>Spot, kit de redes y manual de 13 páginas en el mismo día.</p>
+            </div>
+          </li>
+          <li class="log-item" data-video="assets/kairo-proceso.mp4">
+            <figure class="log-card"><img src="assets/kairo-proceso-poster.jpg" alt="Portada del reel «Esta marca no existe»" width="720" height="1280" loading="lazy"></figure>
+            <div class="log-text">
+              <h3>Bnzo</h3>
+              <p class="log-role">31 de octubre · el salto</p>
+              <p>Quito el «edit» del nombre. A partir de aquí, Bnzo hace marcas. La siguiente puede ser la tuya.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
     </section>
 
     <!-- Contacto -->
