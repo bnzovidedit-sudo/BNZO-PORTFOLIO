@@ -8,8 +8,8 @@
   <meta name="theme-color" content="#0f0f0e">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
   <link rel="preload" href="assets/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="bnzo.css?v=20261103">
-  <script defer src="bnzo.js?v=20261103"></script>
+  <link rel="stylesheet" href="bnzo.css?v=20261107">
+  <script defer src="bnzo.js?v=20261107"></script>
 </head>
 <body>
   <a class="skip" href="#contenido">Saltar al contenido</a>
@@ -154,10 +154,10 @@
       <div class="work-side">
         <h2 id="work-title" data-reveal>Trabajos</h2>
         <div class="work-index" role="tablist" aria-label="Elige un trabajo" aria-orientation="vertical" data-reveal>
-          <button type="button" role="tab" id="t-kairo" aria-selected="true" aria-controls="work-media" data-video="assets/kairo-spot.mp4" data-poster="assets/kairo-spot-poster.jpg" data-note="Marca de demostración creada de cero: logo, manual, redes y spot."><span class="w-name">KAIRO</span><span class="w-tags">Marca · spot · redes</span></button>
-          <button type="button" role="tab" id="t-umbral" aria-selected="false" tabindex="-1" aria-controls="work-media" data-video="assets/umbral-spot.mp4" data-poster="assets/umbral-spot-poster.jpg" data-note="Marca ficticia de mudanzas. Planos de Pexels (RDNE Stock project); marca y música propias."><span class="w-name">UMBRAL</span><span class="w-tags">Marca · spot de servicio</span></button>
-          <button type="button" role="tab" id="t-firme" aria-selected="false" tabindex="-1" aria-controls="work-media" data-video="assets/firme-spot.mp4" data-poster="assets/firme-spot-poster.jpg" data-note="Marca ficticia inmobiliaria. Planos de Pexels; marca y música propias."><span class="w-name">FIRME</span><span class="w-tags">Marca · spot de servicio</span></button>
-          <button type="button" role="tab" id="t-rato" aria-selected="false" tabindex="-1" aria-controls="work-media" data-video="assets/rato-spot.mp4" data-poster="assets/rato-spot-poster.jpg" data-note="Marca ficticia de cafetería. Planos de Pexels; marca y música propias."><span class="w-name">RATO</span><span class="w-tags">Marca · spot de servicio</span></button>
+          <button type="button" role="tab" id="t-kairo" aria-selected="true" aria-controls="work-media" data-web="kairo/" data-video="assets/kairo-spot.mp4" data-poster="assets/kairo-spot-poster.jpg" data-note="Marca de demostración creada de cero: logo, manual, redes y spot."><span class="w-name">KAIRO</span><span class="w-tags">Marca · spot · redes</span></button>
+          <button type="button" role="tab" id="t-umbral" aria-selected="false" tabindex="-1" aria-controls="work-media" data-web="umbral/" data-video="assets/umbral-spot.mp4" data-poster="assets/umbral-spot-poster.jpg" data-note="Marca ficticia de mudanzas. Planos de Pexels (RDNE Stock project); marca y música propias."><span class="w-name">UMBRAL</span><span class="w-tags">Marca · spot de servicio</span></button>
+          <button type="button" role="tab" id="t-firme" aria-selected="false" tabindex="-1" aria-controls="work-media" data-web="firme/" data-video="assets/firme-spot.mp4" data-poster="assets/firme-spot-poster.jpg" data-note="Marca ficticia inmobiliaria. Planos de Pexels; marca y música propias."><span class="w-name">FIRME</span><span class="w-tags">Marca · spot de servicio</span></button>
+          <button type="button" role="tab" id="t-rato" aria-selected="false" tabindex="-1" aria-controls="work-media" data-web="rato/" data-video="assets/rato-spot.mp4" data-poster="assets/rato-spot-poster.jpg" data-note="Marca ficticia de cafetería. Planos de Pexels; marca y música propias."><span class="w-name">RATO</span><span class="w-tags">Marca · spot de servicio</span></button>
           <button type="button" role="tab" id="t-asalto" aria-selected="false" tabindex="-1" aria-controls="work-media" data-video="assets/asalto-spot.mp4" data-poster="assets/asalto-spot-poster.jpg" data-note="Marca ficticia de boxeo. Planos de Pexels; música, marca y efectos propios."><span class="w-name">ASALTO</span><span class="w-tags">Spot · motion</span></button>
           <button type="button" role="tab" id="t-eventos" aria-selected="false" tabindex="-1" aria-controls="work-media" data-video="assets/eventos-spot.mp4" data-poster="assets/eventos-spot-poster.jpg" data-note="Pieza propia para promotoras y salas: tipografía cinética a 160 BPM, música original."><span class="w-name">Eventos</span><span class="w-tags">Tipografía cinética</span></button>
           <button type="button" role="tab" id="t-fisio" aria-selected="false" tabindex="-1" aria-controls="work-media" data-video="assets/fisiofamily-spot.mp4" data-poster="assets/fisiofamily-spot-poster.jpg" data-note="Marca ficticia de fisioterapia. Planos de Pexels (Kampus Production, Ekaterina Bolovtsova, Klaus Nielsen)."><span class="w-name">Fisiofamily</span><span class="w-tags">Spot horizontal</span></button>
@@ -168,7 +168,7 @@
       <figure data-reveal class="work-media" id="work-media" role="tabpanel" aria-labelledby="t-kairo">
         <video id="work-video" muted loop playsinline preload="metadata" poster="assets/kairo-spot-poster.jpg" src="assets/kairo-spot.mp4"></video>
         <button type="button" class="sound" id="work-sound" aria-pressed="false">Activar sonido</button>
-        <figcaption id="work-note">Marca de demostración creada de cero: logo, manual, redes y spot.</figcaption>
+        <figcaption><span id="work-note">Marca de demostración creada de cero: logo, manual, redes y spot.</span> <a class="work-web" id="work-web" href="kairo/">Ver la web de KAIRO →</a></figcaption>
       </figure>
     </section>
 

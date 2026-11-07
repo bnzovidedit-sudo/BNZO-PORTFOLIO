@@ -96,6 +96,12 @@ function select(tab, focus) {
   video.poster = tab.dataset.poster;
   video.src = tab.dataset.video;
   note.textContent = tab.dataset.note;
+  const web = document.getElementById('work-web');
+  web.hidden = !tab.dataset.web;
+  if (tab.dataset.web) {
+    web.href = tab.dataset.web;
+    web.textContent = 'Ver la web de ' + tab.querySelector('.w-name').textContent + ' →';
+  }
   video.classList.remove('wipe'); void video.offsetWidth; video.classList.add('wipe');
   if (!reduce) video.play().catch(() => {});
   if (focus) tab.focus();
