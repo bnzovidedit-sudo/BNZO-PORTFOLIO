@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FIRME · Inmobiliaria</title>
+<meta name="description" content="FIRME te cuenta lo malo del piso antes de que firmes: anuncios traducidos, papeles leídos y una firma que no se puede echar sin leer. Marca de demostración creada por Bnzo.">
+<meta name="theme-color" content="#F5EFE6">
+<link rel="icon" href="assets/simbolo.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/metropolis-latin-600-normal.woff" as="font" type="font/woff" crossorigin>
+<script src="js-on.js"></script>
+<link rel="stylesheet" href="firme.css?v=1">
+</head>
+<body>
+<a class="saltar" href="#anuncios">Saltar a los anuncios traducidos</a>
+
+<header class="barra">
+  <a class="marca" href="#inicio" aria-label="FIRME, volver al inicio">
+    <svg viewBox="0 0 100 120" aria-hidden="true"><path class="m-base" d="M7 86C15 70 24 98 33 79C40 62 47 42 55 24C66 42 81 60 95 79"/><path class="m-base" d="M90 95C66 100 36 102 12 108"/><path class="m-t" pathLength="1" d="M7 86C15 70 24 98 33 79C40 62 47 42 55 24C66 42 81 60 95 79" data-trazo-nav/><path class="m-s" pathLength="1" d="M90 95C66 100 36 102 12 108" data-subraya-nav/></svg>
+    <span>FIRME</span>
+  </a>
+  <nav aria-label="Secciones">
+    <a href="#anuncios">Anuncios</a>
+    <a href="#camino">El camino</a>
+    <a href="#papeles">Los papeles</a>
+    <a href="#firma">Firmar</a>
+  </nav>
+  <a class="aviso" href="#demo">Marca de demostración</a>
+</header>
+
+<main>
+
+<section class="portada" id="inicio">
+  <div class="portada-sup">
+    <h1>Para que firmes <span class="subrayable">tranquilo.<svg viewBox="0 0 600 30" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M4 22C160 12 400 18 596 6"/></svg></span></h1>
+    <svg class="portada-trazo" viewBox="0 0 100 120" aria-hidden="true"><path pathLength="1" d="M7 86C15 70 24 98 33 79C40 62 47 42 55 24C66 42 81 60 95 79"/></svg>
+  </div>
+  <div class="portada-inf">
+    <p>FIRME es una inmobiliaria. Te cuento todo lo del piso antes de que firmes, también lo malo.</p>
+    <a class="boton" href="#anuncios" data-magnetico>Leer antes de firmar</a>
+  </div>
+</section>
+
+<section class="once" id="once" aria-label="Por qué FIRME">
+  <canvas class="once-luz" data-persiana aria-hidden="true"></canvas>
+  <div class="once-txt">
+    <h2>Hemos visto <span class="odo" data-odo="11">11</span> pisos.</h2>
+    <p class="voz">Y ya no sabemos cuál es el bueno.</p>
+    <p>Todos eran «luminosos» y «con mucho potencial». Después llega el contrato, y es la firma más cara de tu vida. Lo que da miedo es equivocarte sin saberlo.</p>
+  </div>
+  <figure class="once-foto"><video src="assets/v/piso.mp4" poster="assets/v/piso.jpg" width="720" height="1280" muted loop playsinline preload="none" aria-label="Una pareja visita un salón vacío con un agente" data-bucle></video></figure>
+</section>
+
+<section class="anuncios" id="anuncios">
+  <div class="anuncios-cab">
+    <h2>Lo que dice el anuncio</h2>
+    <p>Toca una frase y te digo lo que significa. Y lo que miro por ti antes de que vayas a verlo.</p>
+  </div>
+  <ul class="frases" data-frases>
+    <li class="frase" data-prev="assets/v/salon.jpg">
+      <h3><button type="button" aria-expanded="false"><span class="anuncio">Muy luminoso</span><span class="mas" aria-hidden="true"></span></button></h3>
+      <div class="verdad"><div><p class="v-t" data-descifra>¿A qué hora, y en qué mes?</p><p>Volvemos por la mañana y al caer la tarde, y miramos hacia dónde dan las ventanas.</p></div></div>
+    </li>
+    <li class="frase" data-prev="assets/v/piso.jpg">
+      <h3><button type="button" aria-expanded="false"><span class="anuncio">Con mucho potencial</span><span class="mas" aria-hidden="true"></span></button></h3>
+      <div class="verdad"><div><p class="v-t" data-descifra>Hay que reformarlo. Suma la obra al precio.</p><p>Te ayudo a pedir un presupuesto de reforma antes de hacer una oferta, no después.</p></div></div>
+    </li>
+    <li class="frase" data-prev="assets/v/pasillo.jpg">
+      <h3><button type="button" aria-expanded="false"><span class="anuncio">Céntrico y muy animado</span><span class="mas" aria-hidden="true"></span></button></h3>
+      <div class="verdad"><div><p class="v-t" data-descifra>Ven un viernes de noche, con la ventana abierta.</p><p>Una visita a las once de la mañana no te cuenta cómo suena el dormitorio.</p></div></div>
+    </li>
+    <li class="frase" data-prev="assets/v/papel.jpg">
+      <h3><button type="button" aria-expanded="false"><span class="anuncio">Gastos muy bajos</span><span class="mas" aria-hidden="true"></span></button></h3>
+      <div class="verdad"><div><p class="v-t" data-descifra>Enséñame los recibos.</p><p>Comunidad e IBI, en papel. También si hay obras aprobadas que todavía no se han cobrado.</p></div></div>
+    </li>
+    <li class="frase" data-prev="assets/v/agente.jpg">
+      <h3><button type="button" aria-expanded="false"><span class="anuncio">Ascensor en proyecto</span><span class="mas" aria-hidden="true"></span></button></h3>
+      <div class="verdad"><div><p class="v-t" data-descifra>Hoy no hay ascensor, y puede que lo pagues tú.</p><p>Leo las actas de la comunidad: si hay una derrama aprobada, lo sabrás antes de la oferta.</p></div></div>
+    </li>
+    <li class="frase" data-prev="assets/v/cajas.jpg">
+      <h3><button type="button" aria-expanded="false"><span class="anuncio">Ideal para inversores</span><span class="mas" aria-hidden="true"></span></button></h3>
+      <div class="verdad"><div><p class="v-t" data-descifra>Puede que tenga inquilino dentro.</p><p>Preguntamos por el contrato de alquiler y por su duración. Si es para vivir, cambia todo.</p></div></div>
+    </li>
+    <li class="frase" data-prev="assets/v/abrir.jpg">
+      <h3><button type="button" aria-expanded="false"><span class="anuncio">Para entrar a vivir</span><span class="mas" aria-hidden="true"></span></button></h3>
+      <div class="verdad"><div><p class="v-t" data-descifra>Abre los grifos y mira el cuadro eléctrico.</p><p>La pintura nueva lo tapa casi todo. Instalaciones, humedades y ventanas se revisan en la visita.</p></div></div>
+    </li>
+  </ul>
+  <div class="vista" aria-hidden="true" data-vista><img alt="" width="720" height="1280"></div>
+</section>
+
+<div class="camino" id="camino" data-camino>
+  <div class="camino-foto" aria-hidden="true">
+    <video class="on" src="assets/v/pasillo.mp4" poster="assets/v/pasillo.jpg" width="720" height="1280" muted loop playsinline preload="none" data-bucle></video>
+    <video src="assets/v/salon.mp4" poster="assets/v/salon.jpg" width="720" height="1280" muted loop playsinline preload="none" data-bucle></video>
+    <video src="assets/v/papel.mp4" poster="assets/v/papel.jpg" width="720" height="1280" muted loop playsinline preload="none" data-bucle></video>
+    <video src="assets/v/firma.mp4" poster="assets/v/firma.jpg" width="720" height="1280" muted loop playsinline preload="none" data-bucle></video>
+    <video src="assets/v/llaves.mp4" poster="assets/v/llaves.jpg" width="720" height="1280" muted loop playsinline preload="none" data-bucle></video>
+    <video src="assets/v/cena.mp4" poster="assets/v/cena.jpg" width="720" height="1280" muted loop playsinline preload="none" data-bucle></video>
+  </div>
+  <div class="capitulos">
+    <h2 class="camino-tit">El camino hasta las llaves</h2>
+    <section class="cap" data-fondo="crema"><h3>Vemos el piso contigo</h3><img class="cap-foto" src="assets/v/pasillo.jpg" alt="El agente y el cliente recorren un pasillo" width="720" height="1280" loading="lazy"><p>Te acompaño a cada visita con la lista en la mano. Miramos también lo que no sale en las fotos: el trastero, el patio, la escalera.</p></section>
+    <section class="cap" data-fondo="tinta"><h3>Te digo también lo malo</h3><img class="cap-foto" src="assets/v/salon.jpg" alt="El agente explica el salón a la pareja" width="720" height="1280" loading="lazy"><p>Si la terraza da a un bar o la cocina no tiene arreglo barato, te lo digo. El vendedor también es cliente, y por eso le pido que todo esté a la vista desde el principio.</p></section>
+    <section class="cap" data-fondo="crema"><h3>Miramos cada papel</h3><img class="cap-foto" src="assets/v/papel.jpg" alt="El agente enseña un documento a la pareja" width="720" height="1280" loading="lazy"><p>Antes de ofertar, juntos y sin prisa: quién es el dueño, qué debe el piso y qué se ha aprobado en la comunidad.</p></section>
+    <section class="cap" data-fondo="amarillo"><h3>Firmas cuando lo tengas claro</h3><img class="cap-foto" src="assets/v/firma.jpg" alt="Una mujer firma apoyada en una escalera de obra" width="720" height="1280" loading="lazy"><p>Primero las arras, con sus plazos y lo que pierde cada parte si se echa atrás. Después, la escritura ante notario, y el notario lo eliges tú.</p></section>
+    <section class="cap" data-fondo="tinta"><h3>Tus llaves</h3><img class="cap-foto" src="assets/v/llaves.jpg" alt="Una mano cerrada con las llaves" width="720" height="1280" loading="lazy"><p>Te las doy en la mano. Antes repasamos el piso una última vez, para comprobar que está como lo viste, y anotamos los contadores.</p></section>
+    <section class="cap" data-fondo="crema"><h3>La primera cena, en el suelo</h3><img class="cap-foto" src="assets/v/cena.jpg" alt="La pareja cena pizza en el suelo entre cajas" width="720" height="1280" loading="lazy"><p>Entre cajas, con una pizza. Y en tu casa.</p></section>
+  </div>
+</div>
+
+<section class="papeles" id="papeles">
+  <div class="papeles-cab">
+    <h2>Los papeles, subrayados</h2>
+    <p>Esto es lo que leemos antes de que firmes. Lo amarillo es lo que no me saltaría nunca.</p>
+  </div>
+  <div class="pila" data-pila>
+    <article class="hoja-doc"><h3>Nota simple</h3><p class="doc-que">Sale del Registro de la Propiedad y dice quién es el dueño y qué pesa sobre la finca.</p><p class="doc-ojo" data-subraya>Si hay una hipoteca o un embargo sin cancelar, aparece aquí.</p><p class="doc-nota">La pedimos reciente, no la que lleva meses en un cajón.</p></article>
+    <article class="hoja-doc"><h3>Certificado energético</h3><p class="doc-que">Lo firma un técnico y el vendedor tiene que dártelo para vender.</p><p class="doc-ojo" data-subraya>Una letra baja suele traer facturas altas cada invierno.</p><p class="doc-nota">Lo comparamos con las ventanas y la calefacción que hemos visto.</p></article>
+    <article class="hoja-doc"><h3>Certificado de la comunidad</h3><p class="doc-que">El administrador de fincas confirma si el piso está al día de pagos.</p><p class="doc-ojo" data-subraya>También preguntamos por las derramas aprobadas y las obras que vienen.</p><p class="doc-nota">Las actas de las últimas juntas cuentan mucho más que el anuncio.</p></article>
+    <article class="hoja-doc"><h3>Último recibo del IBI</h3><p class="doc-que">Dice lo que pagarás al ayuntamiento cada año y si el vendedor lo ha pagado.</p><p class="doc-ojo" data-subraya>Que los datos del recibo coincidan con los de la nota simple.</p><p class="doc-nota">Una diferencia de metros o de referencia hay que aclararla antes.</p></article>
+    <article class="hoja-doc"><h3>Cédula de habitabilidad</h3><p class="doc-que">Acredita que el piso cumple las condiciones para vivir en él.</p><p class="doc-ojo" data-subraya>Cada comunidad autónoma pide cosas distintas: lo comprobamos en la tuya.</p><p class="doc-nota">Sin ella pueden darte problemas al dar de alta los suministros.</p></article>
+    <article class="hoja-doc"><h3>Contrato de arras</h3><p class="doc-que">Es el compromiso previo a la escritura: señal, plazo y qué pasa si alguien se echa atrás.</p><p class="doc-ojo" data-subraya>Lee qué tipo de arras firmas. No todas te dejan salir igual.</p><p class="doc-nota">Te recomiendo que lo revise un abogado de tu confianza.</p></article>
+  </div>
+</section>
+
+<section class="firmar" id="firma">
+  <div class="firmar-cab">
+    <h2>No te dejo firmar sin leer</h2>
+    <p>Esta es la regla de FIRME. Marca lo que ya tienes claro. Cuando esté todo, la línea de firma se abre.</p>
+  </div>
+  <div class="contrato" data-contrato>
+    <svg class="contrato-logo" viewBox="0 0 100 120" aria-hidden="true"><path class="m-t" d="M7 86C15 70 24 98 33 79C40 62 47 42 55 24C66 42 81 60 95 79"/><path class="m-s" d="M90 95C66 100 36 102 12 108"/></svg>
+    <p class="contrato-tit">Antes de firmar, confirmo que:</p>
+    <div class="clausulas">
+      <label class="clausula"><input type="checkbox"><span class="check" aria-hidden="true"></span><span>He visto el piso de día y de noche.</span></label>
+      <label class="clausula"><input type="checkbox"><span class="check" aria-hidden="true"></span><span>He leído la nota simple y sé qué cargas tiene.</span></label>
+      <label class="clausula"><input type="checkbox"><span class="check" aria-hidden="true"></span><span>Sé lo que pagaré de comunidad, de IBI y de derramas.</span></label>
+      <label class="clausula"><input type="checkbox"><span class="check" aria-hidden="true"></span><span>He sumado impuestos, notaría y reforma al precio.</span></label>
+      <label class="clausula"><input type="checkbox"><span class="check" aria-hidden="true"></span><span>Me han contado lo malo, y aun así lo quiero.</span></label>
+    </div>
+    <div class="firma-zona" data-firma-zona>
+      <p class="firma-aviso" aria-live="polite" data-firma-aviso>Aún no. Te faltan 5.</p>
+      <canvas class="firma-lienzo" width="800" height="240" role="img" aria-label="Línea de firma: dibuja tu firma con el dedo o el ratón" data-lienzo></canvas>
+      <span class="firma-linea" aria-hidden="true"></span>
+      <div class="firma-fila">
+        <button class="boton boton-tinta" type="button" data-firmar disabled>Firmar</button>
+        <button class="boton-texto" type="button" data-borrar>Borrar</button>
+      </div>
+      <p class="firma-nota">Esta firma se queda en tu pantalla. No se guarda ni se envía a ningún sitio.</p>
+    </div>
+  </div>
+  <div class="llaves" data-llaves hidden>
+    <figure class="llaves-foto"><video src="assets/v/llaves.mp4" poster="assets/v/llaves.jpg" width="720" height="1280" muted loop playsinline aria-label="Una mano se abre y aparecen las llaves"></video></figure>
+    <div class="llaves-txt"><p class="voz-grande">Tus llaves.</p><p>Has firmado sabiendo lo que firmabas. Lo demás es cuestión de cajas.</p></div>
+  </div>
+</section>
+
+<section class="pieza" id="spot">
+  <div class="pieza-txt">
+    <h2>El miedo, en treinta segundos</h2>
+    <p>El spot de FIRME cuenta lo mismo desde el lado de quien ha visto once pisos.</p>
+  </div>
+  <video class="pieza-video" src="assets/firme-spot.mp4" poster="assets/firme-spot-poster.jpg" width="720" height="1280" controls playsinline preload="none" aria-label="Spot de FIRME, con sonido"></video>
+</section>
+
+<section class="dudas" id="dudas">
+  <h2>Lo que me suelen preguntar</h2>
+  <div class="lectura">
+    <div><h3>¿Trabajas para el comprador o para el vendedor?</h3><p>El encargo y lo que cobra cada parte se ponen por escrito el primer día. Te lo digo antes de enseñarte nada, para que sepas de qué lado está cada cosa que te cuento.</p></div>
+    <div><h3>¿De verdad me dices lo malo?</h3><p>Sí. Si te lo callo, lo descubres en la primera semana y a mí ya no me recomiendas a nadie. Mi trabajo depende de lo que cuentes de mí después.</p></div>
+    <div><h3>¿Puedo llevar a mi arquitecto o a mi abogado?</h3><p>Ojalá lo hagas. Te facilito la visita y los papeles para que puedan revisar lo que necesiten.</p></div>
+    <div><h3>¿Y si después de todo no quiero ese piso?</h3><p>Antes de las arras no pasa nada: seguimos buscando. Después, depende de lo firmado, y por eso lo leemos juntos antes de firmarlo.</p></div>
+    <div><h3>¿Quién elige la notaría?</h3><p>Como comprador puedes elegirla tú. Te explico cómo funciona y te acompaño el día de la firma.</p></div>
+    <div><h3>¿Esto sustituye a un abogado?</h3><p>No. Yo te ayudo a leer y te digo qué preguntar. Para lo legal de tu caso, mejor un profesional que lo firme.</p></div>
+  </div>
+</section>
+
+<section class="demo" id="demo">
+  <p>FIRME no existe. Es una marca de demostración: el nombre, el logo, el spot y esta web los he hecho yo, Esteban, para enseñar cómo construyo una marca. El servicio y sus condiciones son un ejemplo.</p>
+  <a class="palabra" href="https://www.bnzoedit.online/#marca">Hablamos</a>
+</section>
+
+</main>
+
+<footer class="pie">
+  <p class="pie-nombre" aria-hidden="true">FIRME</p>
+  <ul class="pie-lista">
+    <li><a href="https://www.bnzoedit.online/">bnzoedit.online</a></li>
+    <li><a href="https://www.instagram.com/bnzoedit/">@bnzoedit</a></li>
+    <li><a href="#inicio">Volver a empezar</a></li>
+  </ul>
+  <p class="pie-legal"><span>Marca de demostración de Bnzo. No presta servicios inmobiliarios ni asesora legalmente.</span><span>Vídeo: Anastasia Shuraeva (Pexels).</span></p>
+</footer>
+
+<script src="firme.js?v=1"></script>
+</body>
+</html>
