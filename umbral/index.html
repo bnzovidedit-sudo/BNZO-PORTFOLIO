@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>UMBRAL · Mudanzas y transportes</title>
+<meta name="description" content="La línea UMBRAL: el recorrido de una mudanza parada a parada, de la primera llamada a tu casa nueva. Marca de demostración creada por Bnzo.">
+<meta name="theme-color" content="#1E2A33">
+<link rel="icon" href="assets/simbolo.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/metropolis-latin-600-normal.woff" as="font" type="font/woff" crossorigin>
+<script src="js-on.js"></script>
+<link rel="stylesheet" href="umbral.css?v=1">
+</head>
+<body>
+<a class="saltar" href="#plano">Saltar al plano de la línea</a>
+
+<svg class="defs" aria-hidden="true" width="0" height="0">
+  <symbol id="logo" viewBox="-8 0 116 120">
+    <path d="M13 103V43.5a37 37 0 0 1 74 0V103" fill="none" stroke="currentColor" stroke-width="13"/>
+    <rect x="-8" y="108.5" width="116" height="7" fill="currentColor"/>
+    <rect x="35" y="74.5" width="30" height="30" fill="#E8642C"/>
+    <rect x="47.8" y="74.5" width="4.4" height="12.6" fill="#F5C7B0"/>
+  </symbol>
+</svg>
+
+<header class="barra">
+  <a class="marca" href="#inicio" aria-label="UMBRAL, volver al inicio"><svg aria-hidden="true"><use href="#logo"/></svg><span>UMBRAL</span></a>
+  <p class="pantalla" aria-hidden="true"><span class="p-et">Ahora</span> <b class="p-ahora" data-ahora>Inicio</b> <span class="p-et p-sig">Próxima</span> <b class="p-sig" data-prox>La llamada</b></p>
+  <a class="aviso" href="#demo">Marca de demostración</a>
+</header>
+<nav class="regla" aria-label="Paradas de la línea" data-regla></nav>
+<div class="viajera" aria-hidden="true" data-viajera><i></i></div>
+
+<main>
+
+<section class="portada" id="inicio">
+  <div class="arco" data-cruzado>
+    <video class="on" src="assets/v/puerta.mp4" poster="assets/v/puerta.jpg" width="720" height="1280" muted loop playsinline preload="none" aria-label="Una mujer sale por un portal de ladrillo con una caja en brazos" data-bucle></video>
+    <video src="assets/v/clienta.mp4" poster="assets/v/clienta.jpg" width="720" height="1280" muted loop playsinline preload="none" aria-hidden="true" data-bucle></video>
+    <video src="assets/v/pila.mp4" poster="assets/v/pila.jpg" width="720" height="1280" muted loop playsinline preload="none" aria-hidden="true" data-bucle></video>
+    <span class="arco-caja" aria-hidden="true"><i></i></span>
+  </div>
+  <span class="portada-suelo" aria-hidden="true"></span>
+  <h1><span class="ancho">UMBRAL</span> <span class="sub">Mudanzas y transportes</span></h1>
+  <p class="frase">Te llevamos de la primera llamada hasta tu sofá, ya colocado en la casa nueva.</p>
+  <div class="fila-accion">
+    <span data-cuenta>12 paradas en tu línea</span>
+    <a class="boton" href="#plano" data-magnetico>Dibuja tu línea</a>
+    <span>Tú solo abres la puerta</span>
+  </div>
+</section>
+
+<section class="duda" id="duda" aria-label="Por qué existe esta línea">
+  <div class="duda-pin">
+    <div class="duda-texto">
+      <h2 data-palabras>Me mudo en dos semanas.</h2>
+      <p class="duda2" data-palabras>Y no sé ni por dónde empezar.</p>
+      <p class="respuesta" data-palabras data-naranja>Claro. Nos encargamos de todo.</p>
+      <p class="duda-nota">Una mudanza asusta porque no ves el camino. Aquí lo tienes entero, parada a parada, antes de mover una sola caja.</p>
+    </div>
+    <figure class="duda-foto"><video src="assets/v/duda.mp4" poster="assets/v/duda.jpg" width="720" height="1280" muted loop playsinline preload="none" aria-label="Una mujer cierra una caja en un salón a medio recoger" data-bucle></video></figure>
+  </div>
+</section>
+
+<section class="plano" id="plano">
+  <div class="plano-cab">
+    <h2>Dibuja tu línea</h2>
+    <p>Hay paradas que siempre están y otras que dependen de tu casa. Dinos cómo es y el plano, el recorrido de abajo y tu hoja de ruta cambian contigo.</p>
+  </div>
+  <fieldset class="interruptores" data-interruptores>
+    <legend>Mi mudanza</legend>
+    <label class="sw"><input type="checkbox" role="switch" value="calle" checked><span class="sw-pista"><span class="sw-bola"></span></span><span>Calle estrecha o sin ascensor</span></label>
+    <label class="sw"><input type="checkbox" role="switch" value="embalaje" checked><span class="sw-pista"><span class="sw-bola"></span></span><span>Quiero que lo embaléis</span></label>
+    <label class="sw"><input type="checkbox" role="switch" value="desmontaje" checked><span class="sw-pista"><span class="sw-bola"></span></span><span>Hay muebles que desmontar</span></label>
+    <label class="sw"><input type="checkbox" role="switch" value="guardamuebles"><span class="sw-pista"><span class="sw-bola"></span></span><span>La casa nueva aún no está lista</span></label>
+  </fieldset>
+  <ol class="mapa" data-mapa>
+    <li><a href="#llamada"><i></i><span>La llamada</span></a></li>
+    <li><a href="#visita"><i></i><span>La visita</span></a></li>
+    <li><a href="#presupuesto"><i></i><span>El presupuesto</span></a></li>
+    <li data-opc="calle" class="opc"><a href="#calle"><i></i><span>La calle</span></a></li>
+    <li data-opc="embalaje" class="opc"><a href="#embalaje"><i></i><span>El embalaje</span></a></li>
+    <li data-opc="desmontaje" class="opc"><a href="#desmontaje"><i></i><span>El desmontaje</span></a></li>
+    <li><a href="#carga"><i></i><span>La carga</span></a></li>
+    <li><a href="#ruta"><i></i><span>La ruta</span></a></li>
+    <li data-opc="guardamuebles" class="opc"><a href="#guardamuebles"><i></i><span>El guardamuebles</span></a></li>
+    <li><a href="#descarga"><i></i><span>La descarga</span></a></li>
+    <li><a href="#colocacion"><i></i><span>La colocación</span></a></li>
+    <li><a href="#instalado"><i></i><span>Instalado</span></a></li>
+  </ol>
+  <p class="plano-pie">En naranja, las paradas que dependen de tu casa. Toca cualquiera para ir directo.</p>
+</section>
+
+<div class="tramo" data-tramo>
+  <div class="linea" data-linea><i></i></div>
+
+  <section class="parada crema v-a" id="llamada" data-parada="La llamada" data-cuando="Semanas antes" data-quien="Contigo" data-resumen="Nos cuentas de dónde a dónde y cuándo">
+    <span class="estacion" aria-hidden="true"></span>
+    <h2 class="letrero">La llamada</h2>
+    <div class="pliego"><div class="hoja">
+      <div class="cuerpo">
+        <figure class="foto cuadrada"><video src="assets/v/llamada.mp4" poster="assets/v/llamada.jpg" width="900" height="900" muted loop playsinline preload="none" aria-label="Un conductor de UMBRAL atiende el teléfono desde la cabina" data-bucle></video></figure>
+        <div class="texto">
+          <p class="voz">Cinco minutos, y ya sabes con quién hablas hasta el final.</p>
+          <p>Nos dices de dónde a dónde, qué fecha tienes en la cabeza y qué es lo que más te preocupa. Hablas con una persona de UMBRAL y esa misma lleva tu mudanza.</p>
+        </div>
+      </div>
+      <div class="hoja2">
+        <dl class="reparto"><div><dt>Nosotros</dt><dd>Apuntamos direcciones, fechas y plantas, y te damos un nombre y un teléfono.</dd></div><div><dt>Tú</dt><dd>Contarnos qué te mudas. Con que sea aproximado, basta.</dd></div></dl>
+        <details class="despliega"><summary>Qué te vamos a preguntar<span class="mas" aria-hidden="true"></span></summary><div class="despliega-c"><ul>
+          <li>Dirección de salida y de llegada.</li>
+          <li>Planta, ascensor y si cabe un sofá en él.</li>
+          <li>Si se puede aparcar delante de cada portal.</li>
+          <li>Fecha ideal, y qué margen tienes.</li>
+          <li>Qué quieres hacer tú y qué prefieres dejarnos.</li>
+        </ul></div></details>
+      </div>
+    </div></div>
+  </section>
+
+  <aside class="cinta" aria-label="Punto importante"><p class="cinta-t">El acceso se pregunta antes de dar un precio.</p><p class="cinta-n">Portal, ascensor y calle cambian el trabajo. La ley obliga a preguntarlo (Ley 15/2009, art. 74).</p></aside>
+
+  <section class="parada tinta v-c" id="visita" data-parada="La visita" data-cuando="Semanas antes" data-quien="Contigo" data-resumen="Vemos tu casa y hacemos el inventario">
+    <span class="estacion" aria-hidden="true"></span>
+    <h2 class="letrero">La visita</h2>
+    <div class="pliego"><div class="hoja">
+      <div class="cuerpo">
+        <figure class="foto ancha"><video src="assets/v/inventario.mp4" poster="assets/v/inventario.jpg" width="1280" height="720" muted loop playsinline preload="none" aria-label="Un operario apunta el inventario entre cajas" data-bucle></video></figure>
+        <figure class="foto ancha pequena"><video src="assets/v/libreta.mp4" poster="assets/v/libreta.jpg" width="1280" height="720" muted loop playsinline preload="none" aria-label="Detalle de la libreta del inventario" data-bucle></video></figure>
+        <div class="texto">
+          <p class="voz">Vamos a tu casa, o la vemos contigo por videollamada.</p>
+          <p>Abrimos armarios, medimos lo que no pasa por la puerta y calculamos cuántos metros cúbicos viajan. De ahí salen el vehículo, las manos y las horas.</p>
+        </div>
+      </div>
+      <div class="hoja2">
+        <dl class="reparto"><div><dt>Nosotros</dt><dd>Inventario por habitaciones, medidas y un plan para las piezas difíciles.</dd></div><div><dt>Tú</dt><dd>Enseñarnos todo, también el trastero. Lo que no se ve no se presupuesta.</dd></div></dl>
+        <details class="despliega"><summary>Qué miramos en la visita<span class="mas" aria-hidden="true"></span></summary><div class="despliega-c"><ul>
+          <li>Volumen total, habitación por habitación.</li>
+          <li>Piezas que hay que desmontar o sacar por el balcón.</li>
+          <li>Lo frágil, lo pesado y lo que tiene valor para ti.</li>
+          <li>Lo que no viaja: se regala, se tira o se queda.</li>
+          <li>Fotos de portal, escalera y calle, con tu permiso.</li>
+        </ul></div></details>
+      </div>
+    </div></div>
+  </section>
+
+  <aside class="cinta" aria-label="Punto importante"><p class="cinta-t">Lo que viaja queda en un inventario firmado.</p><p class="cinta-n">Lo firmamos las dos partes. Es la lista con la que se comprueba todo al llegar (art. 73).</p></aside>
+
+  <section class="parada crema v-d" id="presupuesto" data-parada="El presupuesto" data-cuando="Semanas antes" data-quien="UMBRAL" data-resumen="Te lo mandamos por escrito, sin letra pequeña">
+    <span class="estacion" aria-hidden="true"></span>
+    <h2 class="letrero">El presupuesto</h2>
+    <div class="pliego"><div class="hoja">
+      <div class="cuerpo">
+        <div class="papel" role="img" aria-label="Ejemplo de presupuesto de UMBRAL: cada servicio aparece en su línea, con los permisos y el seguro indicados y el precio total al final">
+          <svg class="papel-logo" aria-hidden="true"><use href="#logo"/></svg>
+          <p class="papel-tit">Presupuesto de mudanza</p>
+          <ul>
+            <li><span>Carga, transporte y descarga</span><b>Incluido</b></li>
+            <li><span>Embalaje y material</span><b>Si lo pides</b></li>
+            <li><span>Desmontaje y montaje</span><b>Si lo pides</b></li>
+            <li><span>Permiso de la calle</span><b>Se indica</b></li>
+            <li><span>Seguro de tus cosas</span><b>Te lo ofrecemos</b></li>
+          </ul>
+          <p class="papel-total"><span>Precio total</span><b>Cerrado</b></p>
+        </div>
+        <div class="texto">
+          <p class="voz">Por escrito, línea a línea. Lo que no está, no se cobra.</p>
+          <p>Cada servicio aparece con su coste, incluidos los permisos si los hay. Cuando lo aceptas, ese papel es el contrato: lo que dice es lo que pasa ese día.</p>
+          <figure class="foto vertical"><video src="assets/v/notas.mp4" poster="assets/v/notas.jpg" width="720" height="1280" muted loop playsinline preload="none" aria-label="Un operario revisa sus notas sentado junto a una pila de cajas" data-bucle></video></figure>
+        </div>
+      </div>
+      <div class="hoja2">
+        <dl class="reparto"><div><dt>Nosotros</dt><dd>Precio total, servicios, fecha y seguro, en un documento que puedes enseñar a quien quieras.</dd></div><div><dt>Tú</dt><dd>Leerlo con calma, preguntar lo que no veas claro y aceptarlo.</dd></div></dl>
+        <details class="despliega"><summary>Qué tiene que poner sí o sí<span class="mas" aria-hidden="true"></span></summary><div class="despliega-c"><ul>
+          <li>Los servicios que se prestan y lo que cuesta cada uno.</li>
+          <li>El coste del propio presupuesto, si lo tuviera.</li>
+          <li>El precio total de la mudanza.</li>
+          <li>Si los trámites y permisos están incluidos o no.</li>
+        </ul></div></details>
+      </div>
+    </div></div>
+  </section>
+
+  <aside class="cinta" aria-label="Punto importante"><p class="cinta-t">Sin presupuesto escrito no se mueve ni una caja.</p><p class="cinta-n">Es obligatorio antes de empezar, igual que informarte del seguro (arts. 73 y 74).</p></aside>
+
+  <section class="parada tinta v-b" id="calle" data-opc="calle" data-parada="La calle" data-cuando="Semanas antes" data-quien="UMBRAL" data-resumen="Pedimos el permiso y, si hace falta, el elevador">
+    <span class="estacion" aria-hidden="true"></span>
+    <h2 class="letrero">La calle</h2>
+    <div class="pliego"><div class="hoja">
+      <div class="cuerpo">
+        <div class="texto">
+          <p class="voz">Si no hay sitio para la furgoneta, se reserva. Si no cabe por la escalera, sube por fuera.</p>
+          <p>Estudiamos las dos direcciones. Pedimos el permiso de ocupación que exija cada ayuntamiento y, si el sofá no pasa, montamos un elevador exterior en la fachada.</p>
+          <dl class="reparto"><div><dt>Nosotros</dt><dd>El trámite, la señalización y el elevador.</dd></div><div><dt>Tú</dt><dd>Avisar a la comunidad, si tus normas lo piden.</dd></div></dl>
+        </div>
+        <figure class="foto vertical alta"><video src="assets/v/calle.mp4" poster="assets/v/calle.jpg" width="720" height="1280" muted loop playsinline preload="none" aria-label="Un operario lleva un sofá verde por la acera" data-bucle></video></figure>
+      </div>
+      <div class="hoja2">
+        <details class="despliega"><summary>Cuándo hace falta elevador<span class="mas" aria-hidden="true"></span></summary><div class="despliega-c"><ul>
+          <li>El ascensor no admite el sofá, el armario o el colchón.</li>
+          <li>La escalera es estrecha o tiene un giro imposible.</li>
+          <li>Son muchas plantas a pie: sube más rápido por la fachada.</li>
+          <li>Hay una pieza pesada que no conviene subir a mano.</li>
+        </ul></div></details>
+      </div>
+    </div></div>
+  </section>
+
+  <aside class="cinta" data-opc="calle" aria-label="Punto importante"><p class="cinta-t">El permiso se pide con tiempo, no el día antes.</p><p class="cinta-n">Cada ayuntamiento pone sus plazos. En el presupuesto consta si este trámite va incluido.</p></aside>
+
+  <section class="parada crema v-e" id="embalaje" data-opc="embalaje" data-parada="El embalaje" data-cuando="Los días de antes" data-quien="UMBRAL" data-resumen="Papel, cajas y una etiqueta con tu habitación">
+    <span class="estacion" aria-hidden="true"></span>
+    <h2 class="letrero">El embalaje</h2>
+    <div class="pliego"><div class="hoja">
+      <div class="cuerpo">
+        <figure class="foto vertical"><video src="assets/v/vasos.mp4" poster="assets/v/vasos.jpg" width="720" height="1280" muted loop playsinline preload="none" aria-label="Un operario coloca vasos entre relleno en una caja de cristal" data-bucle></video></figure>
+        <figure class="foto ancha"><video src="assets/v/cinta.mp4" poster="assets/v/cinta.jpg" width="1280" height="720" muted loop playsinline preload="none" aria-label="Unas manos cierran una caja con cinta" data-bucle></video></figure>
+        <figure class="foto ancha"><video src="assets/v/fragil.mp4" poster="assets/v/fragil.jpg" width="1280" height="720" muted loop playsinline preload="none" aria-label="Una caja con la etiqueta de frágil" data-bucle></video></figure>
+        <div class="texto">
+          <p class="voz">Tu vajilla va en la caja de la cocina, y la caja lo dice por fuera.</p>
+          <p>Traemos el material y lo embalamos todo, o solo lo delicado si prefieres hacer tú el resto. Vaso a vaso, con la etiqueta de la habitación de destino a la vista.</p>
+        </div>
+      </div>
+      <div class="hoja2">
+        <dl class="reparto"><div><dt>Nosotros</dt><dd>Cajas, papel, mantas y etiquetas. Lo cerramos y lo apuntamos.</dd></div><div><dt>Tú</dt><dd>Apartar lo que viaja contigo: documentos, joyas y medicinas.</dd></div></dl>
+        <details class="despliega"><summary>Qué se protege y cómo<span class="mas" aria-hidden="true"></span></summary><div class="despliega-c"><ul>
+          <li>Vasos y platos, uno a uno y de canto.</li>
+          <li>Cuadros y espejos, en cartón a medida.</li>
+          <li>Colchones y sofás, en funda cerrada.</li>
+          <li>Pantallas, en su caja o con mantas y esquinas.</li>
+          <li>Ropa de armario, en cajas con barra para colgarla.</li>
+        </ul></div></details>
+      </div>
+    </div></div>
+  </section>
+
+  <aside class="cinta" data-opc="embalaje" aria-label="Punto importante"><p class="cinta-t">Cada caja dice a qué habitación va.</p><p class="cinta-n">Así, al llegar, nadie te pregunta dónde dejarla, y abres primero lo que necesitas esa noche.</p></aside>
+
+  <section class="parada tinta v-b" id="desmontaje" data-opc="desmontaje" data-parada="El desmontaje" data-cuando="El día" data-quien="UMBRAL" data-resumen="Los muebles salen por piezas y los tornillos, en su bolsa">
+    <span class="estacion" aria-hidden="true"></span>
+    <h2 class="letrero">El desmontaje</h2>
+    <div class="pliego"><div class="hoja">
+      <div class="cuerpo">
+        <div class="texto">
+          <p class="voz">Cada tornillo se va en una bolsa con el nombre de su mueble.</p>
+          <p>Desmontamos camas, armarios y mesas lo justo para que pasen por la puerta. Las piezas se marcan y viajan juntas, para volver a montarlas igual que estaban.</p>
+          <dl class="reparto"><div><dt>Nosotros</dt><dd>Herramienta, piezas marcadas y fundas.</dd></div><div><dt>Tú</dt><dd>Vaciar armarios y cajones, si no lo hemos pactado.</dd></div></dl>
+        </div>
+        <figure class="dibujo" aria-label="Dibujo de una mesa desmontada con sus patas y una bolsa de tornillos etiquetada">
+          <svg viewBox="0 0 560 560" role="img" aria-hidden="true">
+            <rect x="60" y="70" width="440" height="56" fill="#C89A64"/>
+            <rect x="90" y="176" width="44" height="240" fill="#C89A64"/><rect x="186" y="176" width="44" height="240" fill="#C89A64"/>
+            <rect x="282" y="176" width="44" height="240" fill="#C89A64"/><rect x="378" y="176" width="44" height="240" fill="#C89A64"/>
+            <rect x="90" y="462" width="210" height="70" fill="#F5EFE6"/>
+            <text x="108" y="508" font-size="30" font-weight="600" fill="#1E2A33">Mesa salón</text>
+            <rect x="330" y="462" width="104" height="70" fill="#E8642C"/>
+            <circle cx="358" cy="497" r="9" fill="#1E2A33"/><circle cx="382" cy="497" r="9" fill="#1E2A33"/><circle cx="406" cy="497" r="9" fill="#1E2A33"/>
+          </svg>
+        </figure>
+      </div>
+      <div class="hoja2">
+        <details class="despliega"><summary>Qué se desmonta casi siempre<span class="mas" aria-hidden="true"></span></summary><div class="despliega-c"><ul>
+          <li>Camas y cabeceros.</li>
+          <li>Armarios altos y estanterías a medida.</li>
+          <li>Mesas grandes de comedor.</li>
+          <li>Muebles de obra o electrodomésticos: lo vemos en la visita.</li>
+        </ul></div></details>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="parada crema v-c" id="carga" data-parada="La carga" data-cuando="El día" data-quien="UMBRAL" data-resumen="Protegemos tu casa y cargamos en orden">
+    <span class="estacion" aria-hidden="true"></span>
+    <h2 class="letrero">La carga</h2>
+    <div class="pliego"><div class="hoja">
+      <div class="cuerpo">
+        <figure class="foto ancha"><video src="assets/v/sofa.mp4" poster="assets/v/sofa.jpg" width="1280" height="720" muted loop playsinline preload="none" aria-label="Dos operarios levantan un sofá verde en un salón vacío" data-bucle></video></figure>
+        <figure class="foto ancha pequena"><video src="assets/v/pasillo.mp4" poster="assets/v/pasillo.jpg" width="1280" height="720" muted loop playsinline preload="none" aria-label="El sofá verde avanza por el pasillo" data-bucle></video></figure>
+        <div class="texto">
+          <p class="voz">Primero protegemos tu casa. Luego cargamos con orden.</p>
+          <p>Cubrimos suelos, marcos y ascensor. Cargamos con un orden pensado para la descarga: lo pesado abajo, lo frágil sujeto y cada cosa contada contra el inventario.</p>
+        </div>
+      </div>
+      <div class="hoja2">
+        <dl class="reparto"><div><dt>Nosotros</dt><dd>Protecciones, cargar, sujetar y contar.</dd></div><div><dt>Tú</dt><dd>Estar localizable y dar las llaves cuando acabemos.</dd></div></dl>
+        <details class="despliega"><summary>Cómo se ordena una furgoneta<span class="mas" aria-hidden="true"></span></summary><div class="despliega-c"><ul>
+          <li>Electrodomésticos y lo pesado, abajo y contra la cabina.</li>
+          <li>Colchones y tableros, de pie y atados.</li>
+          <li>Cajas de abajo arriba, de la más pesada a la más ligera.</li>
+          <li>Lo que necesitas primero, al final, para sacarlo antes.</li>
+        </ul></div></details>
+      </div>
+    </div></div>
+  </section>
+
+  <aside class="cinta" aria-label="Punto importante"><p class="cinta-t">Antes de cerrar, repasamos la casa vacía contigo.</p><p class="cinta-n">Armarios, trastero, balcón. Lo último que hacemos aquí es comprobar que no se queda nada.</p></aside>
+</div>
+
+<section class="ruta tinta" id="ruta" data-parada="La ruta" data-cuando="El día" data-quien="UMBRAL" data-resumen="Tus cosas en carretera; te avisamos al salir y al llegar" data-ruta>
+  <div class="ruta-pin">
+    <div class="ruta-tira" data-tira>
+      <span class="ruta-codo entrada" data-linea aria-hidden="true"><i></i></span>
+      <span class="ruta-linea" data-linea-h aria-hidden="true"><i></i></span>
+      <span class="ruta-codo salida" data-linea aria-hidden="true"><i></i></span>
+      <article class="panel panel-intro">
+        <div class="arriba"><h2 class="letrero">La ruta</h2></div>
+        <div class="abajo"><p class="voz">Aquí la línea gira. Tus cosas ya van por carretera.</p></div>
+      </article>
+      <article class="panel">
+        <div class="arriba"><figure class="foto ancha"><video src="assets/v/cabina.mp4" poster="assets/v/cabina.jpg" width="1280" height="720" muted loop playsinline preload="none" aria-label="Dos operarios hablan y sonríen en la cabina" data-bucle></video></figure></div>
+        <div class="abajo"><p><b>Te avisamos al salir.</b> Sabes quién conduce y a qué hora va a llegar, sin tener que llamar a nadie.</p></div>
+      </article>
+      <article class="panel">
+        <div class="arriba"><p><b>Si el destino está lejos,</b> el vehículo y los relevos ya están pensados desde el presupuesto. Tus cosas no cambian de manos por sorpresa.</p></div>
+        <div class="abajo"><figure class="foto ancha"><video src="assets/v/copiloto.mp4" poster="assets/v/copiloto.jpg" width="1280" height="720" muted loop playsinline preload="none" aria-label="El copiloto mira a la carretera desde la furgoneta" data-bucle></video></figure></div>
+      </article>
+      <article class="panel panel-transbordo" id="guardamuebles" data-opc="guardamuebles" data-parada="El guardamuebles" data-cuando="Hasta que esté lista" data-quien="UMBRAL" data-resumen="Guardamos tus cosas hasta que puedas entrar">
+        <div class="arriba"><h3>El guardamuebles</h3></div>
+        <div class="abajo"><p><b>¿Obras? ¿Llaves que no llegan?</b> Tus cosas esperan en un trastero seco, inventariadas y con acceso si necesitas sacar algo. Cuando la casa esté lista, retomamos la línea donde se quedó.</p></div>
+      </article>
+      <article class="panel">
+        <div class="arriba"><figure class="foto ancha"><video src="assets/v/trasera.mp4" poster="assets/v/trasera.jpg" width="1280" height="720" muted loop playsinline preload="none" aria-label="Los operarios descansan sentados en la trasera de la furgoneta abierta" data-bucle></video></figure></div>
+        <div class="abajo"><p><b>Y te avisamos al llegar.</b> Si tu calle ya tiene sitio reservado, aparcamos en la puerta.</p></div>
+      </article>
+      <article class="panel panel-fin">
+        <div class="arriba"><p class="voz">Última curva. Llegamos a tu calle.</p></div>
+        <div class="abajo"><p>Empieza la parte que más se nota: tus cosas entran en tu casa nueva.</p></div>
+        <figure class="foto ancha panel-fin-foto"><video src="assets/v/pulgar.mp4" poster="assets/v/pulgar.jpg" width="1280" height="720" muted loop playsinline preload="none" aria-label="Un operario levanta el pulgar junto a una caja" data-bucle></video></figure>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="tramo" data-tramo>
+  <div class="linea" data-linea><i></i></div>
+
+  <section class="parada crema v-a invertida" id="descarga" data-parada="La descarga" data-cuando="El día" data-quien="Contigo" data-resumen="Entra todo, y lo compruebas contra el inventario">
+    <span class="estacion" aria-hidden="true"></span>
+    <h2 class="letrero">La descarga</h2>
+    <div class="pliego"><div class="hoja">
+      <div class="cuerpo">
+        <figure class="foto ancha"><video src="assets/v/entra.mp4" poster="assets/v/entra.jpg" width="1280" height="720" muted loop playsinline preload="none" aria-label="Un operario entra con cajas en un piso luminoso" data-bucle></video></figure>
+        <div class="texto">
+          <p class="voz">Volvemos a proteger, ahora tu casa nueva, y entramos habitación por habitación.</p>
+          <p>Te quedas en la puerta con el inventario en la mano. Cada caja lleva escrito adónde va, así que apenas tienes que decir nada.</p>
+          <figure class="foto ancha"><video src="assets/v/luz.mp4" poster="assets/v/luz.jpg" width="1280" height="720" muted loop playsinline preload="none" aria-label="Una mujer cruza el pasillo con una caja" data-bucle></video></figure>
+        </div>
+      </div>
+      <div class="hoja2">
+        <dl class="reparto"><div><dt>Nosotros</dt><dd>Descargar, subir y dejar cada caja en su habitación.</dd></div><div><dt>Tú</dt><dd>Comprobar el inventario. Si algo llega mal, se apunta en el momento.</dd></div></dl>
+        <details class="despliega"><summary>Qué hacer si algo llega mal<span class="mas" aria-hidden="true"></span></summary><div class="despliega-c"><ul>
+          <li>Díselo al equipo antes de que se vaya y anótalo por escrito.</li>
+          <li>Haz una foto del daño y de la caja.</li>
+          <li>Si no se ve a simple vista, tienes siete días tras la entrega, sin contar domingos ni festivos.</li>
+        </ul></div></details>
+      </div>
+    </div></div>
+  </section>
+
+  <aside class="cinta" aria-label="Punto importante"><p class="cinta-t">Si algo llega mal, se anota al momento.</p><p class="cinta-n">Lo que se ve, por escrito en la entrega. Lo que no se ve, en siete días sin contar domingos ni festivos (art. 77).</p></aside>
+
+  <section class="parada tinta v-b" id="colocacion" data-parada="La colocación" data-cuando="El día" data-quien="Contigo" data-resumen="Tú dices dónde; nosotros montamos y recogemos">
+    <span class="estacion" aria-hidden="true"></span>
+    <h2 class="letrero">La colocación</h2>
+    <div class="pliego"><div class="hoja">
+      <div class="cuerpo">
+        <div class="texto">
+          <p class="voz">Tú señalas, nosotros movemos. Las veces que haga falta.</p>
+          <p>Montamos camas, armarios y mesas con sus tornillos, los de su bolsa. Colocamos cada mueble donde quieres, retiramos las protecciones y nos llevamos el material que ya no hace falta.</p>
+          <dl class="reparto"><div><dt>Nosotros</dt><dd>Montar, colocar y recoger el cartón.</dd></div><div><dt>Tú</dt><dd>Sentarte en el sillón y decir «un poco más a la izquierda».</dd></div></dl>
+          <figure class="foto ancha"><video src="assets/v/dos.mp4" poster="assets/v/dos.jpg" width="1280" height="720" muted loop playsinline preload="none" aria-label="Dos operarios colocan una caja grande" data-bucle></video></figure>
+        </div>
+        <figure class="foto ancha alta"><video src="assets/v/sillon.mp4" poster="assets/v/sillon.jpg" width="1280" height="720" muted loop playsinline preload="none" aria-label="Un operario pasa con cajas mientras la clienta descansa en un sillón" data-bucle></video></figure>
+      </div>
+      <div class="hoja2">
+        <details class="despliega"><summary>Antes de que nos vayamos<span class="mas" aria-hidden="true"></span></summary><div class="despliega-c"><ul>
+          <li>Repasamos juntos que cada mueble esté montado y firme.</li>
+          <li>Conectamos lo que hayamos pactado.</li>
+          <li>Quitamos las protecciones de suelos y marcos.</li>
+          <li>Te dejamos a mano la caja de la primera noche.</li>
+        </ul></div></details>
+      </div>
+    </div></div>
+  </section>
+</div>
+
+<section class="cruce" id="instalado" data-parada="Instalado" data-cuando="Esa noche" data-quien="Tú" data-resumen="Cierras la puerta. Ya estás en casa" data-cruce>
+  <div class="cruce-pin">
+    <div class="cruce-foto" data-cruce-foto>
+      <video src="assets/v/casa.mp4" poster="assets/v/casa.jpg" width="1280" height="720" muted loop playsinline preload="none" aria-label="Dos amigas abren cajas en un salón nuevo y luminoso" data-bucle></video>
+      <span class="cruce-velo" data-cruce-velo aria-hidden="true"></span>
+    </div>
+    <span class="cruce-marco" data-cruce-marco aria-hidden="true"></span>
+    <span class="cruce-codo" data-linea aria-hidden="true"><i></i></span>
+    <span class="cruce-umbral" data-cruce-umbral aria-hidden="true"><i data-cruce-hecho></i></span>
+    <span class="cruce-caja" data-cruce-caja aria-hidden="true"><i></i></span>
+    <div class="cruce-antes" data-cruce-antes>
+      <h2 class="letrero">Instalado</h2>
+      <p>La línea acaba en la puerta de tu casa.</p>
+    </div>
+    <div class="cruce-despues" data-cruce-despues>
+      <p class="voz-grande">Tú solo abre la puerta.</p>
+      <p>Tu sofá está donde querías, las camas están montadas y la caja de la primera noche está a mano. Te queda decidir dónde pedir la cena.</p>
+    </div>
+  </div>
+</section>
+
+<aside class="cinta cinta-ultima" aria-label="Punto importante"><p class="cinta-t">Y seguimos al teléfono después de irnos.</p><p class="cinta-n">Si aparece un daño que no se veía, tienes siete días tras la entrega, sin contar domingos ni festivos. Llámanos antes.</p></aside>
+
+<section class="hoja-ruta" id="hoja">
+  <div class="hoja-ruta-txt">
+    <h2>Tu hoja de ruta</h2>
+    <p data-balance>Tu línea tiene 12 paradas. En 4 te necesitamos un rato. Del resto nos ocupamos nosotros.</p>
+    <button class="boton boton-tinta" type="button" data-copiar><span data-copiar-t>Copiar mi hoja de ruta</span></button>
+    <span class="invisible" aria-live="polite" data-copiar-v></span>
+  </div>
+  <div class="ticket" data-ticket>
+    <h3>Semanas antes</h3>
+    <ul>
+      <li data-para="llamada"><span>La llamada</span><i></i><b>Contigo</b></li>
+      <li data-para="visita"><span>La visita</span><i></i><b>Contigo</b></li>
+      <li data-para="presupuesto"><span>El presupuesto</span><i></i><b>UMBRAL</b></li>
+      <li data-para="calle"><span>La calle</span><i></i><b>UMBRAL</b></li>
+    </ul>
+    <h3 data-grupo="embalaje">Los días de antes</h3>
+    <ul>
+      <li data-para="embalaje"><span>El embalaje</span><i></i><b>UMBRAL</b></li>
+    </ul>
+    <h3>El día</h3>
+    <ul>
+      <li data-para="desmontaje"><span>El desmontaje</span><i></i><b>UMBRAL</b></li>
+      <li data-para="carga"><span>La carga</span><i></i><b>UMBRAL</b></li>
+      <li data-para="ruta"><span>La ruta</span><i></i><b>UMBRAL</b></li>
+      <li data-para="guardamuebles"><span>El guardamuebles</span><i></i><b>UMBRAL</b></li>
+      <li data-para="descarga"><span>La descarga</span><i></i><b>Contigo</b></li>
+      <li data-para="colocacion"><span>La colocación</span><i></i><b>Contigo</b></li>
+    </ul>
+    <h3>Esa noche</h3>
+    <ul><li data-para="instalado"><span>Instalado</span><i></i><b>Tú</b></li></ul>
+    <p class="ticket-fin"><span>Tu casa, con todo en su sitio</span><b>Hecho</b></p>
+  </div>
+</section>
+
+<section class="siempre" id="siempre">
+  <figure class="siempre-foto"><video src="assets/v/clienta.mp4" poster="assets/v/clienta.jpg" width="720" height="1280" muted loop playsinline preload="none" aria-label="La clienta sonríe con una caja en brazos en su casa nueva" data-bucle></video></figure>
+  <div class="siempre-txt">
+    <h2>En todas las líneas</h2>
+    <ul class="puntos">
+      <li><h3>Una sola persona</h3><p>La misma que te cogió el teléfono, de principio a fin.</p></li>
+      <li><h3>Precio cerrado</h3><p>Lo que pone en el presupuesto es lo que pagas.</p></li>
+      <li><h3>Inventario firmado</h3><p>Una lista de lo que sale y de lo que llega.</p></li>
+      <li><h3>Seguro a tu elección</h3><p>Te lo explicamos antes de cargar, no después.</p></li>
+      <li><h3>Casa protegida</h3><p>Suelos, marcos y ascensor, en la salida y en la llegada.</p></li>
+      <li><h3>Mantas y fundas</h3><p>Los muebles nunca viajan a pelo.</p></li>
+      <li><h3>Cajas con destino</h3><p>Cada una, con su habitación escrita.</p></li>
+      <li><h3>Dos avisos</h3><p>Uno cuando salimos y otro cuando llegamos.</p></li>
+      <li><h3>Cartón de vuelta</h3><p>Nos llevamos el material que ya no usas.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="dudas" id="dudas">
+  <h2>Lo que nos suelen preguntar</h2>
+  <div class="fichero">
+    <details class="ficha" name="fichero" open><summary><span class="pestana">Fechas</span><span class="pregunta">¿Con cuánta antelación os llamo?</span></summary><div class="ficha-c"><p>Cuanto antes, mejor, sobre todo si hay que pedir permiso de calle o te mudas a final de mes, que es cuando más demanda hay. Si vas con prisa, llámanos igual y te decimos qué se puede hacer.</p></div></details>
+    <details class="ficha" name="fichero"><summary><span class="pestana">Precio</span><span class="pregunta">¿De qué depende lo que cuesta?</span></summary><div class="ficha-c"><p>Del volumen, la distancia, los accesos y los servicios que elijas. Por eso primero vemos tu casa y luego te damos una cifra cerrada y por escrito.</p></div></details>
+    <details class="ficha" name="fichero"><summary><span class="pestana">Seguro</span><span class="pregunta">¿Mis cosas viajan aseguradas?</span></summary><div class="ficha-c"><p>Antes de cargar te explicamos qué cubre el seguro y lo eliges tú. Contratarlo no nos quita la responsabilidad sobre tus cosas: la ley también nos la exige.</p></div></details>
+    <details class="ficha" name="fichero"><summary><span class="pestana">Daños</span><span class="pregunta">¿Y si algo se rompe?</span></summary><div class="ficha-c"><p>Se anota por escrito en la entrega. Si el daño no se ve a simple vista, tienes siete días, sin contar domingos ni festivos. Avísanos cuanto antes y haz una foto.</p></div></details>
+    <details class="ficha" name="fichero"><summary><span class="pestana">Plantas</span><span class="pregunta">¿Os lleváis las plantas y a mi perro?</span></summary><div class="ficha-c"><p>Las plantas sufren en una furgoneta cerrada: te contamos el riesgo antes y tú decides. Tu perro, mejor contigo. Tampoco cargamos materiales peligrosos, como bombonas o disolventes.</p></div></details>
+    <details class="ficha" name="fichero"><summary><span class="pestana">Oficinas</span><span class="pregunta">¿Mudáis también locales y oficinas?</span></summary><div class="ficha-c"><p>Sí, con la misma línea. Cambia el inventario y el calendario: solemos hacerlo fuera de horario para que abras al día siguiente en el sitio nuevo.</p></div></details>
+  </div>
+</section>
+
+<section class="pieza" id="spot">
+  <div class="pieza-txt">
+    <h2>La línea, en treinta segundos</h2>
+    <p>El spot de UMBRAL cuenta este mismo recorrido desde el lado de quien se muda.</p>
+  </div>
+  <video class="pieza-video" src="assets/umbral-spot.mp4" poster="assets/umbral-spot-poster.jpg" width="1920" height="1080" controls playsinline preload="none" aria-label="Spot de UMBRAL, con sonido"></video>
+</section>
+
+<section class="respuesta-sec" id="demo">
+  <p class="respuesta-nota">Si has llegado hasta aquí buscando una mudanza, lo siento: esta empresa no te va a coger el teléfono.</p>
+  <div class="tarjeta">
+    <h2>UMBRAL no existe</h2>
+    <p>Es una marca de demostración. El nombre, el logo, el spot y esta web los he hecho yo, Esteban, para enseñar cómo construyo una marca. Las condiciones de servicio son un ejemplo.</p>
+    <a class="boton boton-tinta boton-entero" href="https://www.bnzoedit.online/#marca">Quiero una marca así</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="pie">
+  <div class="pie-sup">
+    <p class="pie-frase">¿Tienes un negocio que aún no se ve así?</p>
+    <ul>
+      <li><a href="https://www.bnzoedit.online/">bnzoedit.online</a></li>
+      <li><a href="https://www.instagram.com/bnzoedit/">@bnzoedit</a></li>
+      <li><a href="#inicio">Volver a la primera parada</a></li>
+    </ul>
+  </div>
+  <p class="pie-legal"><span>Marca de demostración de Bnzo. No presta servicios de mudanza.</span><span>Vídeo: RDNE Stock project (Pexels). Referencias legales: Ley 15/2009, arts. 71 a 77.</span></p>
+  <p class="pie-nombre" aria-hidden="true">UMBRAL</p>
+</footer>
+
+<script src="umbral.js?v=1"></script>
+</body>
+</html>
