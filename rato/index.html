@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RATO · Cafetería</title>
+<meta name="description" content="RATO es una cafetería donde te sientas cinco minutos. La carta va en minutos y la web te los cuenta. Marca de demostración creada por Bnzo.">
+<meta name="theme-color" content="#2A1C14">
+<link rel="icon" href="assets/simbolo.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/metropolis-latin-600-normal.woff" as="font" type="font/woff" crossorigin>
+<script src="js-on.js"></script>
+<link rel="stylesheet" href="rato.css?v=1">
+</head>
+<body>
+<a class="saltar" href="#carta">Saltar a la carta</a>
+
+<svg class="defs" aria-hidden="true" width="0" height="0">
+  <symbol id="taza" viewBox="0 0 100 120">
+    <path d="M10 56L72 56C72 92 56 110 41 110C26 110 10 92 10 56M72 64C95 60 95 90 66 88" fill="none" stroke="currentColor" stroke-width="9.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M41 42C29 32 53 22 41 8" fill="none" stroke="#FFC48C" stroke-width="7.6" stroke-linecap="round"/>
+  </symbol>
+  <clipPath id="interior"><path d="M10 56L72 56C72 92 56 110 41 110C26 110 10 92 10 56Z"/></clipPath>
+  <clipPath id="interior2"><path d="M10 56L72 56C72 92 56 110 41 110C26 110 10 92 10 56Z"/></clipPath>
+</svg>
+
+<header class="barra">
+  <a class="marca" href="#inicio" aria-label="RATO, volver al inicio"><svg aria-hidden="true"><use href="#taza"/></svg><span>RATO</span></a>
+  <p class="reloj" data-reloj>Acabas de sentarte</p>
+  <a class="aviso" href="#demo">Marca de demostración</a>
+</header>
+
+<main>
+
+<section class="portada" id="inicio">
+  <canvas class="vapor" data-vapor aria-hidden="true"></canvas>
+  <div class="portada-txt">
+    <h1>Siéntate. <br>Es tu rato.</h1>
+    <p>RATO es una cafetería. Pides, te sientas y el móvil espera. Con cinco minutos llega.</p>
+    <a class="boton" href="#carta" data-magnetico>Ver cuánto tengo</a>
+  </div>
+  <div class="portada-taza">
+    <svg class="humo-svg" viewBox="0 0 120 120" aria-hidden="true"><path pathLength="1" d="M40 112C20 88 62 66 40 34"/><path pathLength="1" d="M80 118C60 90 100 62 78 20"/></svg>
+    <figure class="taza-foto"><video src="assets/v/sonrisa.mp4" poster="assets/v/sonrisa.jpg" width="720" height="1280" muted loop playsinline preload="none" aria-label="Una mujer sonríe con una taza verde en las manos" data-bucle></video></figure>
+  </div>
+</section>
+
+<section class="prisa" id="prisa" aria-label="Por qué RATO">
+  <div class="prisa-txt">
+    <h2>Llevo desde las seis sin parar.</h2>
+    <p class="linea">Y aún me queda medio día.</p>
+    <p class="linea">Un café para llevar, que no llego.</p>
+    <p class="linea respuesta"><span>¿Y si te sientas cinco minutos?</span></p>
+    <p class="prisa-nota">Pedir para llevar también es decidir que no tienes ni cinco minutos. Casi siempre los tienes.</p>
+  </div>
+  <figure class="taza-foto prisa-foto"><video src="assets/v/prisa.mp4" poster="assets/v/prisa.jpg" width="720" height="1280" muted loop playsinline preload="none" aria-label="Una mujer con abrigo y bolso mira el móvil de pie" data-bucle></video></figure>
+</section>
+
+<div class="cinta" aria-label="El móvil, el correo, la reunión y tu jefe pueden esperar" data-cinta>
+  <div class="cinta-fila" aria-hidden="true" data-dir="1"><span>El móvil puede esperar</span><span>El correo puede esperar</span><span>La reunión puede esperar</span><span>Tu jefe puede esperar</span></div>
+  <div class="cinta-fila dos" aria-hidden="true" data-dir="-1"><span>Tú no</span><span>El café tampoco</span><span>Tú no</span><span>El café tampoco</span></div>
+</div>
+
+<section class="cinco" id="cinco" data-cinco>
+  <div class="cinco-pin">
+    <h2>Cinco minutos</h2>
+    <div class="reloj-taza" aria-hidden="true">
+      <svg viewBox="0 0 100 120"><rect class="nivel" x="0" y="56" width="100" height="60" clip-path="url(#interior)" data-nivel/><use href="#taza"/></svg>
+      <p class="rueda"><span class="rueda-d" data-rueda><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b></span><span class="rueda-de">de 5</span></p>
+    </div>
+    <ol class="minutos">
+      <li class="minuto on"><div class="minuto-t"><h3>Molemos ahora</h3><p>El grano se muele para tu taza. Te va a oler antes de que te llegue.</p></div><figure class="taza-foto"><video src="assets/v/granos.mp4" poster="assets/v/granos.jpg" width="720" height="1280" muted loop playsinline preload="none" aria-label="Una barista echa granos en el molinillo" data-bucle></video></figure></li>
+      <li class="minuto"><div class="minuto-t"><h3>Sin atajos</h3><p>Ni cápsulas ni leche de termo. El barista calienta la tuya con la jarra en la mano.</p></div><figure class="taza-foto"><video src="assets/v/vapor.mp4" poster="assets/v/vapor.jpg" width="720" height="1280" muted loop playsinline preload="none" aria-label="El barista calienta la leche con el vapor" data-bucle></video></figure></li>
+      <li class="minuto"><div class="minuto-t"><h3>El dibujo</h3><p>No hace que sepa mejor, pero te obliga a mirarlo antes de beber.</p></div><figure class="taza-foto"><video src="assets/v/dibujo.mp4" poster="assets/v/dibujo.jpg" width="720" height="1280" muted loop playsinline preload="none" aria-label="La leche dibuja sobre el café en una taza verde" data-bucle></video></figure></li>
+      <li class="minuto"><div class="minuto-t"><h3>A tu mesa</h3><p>Te lo llevamos nosotros. Nadie grita tu nombre desde la barra.</p></div><figure class="taza-foto"><video src="assets/v/mesa.mp4" poster="assets/v/mesa.jpg" width="720" height="1280" muted loop playsinline preload="none" aria-label="La barista cruza el local hacia una mesa con la taza" data-bucle></video></figure></li>
+      <li class="minuto"><div class="minuto-t"><h3>Tuyo</h3><p>Hueles, bebes y no contestas a nadie. El último minuto es el que has venido a buscar.</p></div><figure class="taza-foto"><video src="assets/v/sorbo.mp4" poster="assets/v/sorbo.jpg" width="720" height="1280" muted loop playsinline preload="none" aria-label="Una mujer huele el café y da un sorbo" data-bucle></video></figure></li>
+    </ol>
+  </div>
+</section>
+
+<section class="carta" id="carta">
+  <div class="carta-cab">
+    <h2>La carta, en minutos</h2>
+    <p>Lo primero aquí no es cuánto cuesta, sino cuánto te puedes quedar. Dinos lo que tienes y te decimos qué pedir.</p>
+  </div>
+  <fieldset class="tengo" data-tengo>
+    <legend>Tengo</legend>
+    <label><input type="radio" name="tengo" value="5" checked><span>5 min</span></label>
+    <label><input type="radio" name="tengo" value="10"><span>10 min</span></label>
+    <label><input type="radio" name="tengo" value="20"><span>20 min</span></label>
+    <label><input type="radio" name="tengo" value="45"><span>45 min</span></label>
+  </fieldset>
+  <ul class="platos" data-platos>
+    <li data-min="5"><img src="assets/v/molido.jpg" alt="" width="720" height="1280" loading="lazy"><div><h3>Café solo</h3><p>Corto, recién molido. Para quien solo necesita sentarse.</p></div><b>5 min</b></li>
+    <li data-min="5"><img src="assets/v/vapor.jpg" alt="" width="720" height="1280" loading="lazy"><div><h3>Cortado</h3><p>Con una nube de leche caliente.</p></div><b>5 min</b></li>
+    <li data-min="5"><img src="assets/v/dibujo.jpg" alt="" width="720" height="1280" loading="lazy"><div><h3>Café con leche</h3><p>En taza grande y con dibujo.</p></div><b>5 min</b></li>
+    <li data-min="5"><img src="assets/v/sonrisa.jpg" alt="" width="720" height="1280" loading="lazy"><div><h3>Té de la casa</h3><p>Lo que tarda en infusionar ya es tu rato.</p></div><b>5 min</b></li>
+    <li data-min="10"><img src="assets/v/sorbo.jpg" alt="" width="720" height="1280" loading="lazy"><div><h3>Flat white y galleta</h3><p>Doble de café. La galleta sale del horno de aquí.</p></div><b>10 min</b></li>
+    <li data-min="10"><img src="assets/v/mesa.jpg" alt="" width="720" height="1280" loading="lazy"><div><h3>Tostada con tomate y aceite</h3><p>Pan de verdad y sin prisa en la plancha.</p></div><b>10 min</b></li>
+    <li data-min="10"><img src="assets/v/barista.jpg" alt="" width="720" height="1040" loading="lazy"><div><h3>Bizcocho del día</h3><p>Pregunta cuál hay. Cambia según amanece.</p></div><b>10 min</b></li>
+    <li data-min="20"><img src="assets/v/granos.jpg" alt="" width="720" height="1280" loading="lazy"><div><h3>Desayuno sentado</h3><p>Café, tostada y zumo. Y nadie te trae la cuenta sin pedirla.</p></div><b>20 min</b></li>
+    <li data-min="20"><img src="assets/v/mostrador.jpg" alt="" width="720" height="1040" loading="lazy"><div><h3>Huevos con pan</h3><p>Se hacen cuando los pides, así que tardan.</p></div><b>20 min</b></li>
+    <li data-min="45"><img src="assets/v/sonrisa.jpg" alt="" width="720" height="1280" loading="lazy"><div><h3>La mesa de la ventana</h3><p>Un libro, un segundo café y el móvil en el bolso.</p></div><b>45 min</b></li>
+  </ul>
+  <div class="carta-pie">
+    <p aria-live="polite" data-recomienda>Con 5 minutos te llega para un café con leche.</p>
+    <button class="boton boton-tinta" type="button" data-empezar><span data-empezar-t>Empezar mis 5 minutos</span></button>
+  </div>
+  <p class="carta-nota">Carta de ejemplo. Se paga en euros, claro.</p>
+</section>
+
+<section class="sitio" id="sitio" aria-labelledby="sitio-t">
+  <div class="sitio-txt">
+    <h2 id="sitio-t">Un sitio que frena</h2>
+    <p>Sillas en las que apetece quedarse y una barra a la vista, para ver cómo hacen lo tuyo. Si pasas el ratón por las imágenes, hasta ellas van más despacio.</p>
+  </div>
+  <div class="pared" data-pared aria-hidden="true">
+    <div class="pared-col"><img src="assets/v/barista.jpg" alt="" width="720" height="1040" loading="lazy"><img src="assets/v/dibujo.jpg" alt="" width="720" height="1280" loading="lazy"><img src="assets/v/granos.jpg" alt="" width="720" height="1280" loading="lazy"><img src="assets/v/sorbo.jpg" alt="" width="720" height="1280" loading="lazy"></div>
+    <div class="pared-col"><img src="assets/v/mesa.jpg" alt="" width="720" height="1280" loading="lazy"><img src="assets/v/molido.jpg" alt="" width="720" height="1280" loading="lazy"><img src="assets/v/sonrisa.jpg" alt="" width="720" height="1280" loading="lazy"><img src="assets/v/vapor.jpg" alt="" width="720" height="1280" loading="lazy"></div>
+  </div>
+</section>
+
+<section class="pieza" id="spot">
+  <video class="pieza-video" src="assets/rato-spot.mp4" poster="assets/rato-spot-poster.jpg" width="720" height="1280" controls playsinline preload="none" aria-label="Spot de RATO, con sonido"></video>
+  <div class="pieza-txt">
+    <h2>El rato, en veinticinco segundos</h2>
+    <p>Dura menos que el café. El spot de RATO cuenta lo mismo desde el lado de quien va corriendo.</p>
+  </div>
+</section>
+
+<section class="dudas" id="dudas">
+  <h2>Lo que nos preguntan</h2>
+  <div class="losetas">
+    <details class="loseta" name="losetas" open><summary>¿Lo puedo pedir para llevar?<span class="mas" aria-hidden="true"></span></summary><p>Claro. Pero te lo vamos a preguntar dos veces.</p></details>
+    <details class="loseta" name="losetas"><summary>¿Y si solo tengo dos minutos?<span class="mas" aria-hidden="true"></span></summary><p>Entonces tómate un solo en la barra, de pie, como en Italia. Dos minutos también son tuyos.</p></details>
+    <details class="loseta" name="losetas"><summary>¿Tenéis wifi?<span class="mas" aria-hidden="true"></span></summary><p>Sí. La contraseña está en la cuenta, así que te la damos al irte.</p></details>
+    <details class="loseta" name="losetas"><summary>¿Puedo trabajar aquí?<span class="mas" aria-hidden="true"></span></summary><p>Puedes. Tenemos pocos enchufes a propósito, y las mesas de la ventana son para quien viene sin portátil.</p></details>
+    <details class="loseta" name="losetas"><summary>¿Hay opciones sin lactosa?<span class="mas" aria-hidden="true"></span></summary><p>Sí, y también bebidas vegetales. El dibujo sale peor, pero sabe igual de bien.</p></details>
+  </div>
+</section>
+
+<section class="demo" id="demo">
+  <p>RATO no existe, así que no te podemos poner ese café. Es una marca de demostración: el nombre, el logo, el spot y esta web los he hecho yo, Esteban, para enseñar cómo construyo una marca. La carta y el local son un ejemplo.</p>
+  <a class="palabra" href="https://www.bnzoedit.online/#marca">Hablamos</a>
+</section>
+
+</main>
+
+<footer class="pie">
+  <svg class="pie-taza" aria-hidden="true"><use href="#taza"/></svg>
+  <div class="pie-der">
+    <p class="pie-nombre" aria-hidden="true">RATO</p>
+    <ul class="pie-lista">
+      <li><a href="https://www.bnzoedit.online/">bnzoedit.online</a></li>
+      <li><a href="https://www.instagram.com/bnzoedit/">@bnzoedit</a></li>
+      <li><a href="#inicio">Otro café</a></li>
+    </ul>
+    <p class="pie-legal">Marca de demostración de Bnzo. No es una cafetería real. Vídeo: Mizuno Kozuki (Pexels).</p>
+  </div>
+</footer>
+
+<dialog class="rato" data-rato aria-labelledby="rato-t">
+  <div class="rato-dentro">
+    <h2 id="rato-t" class="invisible">Tu rato</h2>
+    <svg class="rato-taza" viewBox="0 0 100 120" aria-hidden="true"><rect class="nivel" x="0" y="56" width="100" height="60" clip-path="url(#interior2)" data-rato-nivel/><use href="#taza"/></svg>
+    <p class="rato-tiempo" role="timer" data-rato-tiempo>5:00</p>
+    <p class="rato-frase" aria-live="polite" data-rato-frase>El móvil puede esperar.</p>
+    <button class="boton boton-claro" type="button" data-rato-cerrar>Ya me voy</button>
+  </div>
+</dialog>
+
+<script src="rato.js?v=1"></script>
+</body>
+</html>
