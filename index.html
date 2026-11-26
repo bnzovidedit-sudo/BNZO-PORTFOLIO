@@ -1,344 +1,138 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" class="no-js">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Bnzo · Marcas que no se quedan quietas</title>
-  <meta name="description" content="Bnzo es Esteban Bonet: creo marcas desde cero, despierto negocios que se han estancado y hago los vídeos que los mueven. Identidad y manual, spots con motion, vídeos de YouTube, shorts y contenido para redes.">
-  <meta name="theme-color" content="#0f0f0e">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
-  <link rel="preload" href="assets/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="bnzo.css?v=20261107">
-  <script defer src="bnzo.js?v=20261107"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bnzo · Esteban Bonet · Edición de contenido e imagen de marca</title>
+<meta name="description" content="Esteban Bonet, editor de vídeo en Palma. Edición de contenido para creadores de YouTube y Twitch, e imagen de marca para negocios: identidad, spots, webs y motion.">
+<meta name="theme-color" content="#0f0f0e">
+<link rel="preload" href="assets/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="creadores/creadores.css">
+<link rel="stylesheet" href="hub.css">
 </head>
 <body>
-  <a class="skip" href="#contenido">Saltar al contenido</a>
+<a class="skip" href="#main">Saltar al contenido</a>
 
-  <header class="bar">
-    <a class="wordmark" href="#inicio" aria-label="Bnzo, inicio">BNZO</a>
-    <nav aria-label="Principal">
-      <a href="#marca">Crea tu marca</a>
-      <a href="#servicios">Servicios</a>
-      <a href="#yo">Quién soy</a>
-      <a href="empezar/">Precios</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-  </header>
+<nav class="nav" aria-label="Principal">
+  <a class="logo" href="#inicio" aria-label="Bnzo, inicio">BNZO</a>
+  <ul>
+    <li><a href="creadores/">Creadores</a></li>
+    <li><a href="marcas/">Marcas</a></li>
+    <li><a href="#trabajos">Trabajos</a></li>
+    <li><a href="#yo">Quién soy</a></li>
+  </ul>
+  <a class="cta" href="empezar/">Empezar</a>
+</nav>
 
-  <main id="contenido">
-    <!-- Portada: tarjeta ácida sobre una pared de trabajos -->
-    <section id="inicio" class="hero" aria-labelledby="hero-title">
-      <div class="hero-wall" aria-hidden="true">
-        <video class="auto" muted loop playsinline preload="metadata" poster="assets/kairo-spot-poster.jpg" data-src="assets/kairo-spot.mp4"></video>
-        <video class="auto" muted loop playsinline preload="metadata" poster="assets/asalto-spot-poster.jpg" data-src="assets/asalto-spot.mp4"></video>
-        <video class="auto" muted loop playsinline preload="metadata" poster="assets/kairo-kit-poster.jpg" data-src="assets/kairo-kit.mp4"></video>
-      </div>
-      <div class="hero-card" data-reveal>
-        <h1 id="hero-title" class="hero-title">Marcas que no se quedan quietas</h1>
-        <div class="hero-body">
-          <ul class="hero-facts">
-            <li>Para marcas que empiezan</li>
-            <li>Para negocios que se han parado</li>
-            <li>Para creadores con canal</li>
-          </ul>
-          <p class="hero-sub">Soy Esteban, y Bnzo es mi estudio. Creo marcas desde cero, despierto las que se han estancado y hago los vídeos que las mueven: spots, YouTube, shorts y redes.</p>
-        </div>
-        <div class="hero-foot">
-          <span class="hero-credit">Bnzo · Esteban Bonet</span>
-          <a class="btn btn-dark" href="#marca">Crea tu marca conmigo</a>
-          <a class="link" href="#punto-de-partida">¿Por dónde empiezo?</a>
-        </div>
-      </div>
-    </section>
+<main id="main">
+<!-- Portada: las dos puertas -->
+<section class="hub-hero" id="inicio" aria-labelledby="hub-title">
+  <div class="wrap">
+    <header class="hub-head">
+      <div class="chips"><span class="chip on"><span class="dot" aria-hidden="true"></span>Disponible</span><span class="chip">Esteban Bonet · Palma de Mallorca</span></div>
+      <h1 id="hub-title" class="t-xl ml" aria-label="Edito contenido y creo imagen de marca">
+        <span class="ln" aria-hidden="true"><span>Edito contenido.</span></span>
+        <span class="ln" aria-hidden="true"><span class="acid">Creo marcas.</span></span>
+      </h1>
+      <p class="lead">Soy editor de vídeo. Trabajo para creadores que quieren que su canal se vea mejor y para negocios que necesitan una imagen que se recuerde. ¿Por dónde empezamos?</p>
+    </header>
 
-    <!-- Dos puntos de partida -->
-    <section id="punto-de-partida" class="doors" aria-labelledby="doors-title">
-      <h2 id="doors-title" class="sr-only">Dos puntos de partida</h2>
-      <a class="door door-new" href="#marca" data-reveal>
-        <h3>Empiezas de&nbsp;cero&nbsp;<span aria-hidden="true">→</span></h3>
-        <p>Tienes una idea o un negocio recién abierto y nada que lo identifique. Creamos el nombre si hace falta, el logo, el manual, las redes y un spot para presentarlo.</p>
+    <div class="doors">
+      <a class="door rv" href="creadores/">
+        <video src="assets/short-narco.mp4" poster="assets/short-narco.jpg" muted loop playsinline preload="none" data-auto aria-hidden="true"></video>
+        <span class="door-body">
+          <span class="door-q">¿Eres creador?</span>
+          <span class="door-t t-l">Edición de <span class="acid">contenido</span></span>
+          <span class="door-d">Directos convertidos en episodios, shorts con subtítulos, storytelling y pantallas para OBS.</span>
+          <span class="door-go">Ver lo que hago para creadores →</span>
+        </span>
       </a>
-      <a class="door door-stuck" href="#servicios" data-reveal>
-        <h3>Te has estancado&nbsp;<span aria-hidden="true">→</span></h3>
-        <p>Llevas años abierto, pero tu imagen se ha quedado atrás y tus redes no dicen nada. Ordenamos tu marca y te doy contenido cada mes: reels, shorts y vídeos de YouTube.</p>
+      <a class="door rv" href="marcas/">
+        <video src="assets/asalto-spot.mp4" poster="assets/asalto-spot-poster.jpg" muted loop playsinline preload="none" data-auto aria-hidden="true"></video>
+        <span class="door-body">
+          <span class="door-q">¿Eres una marca?</span>
+          <span class="door-t t-l">Imagen de <span class="acid">marca</span></span>
+          <span class="door-d">Identidad, spots con motion, reels para redes y webs para negocios que se quedan quietos.</span>
+          <span class="door-go">Ver lo que hago para marcas →</span>
+        </span>
       </a>
-    </section>
-
-    <!-- Crea tu marca conmigo: el caso KAIRO -->
-    <section id="marca" class="case" aria-labelledby="case-title">
-      <div class="case-run">
-        <div class="case-stage">
-          <img class="case-ground" src="assets/kairo-spot-aro2.jpg" alt="" width="1080" height="1920">
-          <div class="case-track">
-            <div class="case-head" data-reveal>
-              <h2 id="case-title">Crea tu marca conmigo</h2>
-              <p>KAIRO no existe. La inventé de cero para enseñarte lo que recibe tu negocio: una idea, un logo construido, su manual, sus redes, su anuncio y sus objetos.</p>
-              <a class="btn case-cta" href="kairo/">Ver la web de KAIRO →</a>
-            </div>
-            <article class="case-card tone-a">
-              <img src="assets/kairo-manual-02.jpg" alt="Página del concepto de KAIRO: el aro y el impulso que lo cruza" width="1600" height="900" loading="lazy">
-              <div class="case-panel"><h3>La idea</h3><p>Kairós es el momento justo. Un aro para el tiempo y un impulso que lo cruza.</p></div>
-            </article>
-            <article class="case-card tone-b">
-              <img src="assets/kairo-manual-03.jpg" alt="Plano de construcción del símbolo con sus medidas y curvas" width="1600" height="900" loading="lazy">
-              <div class="case-panel"><h3>El logo, medido</h3><p>Aros de 78 y 56 unidades, cuerda a 32° y cursiva de 12°. Nada está a ojo.</p></div>
-            </article>
-            <article class="case-card tone-c">
-              <img src="assets/kairo-manual-05.jpg" alt="Las seis versiones del logo KAIRO sobre fondos distintos" width="1600" height="900" loading="lazy">
-              <div class="case-panel"><h3>El manual</h3><p>13 páginas: versiones, usos prohibidos, color, letra y voz. Y 24 archivos del logo.</p></div>
-            </article>
-            <article class="case-card tone-a">
-              <img src="assets/kairo-manual-11.jpg" alt="KAIRO aplicada en redes, tarjeta, cartel y camiseta" width="1600" height="900" loading="lazy">
-              <div class="case-panel"><h3>Las redes</h3><p>Perfil, publicaciones, historias y portadas de reel, todo con la misma plantilla.</p></div>
-            </article>
-            <article class="case-card tone-b">
-              <video class="auto" muted loop playsinline preload="none" poster="assets/kairo-spot-poster.jpg" data-src="assets/kairo-spot.mp4" aria-label="Spot de 15 segundos de KAIRO"></video>
-              <div class="case-panel"><h3>El anuncio</h3><p>Spot de 15 s a 120 BPM. Cada golpe cae en su fotograma, con música hecha para él.</p></div>
-            </article>
-            <article class="case-card tone-c">
-              <img src="assets/kairo-manual-12.jpg" alt="Gorra, funda de móvil, estuche y llavero con la marca KAIRO" width="1600" height="900" loading="lazy">
-              <div class="case-panel"><h3>Fuera de la pantalla</h3><p>Gorra, funda, estuche y llavero. La marca tiene que aguantar también en la mano.</p></div>
-            </article>
-          </div>
-        </div>
-      </div>
-
-      <div class="try wrap" aria-labelledby="try-title">
-        <figure class="try-stage" id="try-stage" data-bg="noche" data-reveal>
-          <img id="try-logo" src="assets/kairo_horizontal_oscuro.svg" alt="Logo KAIRO horizontal, versión para fondo oscuro" width="838" height="600">
-        </figure>
-        <div class="try-text" data-reveal>
-          <h2 id="try-title">Un logo para cada fondo</h2>
-          <p>Elige fondo y forma, y mira qué archivo del manual le toca. En una marca bien hecha nadie tiene que improvisar.</p>
-          <div class="try-group" role="group" aria-label="Fondo">
-            <button type="button" class="chip" data-bg="noche" aria-pressed="true">Noche</button>
-            <button type="button" class="chip" data-bg="hueso" aria-pressed="false">Hueso</button>
-            <button type="button" class="chip" data-bg="bermellon" aria-pressed="false">Bermellón</button>
-          </div>
-          <div class="try-group" role="group" aria-label="Forma">
-            <button type="button" class="chip" data-form="horizontal" aria-pressed="true">Horizontal</button>
-            <button type="button" class="chip" data-form="vertical" aria-pressed="false">Vertical</button>
-            <button type="button" class="chip" data-form="simbolo" aria-pressed="false">Símbolo</button>
-          </div>
-          <p class="try-file" aria-live="polite">Archivo: <span id="try-file">kairo_horizontal_oscuro.svg</span></p>
-        </div>
-      </div>
-
-      <div class="get wrap" aria-labelledby="get-title">
-        <div class="get-text" data-reveal>
-          <h2 id="get-title">Lo que recibes</h2>
-          <ul class="get-list">
-            <li data-reveal>La idea y el nombre, si aún no lo tienes, con el porqué escrito.</li>
-            <li data-reveal>El logo y su construcción, en horizontal, vertical y símbolo.</li>
-            <li data-reveal>El manual de marca en PDF: color, letra, versiones, voz y usos prohibidos.</li>
-            <li data-reveal>Los archivos en SVG y PNG para fondo claro, oscuro y a una tinta.</li>
-            <li data-reveal>El kit de redes: perfil, plantillas de publicación, historias y portadas.</li>
-            <li data-reveal>El spot de lanzamiento, con motion y música propia.</li>
-            <li data-reveal>Las aplicaciones: tarjeta, cartel, ropa y objetos.</li>
-            <li data-reveal>La web de la marca, con movimiento y hecha a medida, como la de KAIRO.</li>
-          </ul>
-          <div class="get-actions">
-            <a class="btn" href="mailto:esteban@bnzoedit.online?subject=Quiero%20crear%20mi%20marca&amp;body=Hola%20Esteban%2C%20mi%20negocio%20es%3A%20">Quiero mi marca</a>
-            <a class="link" href="kairo/">Visitar la web de KAIRO</a>
-            <a class="link" href="assets/KAIRO_manual_de_marca.pdf">Abrir el manual de KAIRO (PDF, 13 páginas)</a>
-          </div>
-        </div>
-        <figure class="get-media" data-reveal>
-          <video controls muted playsinline preload="none" poster="assets/kairo-proceso-poster.jpg" src="assets/kairo-proceso.mp4" aria-label="Reel «Esta marca no existe»: el proceso de KAIRO en 30 segundos"></video>
-          <figcaption>«Esta marca no existe»: el proceso entero en 30 segundos.</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <!-- Trabajos: índice pequeño, imagen grande -->
-    <section id="trabajos" class="work" aria-labelledby="work-title">
-      <div class="work-side">
-        <h2 id="work-title" data-reveal>Trabajos</h2>
-        <div class="work-index" role="tablist" aria-label="Elige un trabajo" aria-orientation="vertical" data-reveal>
-          <button type="button" role="tab" id="t-kairo" aria-selected="true" aria-controls="work-media" data-web="kairo/" data-video="assets/kairo-spot.mp4" data-poster="assets/kairo-spot-poster.jpg" data-note="Marca de demostración creada de cero: logo, manual, redes y spot."><span class="w-name">KAIRO</span><span class="w-tags">Marca · spot · redes</span></button>
-          <button type="button" role="tab" id="t-umbral" aria-selected="false" tabindex="-1" aria-controls="work-media" data-web="umbral/" data-video="assets/umbral-spot.mp4" data-poster="assets/umbral-spot-poster.jpg" data-note="Marca ficticia de mudanzas. Planos de Pexels (RDNE Stock project); marca y música propias."><span class="w-name">UMBRAL</span><span class="w-tags">Marca · spot de servicio</span></button>
-          <button type="button" role="tab" id="t-firme" aria-selected="false" tabindex="-1" aria-controls="work-media" data-web="firme/" data-video="assets/firme-spot.mp4" data-poster="assets/firme-spot-poster.jpg" data-note="Marca ficticia inmobiliaria. Planos de Pexels; marca y música propias."><span class="w-name">FIRME</span><span class="w-tags">Marca · spot de servicio</span></button>
-          <button type="button" role="tab" id="t-rato" aria-selected="false" tabindex="-1" aria-controls="work-media" data-web="rato/" data-video="assets/rato-spot.mp4" data-poster="assets/rato-spot-poster.jpg" data-note="Marca ficticia de cafetería. Planos de Pexels; marca y música propias."><span class="w-name">RATO</span><span class="w-tags">Marca · spot de servicio</span></button>
-          <button type="button" role="tab" id="t-asalto" aria-selected="false" tabindex="-1" aria-controls="work-media" data-video="assets/asalto-spot.mp4" data-poster="assets/asalto-spot-poster.jpg" data-note="Marca ficticia de boxeo. Planos de Pexels; música, marca y efectos propios."><span class="w-name">ASALTO</span><span class="w-tags">Spot · motion</span></button>
-          <button type="button" role="tab" id="t-eventos" aria-selected="false" tabindex="-1" aria-controls="work-media" data-video="assets/eventos-spot.mp4" data-poster="assets/eventos-spot-poster.jpg" data-note="Pieza propia para promotoras y salas: tipografía cinética a 160 BPM, música original."><span class="w-name">Eventos</span><span class="w-tags">Tipografía cinética</span></button>
-          <button type="button" role="tab" id="t-fisio" aria-selected="false" tabindex="-1" aria-controls="work-media" data-video="assets/fisiofamily-spot.mp4" data-poster="assets/fisiofamily-spot-poster.jpg" data-note="Marca ficticia de fisioterapia. Planos de Pexels (Kampus Production, Ekaterina Bolovtsova, Klaus Nielsen)."><span class="w-name">Fisiofamily</span><span class="w-tags">Spot horizontal</span></button>
-          <button type="button" role="tab" id="t-gym" aria-selected="false" tabindex="-1" aria-controls="work-media" data-video="assets/gimnasio-pata.mp4" data-poster="assets/gimnasio-pata-poster.jpg" data-note="Muestra de contenido orgánico para un gimnasio. Planos de Pexels; música «Pa Ta», de Infraction y Emerel Gray."><span class="w-name">Gimnasio</span><span class="w-tags">Contenido orgánico</span></button>
-          <button type="button" role="tab" id="t-yo" aria-selected="false" tabindex="-1" aria-controls="work-media" data-video="assets/sobre-mi.mp4" data-poster="assets/sobre-mi-poster.jpg" data-note="Mi presentación: vertical, con voz y subtítulos."><span class="w-name">Sobre mí</span><span class="w-tags">Short con voz</span></button>
-        </div>
-      </div>
-      <figure data-reveal class="work-media" id="work-media" role="tabpanel" aria-labelledby="t-kairo">
-        <video id="work-video" muted loop playsinline preload="metadata" poster="assets/kairo-spot-poster.jpg" src="assets/kairo-spot.mp4"></video>
-        <button type="button" class="sound" id="work-sound" aria-pressed="false">Activar sonido</button>
-        <figcaption><span id="work-note">Marca de demostración creada de cero: logo, manual, redes y spot.</span> <a class="work-web" id="work-web" href="kairo/">Ver la web de KAIRO →</a></figcaption>
-      </figure>
-    </section>
-
-    <!-- Servicios: una hoja de color por servicio -->
-    <section id="servicios" class="services" aria-labelledby="services-title">
-      <h2 id="services-title" class="wrap" data-reveal>Lo que hago</h2>
-      <div class="sheets">
-        <article data-reveal class="sheet s1">
-          <h3>Marca desde cero</h3>
-          <p>Nombre, logo, manual, colores, letra y plantillas de redes. Todo sale de una idea y todo encaja con todo.</p>
-          <img src="assets/kairo-manual-07.jpg" alt="Página de color del manual de KAIRO: noche, hueso y bermellón" width="1600" height="900" loading="lazy">
-        </article>
-        <article data-reveal class="sheet s2">
-          <h3>Contenido para redes</h3>
-          <p>Reels y carruseles cada mes, con tu marca. Grabas con el móvil lo que pasa en tu negocio y yo lo monto, lo animo y te lo dejo listo para publicar.</p>
-          <img src="assets/gimnasio-pata-poster.jpg" alt="Fotograma de la muestra de contenido para gimnasios" width="720" height="1280" loading="lazy">
-        </article>
-        <article data-reveal class="sheet s3">
-          <h3>Vídeos para YouTube</h3>
-          <p>Vídeos horizontales con guion, ritmo, rótulos y miniatura. Es lo que hago en mi propio canal, SCRIPTUM GAMING, así que sé lo que cuesta que alguien se quede hasta el final.</p>
-          <img class="pos-left" src="assets/scriptum-ep01.jpg" alt="Miniatura del episodio «La misma espada» de SCRIPTUM GAMING" width="1280" height="720" loading="lazy">
-        </article>
-        <article data-reveal class="sheet s4">
-          <h3>Shorts y clips</h3>
-          <p>Saco los mejores momentos de tus vídeos largos, directos o podcasts y los monto en vertical, con subtítulos, para Shorts, Reels y TikTok.</p>
-          <img src="assets/sobre-mi-poster.jpg" alt="Fotograma de un short vertical con subtítulos de Esteban" width="720" height="1280" loading="lazy">
-        </article>
-        <article data-reveal class="sheet s5">
-          <h3>Spots con motion</h3>
-          <p>Anuncios de 15 a 30 segundos con tipografía animada, efectos y música hecha para la pieza. Con tus grabaciones o con stock con licencia.</p>
-          <img src="assets/eventos-spot-poster.jpg" alt="Fotograma del spot de tipografía cinética para eventos" width="1280" height="720" loading="lazy">
-        </article>
-      </div>
-    </section>
-
-    <!-- Cómo trabajo: un verbo cada vez -->
-    <section id="proceso" class="verbs" aria-labelledby="verbs-title">
-      <h2 id="verbs-title" class="verbs-title">Cómo trabajo</h2>
-      <div class="verb">
-        <img src="assets/esteban-retrato.jpg" alt="Esteban en su mesa de trabajo" width="840" height="1050" loading="lazy">
-        <div class="verb-word"><h3>Escucho</h3></div>
-        <p class="verb-line" data-reveal>15 minutos de llamada: qué haces, a quién le hablas y qué quieres que sientan al verte.</p>
-      </div>
-      <div class="verb">
-        <img src="assets/kairo-manual-03.jpg" alt="Construcción geométrica del símbolo de KAIRO" width="1600" height="900" loading="lazy">
-        <div class="verb-word"><h3>Construyo</h3></div>
-        <p class="verb-line" data-reveal>Idea, logo y manual. Cada decisión tiene su porqué y queda por escrito.</p>
-      </div>
-      <div class="verb">
-        <img src="assets/kairo-kit-construccion.jpg" alt="Fotograma del logo de KAIRO animándose" width="720" height="1280" loading="lazy">
-        <div class="verb-word"><h3>Muevo</h3></div>
-        <p class="verb-line" data-reveal>La marca se anima: logo, rótulos, transiciones y un spot para presentarla.</p>
-      </div>
-      <div class="verb">
-        <img src="assets/kairo-kit-poster.jpg" alt="Cuadrícula de publicaciones de KAIRO en redes" width="720" height="1280" loading="lazy">
-        <div class="verb-word"><h3>Publico</h3></div>
-        <p class="verb-line" data-reveal>Te llevas el kit de redes listo y, si quieres, contenido cada mes en la misma línea.</p>
-      </div>
-    </section>
-
-    <!-- Quién soy: entre las cuerdas -->
-    <section id="yo" class="me" aria-labelledby="me-title">
-      <div class="ropes" aria-hidden="true"><span></span><span></span><span></span></div>
-      <figure class="me-photo">
-        <img src="assets/esteban-retrato.jpg" alt="Retrato de Esteban Bonet en su mesa de trabajo" width="840" height="1050" loading="lazy">
-      </figure>
-      <div class="me-text">
-        <h2 id="me-title" data-reveal>Rebelde, entre las cuerdas</h2>
-        <p class="me-lead" data-reveal>Soy curioso, apasionado y tengo una ambición que no me cabe en la mesa.</p>
-        <p data-reveal>Mi único rival es el Esteban de ayer. Cada proyecto tiene que ganarle al anterior, y no lo entrego hasta sentirme orgulloso de él.</p>
-        <p data-reveal>Soy rebelde con las ideas y formal con todo lo demás: contesto rápido, cumplo fechas y hago lo que digo. Me salgo de la plantilla, no del ring.</p>
-        <p data-reveal>Bnzo es mi salto. Dejo de ser solo editor para dedicarme a lo que quiero hacer: construir marcas. La primera es la mía.</p>
-      </div>
-    </section>
-
-    <!-- De dónde vengo: las piezas giran en un anillo; la de delante se reproduce -->
-    <section id="origen" class="log" aria-labelledby="log-title">
-      <div class="log-head">
-        <h2 id="log-title">De dónde vengo</h2>
-        <p>De editar reels con el móvil de otros a construir marcas enteras.</p>
-      </div>
-      <div class="orbit" id="orbit" aria-roledescription="carrusel" aria-label="Mi camino, de la primera pieza a la última">
-        <ol class="log-list">
-          <li class="log-item" data-video="assets/natur-final.mp4">
-            <figure class="log-card"><img src="assets/natur-poster.jpg" alt="Fotograma del borrador Natur: agua y naturaleza" width="720" height="1280" loading="lazy"></figure>
-            <div class="log-text">
-              <h3>Natur</h3>
-              <p class="log-role">Borrador · BNZOEDIT</p>
-              <p>Planos de agua y naturaleza montados al ritmo de la respiración, dejando que la imagen hable sola.</p>
-            </div>
-          </li>
-          <li class="log-item" data-video="assets/pulso-tren.mp4">
-            <figure class="log-card"><img src="assets/pulso-tren-poster.jpg" alt="Fotograma del borrador «El pulso invisible», trayectos en tren" width="720" height="1280" loading="lazy"></figure>
-            <div class="log-text">
-              <h3>El pulso invisible</h3>
-              <p class="log-role">Borrador · historia corta</p>
-              <p>Trayectos de tren convertidos en una historia con principio y final en menos de un minuto.</p>
-            </div>
-          </li>
-          <li class="log-item" data-video="assets/cafe-reel.mp4">
-            <figure class="log-card"><img src="assets/cafe-reel-poster.jpg" alt="Fotograma del reel para una cafetería" width="720" height="1280" loading="lazy"></figure>
-            <div class="log-text">
-              <h3>Café</h3>
-              <p class="log-role">Borrador · reel de negocio</p>
-              <p>Un reel para una cafetería, montado con planos de móvil.</p>
-            </div>
-          </li>
-          <li class="log-item" data-video="assets/barberia-reel.mp4">
-            <figure class="log-card"><img src="assets/barberia-reel-poster.jpg" alt="Fotograma del comercial para una barbería" width="720" height="1280" loading="lazy"></figure>
-            <div class="log-text">
-              <h3>Barbería</h3>
-              <p class="log-role">Borrador · comercial</p>
-              <p>Un comercial vertical para una barbería: el salto de editar momentos a vender un negocio.</p>
-            </div>
-          </li>
-          <li class="log-item">
-            <figure class="log-card"><img class="wide" src="assets/scriptum-ep01.jpg" alt="Miniatura de «La misma espada», primer episodio de SCRIPTUM GAMING" width="1280" height="720" loading="lazy"></figure>
-            <div class="log-text">
-              <h3>SCRIPTUM GAMING</h3>
-              <p class="log-role">27 de octubre · mi canal</p>
-              <p>Abrí mi propio canal de YouTube de lore de videojuegos. Ahí entreno guion, voz y montaje largo.</p>
-            </div>
-          </li>
-          <li class="log-item" data-video="assets/asalto-spot.mp4">
-            <figure class="log-card"><img src="assets/asalto-spot-poster.jpg" alt="Fotograma del spot de boxeo ASALTO" width="720" height="1280" loading="lazy"></figure>
-            <div class="log-text">
-              <h3>ASALTO</h3>
-              <p class="log-role">30 de octubre · spot</p>
-              <p>El spot de boxeo pasó por 14 versiones hasta la definitiva.</p>
-            </div>
-          </li>
-          <li class="log-item" data-video="assets/kairo-spot.mp4">
-            <figure class="log-card"><img src="assets/kairo-spot-poster.jpg" alt="Cierre del spot de KAIRO con su eslogan" width="720" height="1280" loading="lazy"></figure>
-            <div class="log-text">
-              <h3>KAIRO</h3>
-              <p class="log-role">30 de octubre · marca</p>
-              <p>Spot, kit de redes y manual de 13 páginas en el mismo día.</p>
-            </div>
-          </li>
-          <li class="log-item" data-video="assets/kairo-proceso.mp4">
-            <figure class="log-card"><img src="assets/kairo-proceso-poster.jpg" alt="Portada del reel «Esta marca no existe»" width="720" height="1280" loading="lazy"></figure>
-            <div class="log-text">
-              <h3>Bnzo</h3>
-              <p class="log-role">31 de octubre · el salto</p>
-              <p>Quito el «edit» del nombre. A partir de aquí, Bnzo hace marcas. La siguiente puede ser la tuya.</p>
-            </div>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- Contacto -->
-    <section id="contacto" class="contact" aria-labelledby="contact-title">
-      <h2 id="contact-title" class="contact-lead">¿Empiezas o te has estancado? Cuéntamelo y lo hablamos en 15 minutos.</h2>
-      <a class="contact-mail" href="mailto:esteban@bnzoedit.online?subject=Hablemos%20de%20mi%20marca">esteban@<wbr>bnzoedit.online</a>
-      <div class="contact-foot">
-        <p><a href="empezar/">¿Ya sabes lo que quieres? Mira precios y haz tu encargo →</a></p>
-        <p><a href="https://wa.me/34656913425?text=Hola%20Esteban%2C%20vi%20tu%20web%20y%20quiero%20hablar%20de%20mi%20marca." target="_blank" rel="noopener noreferrer">WhatsApp</a></p>
-        <p><a href="https://www.instagram.com/bnzoedit" target="_blank" rel="noopener noreferrer">Instagram</a> · <a href="https://www.youtube.com/@scriptumgaming" target="_blank" rel="noopener noreferrer">YouTube: SCRIPTUM GAMING</a> · <a href="https://www.tiktok.com/@recortia_" target="_blank" rel="noopener noreferrer">Recortia</a></p>
-      </div>
-    </section>
-  </main>
-
-  <footer class="foot">
-    <p class="foot-mark" aria-hidden="true">BNZO</p>
-    <div class="foot-row">
-      <p>© 2026 Esteban Bonet. KAIRO, ASALTO y Fisiofamily son marcas de demostración.</p>
-      <p><a href="legal.html#aviso-legal">Aviso legal</a> · <a href="legal.html#privacidad">Privacidad</a> · <a href="legal.html#cookies">Cookies</a></p>
     </div>
-  </footer>
+    <p class="hub-start rv">¿Ya sabes lo que quieres? <a href="empezar/">Pide tu vídeo en 2 minutos →</a></p>
+  </div>
+</section>
+
+<!-- Showreel -->
+<section aria-labelledby="reel-title">
+  <div class="wrap">
+    <header class="head rv">
+      <p class="eyebrow">Showreel</p>
+      <h2 id="reel-title" class="t-l">40 segundos de <span class="acid">todo lo que hago</span></h2>
+    </header>
+    <figure class="showreel rv">
+      <video src="assets/showreel.mp4" poster="assets/showreel-poster.jpg" controls playsinline preload="none" aria-label="Showreel de Bnzo: directos, shorts, storytelling, pantallas de OBS y spots, 37 segundos"></video>
+    </figure>
+  </div>
+</section>
+
+<!-- Trabajos: dos estanterías con el mismo diseño -->
+<section id="trabajos" aria-labelledby="work-title">
+  <div class="wrap">
+    <header class="head rv">
+      <p class="eyebrow">Trabajos</p>
+      <h2 id="work-title" class="t-l">Dos oficios, <span class="acid">un mismo ojo</span></h2>
+    </header>
+
+    <div class="shelf rv">
+      <div class="shelf-head"><h3 class="t-m">Edición de contenido</h3><a href="creadores/">Ver todo →</a></div>
+      <div class="shelf-row">
+        <a class="tile-s" href="https://www.youtube.com/watch?v=fj8B8vjZEvA" target="_blank" rel="noopener"><img src="assets/maister-ep01.jpg" alt="" loading="lazy" width="1280" height="720"><span><b>Maister San</b>GTA VI · de 4 h de directo a 40 min</span></a>
+        <a class="tile-s" href="https://youtu.be/gr6xxASaUQM" target="_blank" rel="noopener"><img src="assets/scriptum-halflife.jpg" alt="" loading="lazy" width="1280" height="720"><span><b>SCRIPTUM GAMING</b>Half-Life · 16,4K vistas</span></a>
+        <a class="tile-s" href="creadores/#packs"><img src="assets/maister-obs-gta.jpg" alt="" loading="lazy" width="1280" height="720"><span><b>Pantallas OBS</b>Kit animado de Maister San</span></a>
+      </div>
+    </div>
+
+    <div class="shelf rv">
+      <div class="shelf-head"><h3 class="t-m">Imagen de marca</h3><a href="marcas/">Ver todo →</a></div>
+      <div class="shelf-row">
+        <a class="tile-s" href="marcas/#trabajos"><img src="assets/asalto-spot-poster.jpg" alt="" loading="lazy" width="720" height="1280"><span><b>ASALTO</b>Spot de boxeo</span></a>
+        <a class="tile-s" href="kairo/"><img src="assets/kairo-kit-poster.jpg" alt="" loading="lazy" width="1280" height="720"><span><b>KAIRO</b>Marca completa y web</span></a>
+        <a class="tile-s" href="umbral/"><img src="assets/umbral-spot-poster.jpg" alt="" loading="lazy" width="720" height="1280"><span><b>UMBRAL</b>Spot de servicio y web</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Quién soy -->
+<section id="yo" aria-labelledby="me-title">
+  <div class="wrap me rv">
+    <img src="assets/esteban-retrato.jpg" alt="Esteban Bonet" loading="lazy" width="600" height="750">
+    <div>
+      <p class="eyebrow">Quién soy</p>
+      <h2 id="me-title" class="t-l">Me salgo del metraje, <span class="acid">no del ring</span></h2>
+      <p class="lead">Soy Esteban, editor en Palma. Llevo la edición y la marca de Maister San, tengo mi propio canal de historias, SCRIPTUM GAMING, y creo marcas para negocios. Mi único rival es el Esteban de ayer.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Empezar -->
+<section class="hub-cta" aria-labelledby="cta-title">
+  <div class="wrap">
+    <h2 id="cta-title" class="t-xl ml" aria-label="¿Hablamos?"><span class="ln" aria-hidden="true"><span>¿Hablamos<span class="acid">?</span></span></span></h2>
+    <div class="actions">
+      <a class="btn solid mag" href="empezar/"><span>Empezar un encargo</span></a>
+      <a class="btn mag" href="creadores/#contacto"><span>Soy creador</span></a>
+      <a class="btn mag" href="marcas/#contacto"><span>Tengo una marca</span></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 Bnzo · Esteban Bonet · <a href="mailto:esteban@bnzoedit.online">esteban@bnzoedit.online</a> · <a href="legal.html">Aviso legal</a></p>
+    <a class="biz" href="empezar/">Empezar →</a>
+  </div>
+</footer>
+<script src="creadores/creadores.js"></script>
 </body>
 </html>

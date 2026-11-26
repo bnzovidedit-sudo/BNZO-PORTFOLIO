@@ -69,7 +69,7 @@ function paintLogo() {
   stage.dataset.bg = state.bg;
   logo.classList.add('swap');
   setTimeout(() => {
-    logo.src = `assets/${file}`;
+    logo.src = `/assets/${file}`;
     logo.alt = `Logo KAIRO ${formNames[state.form]}, versión para ${bgNames[state.bg]}`;
     logo.classList.remove('swap');
   }, reduce ? 0 : 160);
